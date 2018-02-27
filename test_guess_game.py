@@ -15,11 +15,21 @@ class test_guess_game(unittest.TestCase):
     
     def test_check_username_is_valid(self):
         """
-        Test to ensure username cannot be black
+        Test to ensure username cannot be blank
         """
-        check_username = guess_game.check_username("Paul")
-        self.assertNotEqual(len(check_username), 0)
+        validate_username = guess_game.validate_username("Mark123")
+        self.assertNotEqual(len(validate_username), 0)
+
+
+    def test_email_address_is_valid_length(self):
+        """
+        Test to ensure email address is a valid length (>=6)
+        """
+        email_address = guess_game.email_address("des@me.com")
+        self.assertGreater(len(email_address), 5)
+
         
 
 if __name__ == '__main__':
     unittest.main()
+    

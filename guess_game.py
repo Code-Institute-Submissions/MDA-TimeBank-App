@@ -1,9 +1,19 @@
 def username(name):
     return name
 
-def check_username(name):
+def validate_username(name):
     while True:
         if len(name) < 1:
             name = input("Your username cannot be blank. Reveal yourself: ")
             continue
         return name
+
+def email_address(email):
+    while True:
+        if len(email) < 6:
+            email = input("That's not a valid email address.\nWe'll only use this to notify you of MDA events and opportunities.\nTry again:")
+        if "@" and "." not in email:
+            email = input("Your email address must contain a '@' and a '.'\nWe'll only use this to notify you of MDA events and opportunities.")
+            continue
+        return email
+
