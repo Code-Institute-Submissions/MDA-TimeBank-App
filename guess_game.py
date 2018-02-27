@@ -19,3 +19,15 @@ def validate_email_address(email):
             continue
         return email
 
+"""
+QUESTIONS_ANSWERS FUNCTION
+"""
+def ask_questions(guess, answer):
+    if guess == answer:
+        return 10
+    elif guess > answer and guess < (answer + 10):
+        return 5
+    elif guess < answer and guess > (answer - 10):
+        return 5
+   
+   
