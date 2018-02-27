@@ -28,7 +28,16 @@ class test_guess_game(unittest.TestCase):
         email_address = guess_game.email_address("des@me.com")
         self.assertGreater(len(email_address), 5)
 
+
+    # def test_email_address_is_valid_characters
+        """
+        Test to ensure email address includes '@' and '.'
+        MANUAL TEST CARRIED OUT IN COMMAND LINE TO CHECK VALID
+        EMAIL LOOP. WILL ONLY ENSURE >5 length, '@' and '.' in 
+        any combination.
+        """
         
+
 
 if __name__ == '__main__':
     unittest.main()
