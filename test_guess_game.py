@@ -7,9 +7,19 @@ class test_guess_game(unittest.TestCase):
     """
     def test_username_not_blank(self):
         """
-        Test to ensure username is not blank
+        Test to detect if username is blank
         """
-        username = guess_game.username("Mark123")
-        self.assertNotEqual(len(username), 0)
+        username = guess_game.username("")
+        self.assertNotEqual(len(username), 1)
+
     
-    def test_username
+    def test_check_username_is_valid(self):
+        """
+        Test to ensure username cannot be black
+        """
+        check_username = guess_game.check_username("Paul")
+        self.assertNotEqual(len(check_username), 0)
+        
+
+if __name__ == '__main__':
+    unittest.main()
