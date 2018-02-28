@@ -59,7 +59,6 @@ class test_guess_game(unittest.TestCase):
         self.assertNotEqual(guess_game.ask_questions("&%$", 3), 10)
         self.assertNotEqual(guess_game.ask_questions(32, 3), 10)
       
-      
     def test_questions_scores_5(self):
         """
         Test to check whether 5 awarded for answers which are within range of  
