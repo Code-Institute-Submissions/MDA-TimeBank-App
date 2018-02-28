@@ -71,12 +71,12 @@ class test_guess_game(unittest.TestCase):
     
     def test_questions_scores_0(self):
         """
-        Test to check whether 5 awarded for answers which are within range of  
-        10 lower or higher than answer
+        Test to check whether 0 awarded for incorrect and invalid answers
         """
         self.assertEqual(guess_game.ask_questions(19, 30), 0)
         self.assertEqual(guess_game.ask_questions(41, 30), 0)
         self.assertEqual(guess_game.ask_questions("hello", 30), 0)
+        self.assertEqual(guess_game.ask_questions(-1, 30), 0)
 
 if __name__ == '__main__':
     unittest.main()
