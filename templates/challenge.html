@@ -1,20 +1,7 @@
-<html>
-
-<head>
-    <title>MDA timeBank</title>
-</head>
-
-<body>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for ('index') }}">Home</a></li>
-            <li><a href="{{ url_for ('challenge') }}">timeBank Challenge</a></li>
-            <li><a href="{{ url_for ('information') }}">More Information</a></li>
-            <li><a href="{{ url_for ('message_board') }}">Message Board</a></a></li>
-        </ul>
-    </nav>
+{% extends 'base.html' %}
+{% block content %}
 
     <h1>Take the Challenge</h1>
-</body>
+    
+{% endblock %}
 
-</html>
