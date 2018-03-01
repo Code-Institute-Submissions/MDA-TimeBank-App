@@ -1,0 +1,12 @@
+.bk-image-1 {
+    background-image: url(/static/img/hands.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bk-image-2 {
+    background-image: url(/static/img/wrench-web.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+    background-size: cover;
+}
