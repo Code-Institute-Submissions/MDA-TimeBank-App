@@ -1,15 +1,19 @@
 import os
+import json
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html", page_title="Welcome")
+    return render_template("index.html")
 
 @app.route('/challenge')
 def challenge():
-    return render_template("challenge.html", page_title="Take the timeBank Challenge")
+    data = []
+    with open("data/challenge.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("challenge.html", question_count=" Answered 1/6", running_score="Your Score: 15", challenge_data = data)
     
 @app.route('/information')
 def information():

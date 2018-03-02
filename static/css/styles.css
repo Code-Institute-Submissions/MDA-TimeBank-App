@@ -1,12 +1,193 @@
+/*Background Images*/
+
 .bk-image-1 {
     background-image: url(/static/img/hands.jpeg);
     background-repeat: no-repeat;
+    background-position: 50% 5%;
     background-size: cover;
 }
 
 .bk-image-2 {
+    background-image: url(/static/img/computer-web.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+    background-size: cover;
+}
+
+.bk-image-3 {
     background-image: url(/static/img/wrench-web.jpeg);
     background-repeat: no-repeat;
     background-position: 50% 5%;
     background-size: cover;
+}
+
+.bk-image-4 {
+    background-image: url(/static/img/decorate-web.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+    background-size: cover;
+}
+
+.bk-image-5 {
+    background-image: url(/static/img/wrench-web.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+    background-size: cover;
+}
+
+.bk-image-6 {
+    background-image: url(/static/img/car-web.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+    background-size: cover;
+}
+
+.bk-image-7 {
+    background-image: url(/static/img/yoga-web.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+    background-size: cover;
+}
+
+
+
+
+/*Page Headings*/
+
+/*.p-0 {*/
+/*    background-color: black;*/
+/*}*/
+
+.heading {
+    color: #fafafa;
+    position: fixed;
+    font-size: 5rem;
+    z-index: 1;
+    top: 12%;
+    left: 30%;
+    text-align: right;
+    background-color: #492c2c80;
+    padding-right: 1rem;
+    text-shadow: 5px -2px black;
+}
+
+.landing-page {
+    font-size: 13rem !important;
+    line-height: 12.5rem;
+    color: white;
+    text-shadow: 5px -2px black;
+}
+
+.challenge-page-title {
+    font-size: 11rem;
+    line-height: 8rem;
+    color: #3273a6;
+    margin: 4.5rem 0rem !important;
+}
+
+
+
+.challenge-numbers_1 {
+    font-family: 'Knewave', cursive;
+    font-size: 20rem;
+    line-height: 5rem;
+    color: #2e72aa !important;
+}
+
+.challenge-numbers_2 {
+    font-family: 'Knewave', cursive;
+    font-size: 20rem;
+    line-height: 5rem;
+    color: #bd5d38!important;
+    padding-top: 7rem;
+    text-shadow: 7px -3px black;
+}
+
+.subheading {
+    font-size: 3.5rem;
+    color: #fafafa;
+}
+
+.question_count {
+    position: fixed;
+    top: 16%;
+    left: 74%;
+    color: #fff;
+    background-color: #000;
+    opacity: .8;
+    font-size: 3rem !important;
+    padding: 1rem;
+    z-index: 3
+}
+
+.running_score {
+    position: fixed;
+    top: 88%;
+    left: 6%;
+    color: #fff;
+    background-color: #000;
+    opacity: .8;
+    font-size: 3rem !important;
+    padding: 1rem;
+}
+
+.parent_1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    opacity: .8;
+    margin: 1rem;
+}
+
+.parent_2 {
+    display: flex;
+    align-items: center;
+    opacity: .8;
+    margin: 1rem;
+}
+
+ .parent > div {
+        flex: 1;
+        padding: 2rem;
+    }
+
+/*Paragraphs*/
+
+p {
+    color: black !important;
+}
+
+/*Navigation Bar*/
+
+.fixed-top {
+    height: 15%;
+}
+
+.navbar-toggler-icon {
+    font-size: 4rem !important;
+}
+
+/*Icons*/
+/*.challenge-icons {*/
+    
+/*}*/
+
+/*Padding and Margins*/
+.my-auto {
+    margin-top: 10rem;
+    padding-left: 2rem;
+}
+
+h1, h2 {
+    padding: 1rem !important;
+    
+}
+
+/*Buttons*/
+.form-control,
+.btn {
+    font-size: 2.5rem;
+    font-weight: 600;
+    opacity: .8;
 }
