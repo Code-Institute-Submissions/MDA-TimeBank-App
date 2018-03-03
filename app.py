@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect, url_for
 
 
 app = Flask(__name__)
@@ -10,13 +10,13 @@ app.secret_key = "some_secret"
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        """Display username during challenge"""
         flash("Welcome {}!".format(
-            request.form["username"]
+        request.form["username"]
         ))
         with open("data/user_info.txt", "a") as user_details:
             user_details.write(request.form["username"] + "\n")
             user_details.write(request.form["email"]  + "\n")
+        print request.form["username"]
     return render_template("index.html")
 
 @app.route('/challenge')
