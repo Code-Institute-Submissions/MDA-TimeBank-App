@@ -1,15 +1,19 @@
-{% extends 'base.html' %} 
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container-fluid p-0">
-
-{% for question in challenge_data %}
-
+    
+            {% for question in challenge_data %}
     <section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-2" id="interests">
         <div class="my-auto">
-            <h3 class="question_count">{{ question_count }}</h3>
+
+            {% with messages = get_flashed_messages() %} {% if messages %} 
+            {% for message in messages %}
+            <h3 class="question_count">{{ message }}</h3>
+            {% endfor %}
+            {% endif %} {% endwith %}
+
             <h3 class="running_score">{{ running_score }}</h3>
+
 
             <div class="parent_1">
                 <div class="left input-group">
@@ -36,9 +40,8 @@
             </div>
         </div>
     </section>
+
 </div>
-
-{% endfor %}
-
+{% endfor %} 
 
 {% endblock %}
