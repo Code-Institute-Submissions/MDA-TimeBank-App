@@ -4,54 +4,54 @@
         "need_statement": "needed support to be able to confidently use",
         "skill_question": "How many said they had computer related expertise they could share with neighbours?", 
         "skill_answer": 78
-        
+
         },
         {
         "title": "Bicycle Repairs",
         "need_amount": 15,
-        "need_statement": "said they could use some support to repair bicycles",
+        "need_statement": "said they could use some support for",
         "skill_question": "How many locals responded that they could carry out bicycle maintenance?",
         "skill_answer": 6
         },
         {
         "title":"Home Decorating",
         "need_amount": 15,
-        "need_statement": "would like some help decorating their homes",
+        "need_statement": "would could use support",
         "skill_question": "What number of respondents said they had experience and skill in decorating?",
         "skill_answer": 13
         },
         {
         "title":"Home Repairs",
         "need_amount": 23,
-        "need_statement": "needed help carrying out home repairs",
+        "need_statement": "needed help carrying out",
         "skill_question": "How many said they had practical experience of home repairs?",
         "skill_answer": 18
         }, 
         {
-        "title": "Helping with Transport",
+        "title": "Help with Transport",
         "need_amount": 9,
-        "need_statement": "could benefit from getting lifts to appointments",
+        "need_statement": "find it difficult getting to appointments and would benefit from",
         "skill_question": "What number do you think said would be able to provide lifts to people?",
         "skill_answer": 17
         },
         {
         "title": "Needlework",
         "need_amount": 17,
-        "need_statement": "wanted help with sewing, embroidery and knitting",
+        "need_statement": "wanted help with sewing, embroidery and knitting:",
         "skill_question": "How many do you think had the ability to provide support?",
         "skill_answer": 8
         },
         {
         "title": "Health and Fitness",    
         "need_amount": 16,
-        "need_statement": "would like to learn yoga and/or do a fitness course", 
+        "need_statement": "are eager to learn yoga and take other courses in", 
         "skill_question": "What number do you think said they could provide this?",
         "skill_answer": 7
         },
         {
         "title": "Music",
         "need_amount": 17,
-        "need_statement": "would like to learn or develop their skills in playing music",
+        "need_statement": "would like to learn or develop their skills in playing",
         "skill_question": "How many said they would have enough experience and/or qualification to teach music?",
         "skill_answer":3
         }
