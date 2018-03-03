@@ -10,9 +10,13 @@ app.secret_key = "some_secret"
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
+        """Display username during challenge"""
         flash("Welcome {}!".format(
             request.form["username"]
         ))
+        with open("data/user_info.txt", "a") as user_details:
+            user_details.write(request.form["username"] + "\n")
+            user_details.write(request.form["email"]  + "\n")
     return render_template("index.html")
 
 @app.route('/challenge')
@@ -20,7 +24,7 @@ def challenge():
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("challenge.html", question_count=" Answered 1/6", running_score="Your Score: 15", challenge_data = data)
+    return render_template("challenge.html", running_score="Your Score: 15", challenge_data = data)
     
 @app.route('/information')
 def information():
