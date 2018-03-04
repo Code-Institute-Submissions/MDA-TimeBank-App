@@ -35,24 +35,22 @@ def index():
         flash("Welcome {}!".format(
         request.form["username"]
         ))
-        with open("data/user_info.txt", "a") as user_details:
-            user_details.write(request.form["username"] + "\n")
-            user_details.write(request.form["email"]  + "\n")
-        
-          
+        with open("data/user_info.json", "w") as user_details:
+            json.dump(request.form, user_details)
+            return redirect('/challenge')
+
     return render_template("index.html")
 
 @app.route('/challenge', methods=["GET", "POST"])
 def challenge():
     if request.method == "POST":
-        
         """
         Storing Guesses in user_info.json file
         """
         with open("data/user_info.json", "a") as user_details:
             json.dump(request.form, user_details)
             print(request.form["guess"])
-    
+            return redirect('/')
     """
     Reading data from challenge.json into challenge.html
     """
