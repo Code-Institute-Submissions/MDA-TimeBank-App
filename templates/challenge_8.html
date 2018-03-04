@@ -1,0 +1,46 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-2" id="interests">
+        <div class="my-auto">
+
+            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <h3 class="username">{{ message }}</h3>
+            
+            {% endfor %} {% endif %} {% endwith %}
+
+            <h3 class="running_score">{{ running_score }}</h3>
+
+
+            <div class="parent_1">
+                <div class="left input-group">
+                    <h1 class="challenge-numbers_1">{{ challenge_data[7]["need_amount"] }}</h1>
+                </div>
+                <div class="right">
+                    <h2>{{ challenge_data[7]["need_statement"] }}</h2>
+                </div>
+            </div>
+
+            <h1 class="mb-5 challenge-page-title">{{ challenge_data[7]["title"] }}</h1>
+
+            <h2>{{ challenge_data[7]["skill_question"] }}</h2>
+
+            <div class="parent_2">
+
+                <form method='post'>
+                    <input type='text' class="input-field input-lg" name='guess' placeholder="Your Guess...">
+                    <input type='submit' class="btn-lg btn-danger" value='submit'>
+                </form>
+
+                <div class="challenge-numbers_2">{{ challenge_data[7]["skill_answer"] }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}

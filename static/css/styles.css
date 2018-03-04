@@ -55,7 +55,9 @@
 /*Page Headings*/
 
 /*.p-0 {*/
+
 /*    background-color: black;*/
+
 /*}*/
 
 .heading {
@@ -147,10 +149,10 @@
     margin: 1rem;
 }
 
- .parent > div {
-        flex: 1;
-        padding: 2rem;
-    }
+.parent>div {
+    flex: 1;
+    padding: 2rem;
+}
 
 /*Paragraphs*/
 
@@ -161,7 +163,7 @@ p {
 /*Navigation Bar*/
 
 .fixed-top {
-    height: 15%;
+    height: 10%;
 }
 
 .navbar-toggler-icon {
@@ -169,25 +171,38 @@ p {
 }
 
 /*Icons*/
+
 /*.challenge-icons {*/
-    
+
 /*}*/
 
 /*Padding and Margins*/
+
 .my-auto {
     margin-top: 10rem;
     padding-left: 2rem;
 }
 
-h1, h2 {
+h1,
+h2 {
     padding: 1rem !important;
-    
+
 }
 
+
+
 /*Buttons*/
-.form-control,
-.btn {
-    font-size: 2.5rem;
-    font-weight: 600;
+
+.btn-lg {
+    padding: 1.5rem 4rem;
+    font-size: 3rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    margin-top: 1rem;
     opacity: .8;
+}
+
+.input-lg {
+    font-size: 3rem;
+    max-width: 70%;
 }
