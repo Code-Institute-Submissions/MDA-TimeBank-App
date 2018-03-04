@@ -1,6 +1,5 @@
 import unittest
 import guess_game
-import app
 
 class test_guess_game(unittest.TestCase):
     """

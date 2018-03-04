@@ -3,26 +3,34 @@ import json
 from flask import Flask, render_template, request, flash, redirect, url_for
 
 
+
 app = Flask(__name__)
 app.secret_key = "some_secret"
 
+
 """
-Scoring Function
+Create list to user store scores as game progresses
+
+"""
+user_info = []
+
+
+"""
+Scoring Function - needs developed and tested
 """
 def ask_questions(guess, answer):
-    # data = []
-    with open("data/challenge.json", "r") as json_data:
-        data = json.load(json_data)
-    guess = request.form["guess"]
-    answer = data[0]["skill_answer"]
+    score = 0
     if guess is str(guess):
-        return 0
+        score = score + 0
     elif guess == answer:
-        return 10
+        score = score + 10
     elif ((guess > answer) and (guess < (answer + 10))) or ((guess < answer) and (guess > (answer - 10))):
-        return 5
+        score = score + 5
     else:
-        return 0
+        score = score + 0
+    print(score)
+
+
 
 """
 Add a function to get all of the scores and add them
@@ -38,19 +46,23 @@ def index():
         with open("data/user_info.json", "w") as user_details:
             json.dump(request.form, user_details)
             return redirect('/challenge')
-
     return render_template("index.html")
+
 
 @app.route('/challenge', methods=["GET", "POST"])
 def challenge():
     if request.method == "POST":
-        """
-        Storing Guesses in user_info.json file
-        """
-        with open("data/user_info.json", "a") as user_details:
-            json.dump(request.form, user_details)
+        with open("data/challenge.json", "r") as json_data:
+            data = json.load(json_data)
             print(request.form["guess"])
-            return redirect('/')
+            print(data[0]["skill_answer"])
+            """Call Scoring"""
+            ask_questions(int(request.form["guess"]), int(data[0]["skill_answer"]))
+        """Redirect to next page"""
+        return redirect('/')
+        
+      
+        
     """
     Reading data from challenge.json into challenge.html
     """
@@ -58,15 +70,20 @@ def challenge():
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
     
-    """
-    Use a return redirect to move to the next question
-    """
-    
     return render_template("challenge_1.html", running_score="Your Score: 15", challenge_data = data)
+
+
+
 
 """
 Do you iterate through html within the same route? _1, _2, _3, etc
 """
+
+
+
+
+
+
 
 
 

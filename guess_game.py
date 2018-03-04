@@ -5,13 +5,19 @@ REGISTER FUNCTION - Validated but simplified with bootstrap
 QUESTIONS_ANSWERS FUNCTION
 # """
 def ask_questions(guess, answer):
+    score = 0
     if guess is str(guess):
-        return 0
+        score = score + 0
     elif guess == answer:
-        return 10
+        score = score + 10
     elif ((guess > answer) and (guess < (answer + 10))) or ((guess < answer) and (guess > (answer - 10))):
-        return 5
+        score = score + 5
     else:
-        return 0
+        score = score + 0
+    return score
+
+  
+
+
    
    
