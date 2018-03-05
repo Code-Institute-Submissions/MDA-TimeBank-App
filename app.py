@@ -28,7 +28,7 @@ def ask_questions(guess, answer):
         score = score + 5
     else:
         score = score + 0
-    print(score)
+    return score
 
 
 
@@ -40,29 +40,27 @@ Add a function to get all of the scores and add them
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        flash("Welcome {}!".format(
-        request.form["username"]
-        ))
-        with open("data/user_info.json", "w") as user_details:
-            json.dump(request.form, user_details)
-            return redirect('/challenge')
+        user_info.append(request.form["username"])
+        user_info.append(request.form["email"])
+        # with open("data/user_info.json", "w") as user_details:
+        #     json.dump(request.form, user_details)
+        return redirect('/challenge')
     return render_template("index.html")
 
 
 @app.route('/challenge', methods=["GET", "POST"])
 def challenge():
+    print(user_info[0])
     if request.method == "POST":
         with open("data/challenge.json", "r") as json_data:
             data = json.load(json_data)
-            print(request.form["guess"])
-            print(data[0]["skill_answer"])
             """Call Scoring"""
             ask_questions(int(request.form["guess"]), int(data[0]["skill_answer"]))
+            flash("You guessed {}!".format(
+            request.form["guess"]
+            ))
         """Redirect to next page"""
-        return redirect('/')
-        
-      
-        
+        # return redirect('/')
     """
     Reading data from challenge.json into challenge.html
     """
@@ -70,7 +68,7 @@ def challenge():
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
     
-    return render_template("challenge_1.html", running_score="Your Score: 15", challenge_data = data)
+    return render_template("challenge_1.html", user = user_info, challenge_data = data)
 
 
 
