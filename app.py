@@ -21,9 +21,9 @@ def list_append(type):
     
 
 """
-Scoring Function - needs developed and tested
+Scoring Function
 """
-def ask_questions(guess, answer):
+def challenge_scoring(guess, answer):
     score = 0
     if guess is str(guess):
         score = score + 0
@@ -36,6 +36,27 @@ def ask_questions(guess, answer):
     list_append(score)
     return score
     
+"""
+Challenge Q&A function
+"""
+def challenge_q_a(num):
+    if request.method == "POST":
+            with open("data/challenge.json", "r") as json_data:
+                data = json.load(json_data)
+                
+                """Call Scoring Function"""
+                challenge_scoring(int(request.form["guess"]), int(data[num]["skill_answer"]))
+                
+                
+                """Display guess to user"""
+                flash("You guessed {}!".format(
+                request.form["guess"]
+                ))
+                print(user_info)
+            """Redirect to next page"""
+            # return redirect('/challenge')
+
+
 
 
 
@@ -49,38 +70,14 @@ def index():
         list_append(request.form["username"])
         list_append(request.form["email"])
         print(user_info)
-        
-        
-        # user_info.append(request.form["username"])
-        # user_info.append(request.form["email"])
-        return redirect('/challenge')
+        return redirect('/challenge_1')
     return render_template("index.html")
 
 
 
-# CHALLENGE PAGES START
-
-
-@app.route('/challenge', methods=["GET", "POST"])
-def challenge():
-    """
-    Access json file to match guess with answer
-    """
-    if request.method == "POST":
-        with open("data/challenge.json", "r") as json_data:
-            data = json.load(json_data)
-            
-            """Call Scoring Function"""
-            ask_questions(int(request.form["guess"]), int(data[0]["skill_answer"]))
-            
-            
-            """Display guess to user"""
-            flash("You guessed {}!".format(
-            request.form["guess"]
-            ))
-            print(user_info)
-        """Redirect to next page"""
-        # return redirect('/challenge')
+@app.route('/challenge_1', methods=["GET", "POST"])
+def challenge_1():
+    challenge_q_a(0)
     """
     Reading data from challenge.json into challenge.html
     """
@@ -91,9 +88,18 @@ def challenge():
     return render_template("challenge_1.html", user = user_info, challenge_data = data)
 
 
+@app.route('/challenge_2', methods=["GET", "POST"])
+def challenge_2():
+    challenge_q_a(1)
+    """
+    Reading data from challenge.json into challenge.html
+    """
+    data = []
+    with open("data/challenge.json", "r") as json_data:
+        data = json.load(json_data)
+    
+    return render_template("challenge_2.html", user = user_info, challenge_data = data)
 
-
-# CHALLENGE PAGES END
 
 
 
