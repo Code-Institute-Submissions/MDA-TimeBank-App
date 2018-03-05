@@ -7,13 +7,18 @@ from flask import Flask, render_template, request, flash, redirect, url_for
 app = Flask(__name__)
 app.secret_key = "some_secret"
 
-
 """
-Create list to user store scores as game progresses
+Create list to user store user detail and scores as game progresses
 
 """
 user_info = []
 
+"""
+Handle list appendages
+"""
+def list_append(type):
+    user_info.append(type)
+    
 
 """
 Scoring Function - needs developed and tested
@@ -28,39 +33,54 @@ def ask_questions(guess, answer):
         score = score + 5
     else:
         score = score + 0
+    list_append(score)
     return score
+    
 
 
-
-"""
-Add a function to get all of the scores and add them
-"""
 
 
 @app.route('/', methods=["GET", "POST"])
 def index():
+    """
+    Sign in & add details to user_info list
+    """
     if request.method == "POST":
-        user_info.append(request.form["username"])
-        user_info.append(request.form["email"])
-        # with open("data/user_info.json", "w") as user_details:
-        #     json.dump(request.form, user_details)
+        list_append(request.form["username"])
+        list_append(request.form["email"])
+        print(user_info)
+        
+        
+        # user_info.append(request.form["username"])
+        # user_info.append(request.form["email"])
         return redirect('/challenge')
     return render_template("index.html")
 
 
+
+# CHALLENGE PAGES START
+
+
 @app.route('/challenge', methods=["GET", "POST"])
 def challenge():
-    print(user_info[0])
+    """
+    Access json file to match guess with answer
+    """
     if request.method == "POST":
         with open("data/challenge.json", "r") as json_data:
             data = json.load(json_data)
-            """Call Scoring"""
+            
+            """Call Scoring Function"""
             ask_questions(int(request.form["guess"]), int(data[0]["skill_answer"]))
+            
+            
+            """Display guess to user"""
             flash("You guessed {}!".format(
             request.form["guess"]
             ))
+            print(user_info)
         """Redirect to next page"""
-        # return redirect('/')
+        # return redirect('/challenge')
     """
     Reading data from challenge.json into challenge.html
     """
@@ -73,14 +93,7 @@ def challenge():
 
 
 
-"""
-Do you iterate through html within the same route? _1, _2, _3, etc
-"""
-
-
-
-
-
+# CHALLENGE PAGES END
 
 
 
@@ -98,3 +111,24 @@ if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
         debug=True)
+        
+        
+# """
+# Final ScoreBoard
+# """
+# scoreboard = []
+
+# def final_score(username, total_score):
+#     scoreboard.append("{}: {}".format(username, total_score))
+    
+
+# """
+# Show ScoreBoard
+# """
+# def show_scoreboard():
+#     """Group messages & separate them by a `br` - need descending order"""
+#     return "<br>".join(scoreboard)
+
+# """
+# Add a function to get all of the scores and add them
+# """
