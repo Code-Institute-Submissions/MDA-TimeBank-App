@@ -8,34 +8,44 @@ app = Flask(__name__)
 app.secret_key = "some_secret"
 
 """
-Create list to user store user detail and scores as game progresses
+Create list to user store user details and scores as game progresses
 
 """
 user_info = []
 
+
 """
-Handle list appendages
+List to handle scores
+"""
+score = []
+total_score = sum(score)
+
+
+"""
+Handle user_info list appendages
 """
 def list_append(type):
     user_info.append(type)
-    
+
 
 """
 Scoring Function
 """
-def challenge_scoring(guess, answer):
-    score = 0
-    if guess is str(guess):
-        score = score + 0
+def limit_number_questions(guess, answer):
+    if guess <= 0:
+        return 0
     elif guess == answer:
-        score = score + 10
-    elif ((guess > answer) and (guess < (answer + 10))) or ((guess < answer) and (guess > (answer - 10))):
-        score = score + 5
+        score.append(10)
     else:
-        score = score + 0
-    list_append(score)
-    return score
-    
+        if guess > answer + 10:
+            return 0
+        elif guess < answer - 10:
+            return 0
+        elif guess > answer and guess <= answer + 10:      
+            score.append(5)  
+        elif guess < answer and guess >= answer - 10: 
+            score.append(5)  
+
 """
 Challenge Q&A function
 """
@@ -45,21 +55,18 @@ def challenge_q_a(num):
                 data = json.load(json_data)
                 
                 """Call Scoring Function"""
-                challenge_scoring(int(request.form["guess"]), int(data[num]["skill_answer"]))
+                limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
                 
                 
                 """Display guess to user"""
                 flash("You guessed {}!".format(
                 request.form["guess"]
                 ))
-                print(user_info)
-            """Redirect to next page"""
-            # return redirect('/challenge')
+                print(score)
 
-
-
-
-
+"""
+Challenge Pages
+"""
 
 @app.route('/', methods=["GET", "POST"])
 def index():
@@ -71,20 +78,20 @@ def index():
         list_append(request.form["email"])
         print(user_info)
         return redirect('/challenge_1')
+    
     return render_template("index.html")
-
 
 
 @app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
     challenge_q_a(0)
+    
     """
     Reading data from challenge.json into challenge.html
     """
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    
     return render_template("challenge_1.html", user = user_info, challenge_data = data)
 
 
