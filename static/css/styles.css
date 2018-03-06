@@ -101,7 +101,7 @@
     font-size: 20rem;
     line-height: 5rem;
     color: #bd5d38!important;
-    padding-top: 7rem;
+    margin-top: 5rem;
     text-shadow: 7px -3px black;
 }
 
@@ -195,9 +195,9 @@ h2 {
 
 .btn-lg {
     padding: 1.5rem 4rem;
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1.5;
-    border-radius: .3rem;
+    border-radius: 2rem;
     margin-top: 1rem;
     opacity: .8;
 }
@@ -205,4 +205,11 @@ h2 {
 .input-lg {
     font-size: 3rem;
     max-width: 70%;
+}
+
+/*Transitions*/
+.hidden,
+.hidden_title,
+.hidden_answer {
+    display: none;
 }
