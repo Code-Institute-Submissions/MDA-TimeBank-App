@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
 
 
 
@@ -11,7 +11,18 @@ app.secret_key = "some_secret"
 Create list to user store user details and scores as game progresses
 
 """
-user_info = []
+
+user_dict = {}
+
+def store_user_info(username, email, guess=0):
+    user_dict = {"username": username, "email": email, "score": [guess]}
+    #Write user details to user_info.txt file
+    with open("data/user_info.txt", "a") as user_details:
+        user_details.writelines("{0}\n{1}\n{2}\n".format(
+            user_dict["username"],
+            user_dict["email"],
+            user_dict["score"])) 
+    print(user_dict)
 
 
 """
@@ -19,13 +30,6 @@ List to handle scores
 """
 score = []
 total_score = sum(score)
-
-
-"""
-Handle user_info list appendages
-"""
-def list_append(type):
-    user_info.append(type)
 
 
 """
@@ -44,7 +48,8 @@ def limit_number_questions(guess, answer):
         elif guess > answer and guess <= answer + 10:      
             score.append(5)  
         elif guess < answer and guess >= answer - 10: 
-            score.append(5)  
+            score.append(5)
+
 
 """
 Challenge Q&A function
@@ -56,13 +61,16 @@ def challenge_q_a(num):
                 
                 """Call Scoring Function"""
                 limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
-                
+                print(request.form)
                 
                 """Display guess to user"""
                 flash("You guessed {}!".format(
                 request.form["guess"]
                 ))
-                print(score)
+                
+                # print(score)
+                # print(score)
+    
 
 """
 Challenge Pages
@@ -74,9 +82,7 @@ def index():
     Sign in & add details to user_info list
     """
     if request.method == "POST":
-        list_append(request.form["username"])
-        list_append(request.form["email"])
-        print(user_info)
+        store_user_info(request.form["username"], request.form["email"])
         return redirect('/challenge_1')
     
     return render_template("index.html")
@@ -92,7 +98,7 @@ def challenge_1():
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("challenge_1.html", user = user_info, challenge_data = data)
+    return render_template("challenge_1.html", user = user_dict, challenge_data = data)
 
 
 @app.route('/challenge_2', methods=["GET", "POST"])
@@ -105,7 +111,7 @@ def challenge_2():
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
     
-    return render_template("challenge_2.html", user = user_info, challenge_data = data)
+    return render_template("challenge_2.html", challenge_data = data)
 
 
 
@@ -113,6 +119,7 @@ def challenge_2():
 
 @app.route('/information')
 def information():
+    
     return render_template("information.html", page_title="Find out more...")
 
     

@@ -4,13 +4,11 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-2" id="interests">
         <div class="my-auto">
-            <h3 class="username">Welcome {{ user[0] }}!</h3>
+            <h3 class="username">Insert Welcome</h3>
             {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
 
             <h3 class="running_score">{{ message }}</h3>
             {% endfor %} {% endif %} {% endwith %}
-
-
 
 
             <div class="parent_1">
@@ -30,8 +28,8 @@
             <div class="parent_2">
 
                 <form method='post' class="form hidden_title">
-                    <input type='number' class=" form-control form-control-lg input-field input-lg" name='guess' placeholder="Your Guess..." required>
-                    <button type='button' class="btn-lg btn-danger" value='submit' onSubmit="return false;">submit</button>
+                    <input type='number' class="form-control form-control-lg input-field input-lg" name='guess' autocomplete="off" placeholder="Your Guess..." required>
+                    <input type='button' id="numScore" class="btn-lg btn-danger challenge_btn" value='Guess' return false>
                 </form>
 
                 <div>
