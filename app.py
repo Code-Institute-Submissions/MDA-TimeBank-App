@@ -26,7 +26,7 @@ def store_user_info(username, email, guess=0):
 
 
 """
-List to handle scores
+List to handle scores - CURRENTLY ADDING ALL SCORES TOGETHER - NOT BY USERNAME
 """
 score = []
 total_score = sum(score)
@@ -49,6 +49,7 @@ def limit_number_questions(guess, answer):
             score.append(5)  
         elif guess < answer and guess >= answer - 10: 
             score.append(5)
+        
 
 
 """
@@ -62,14 +63,13 @@ def challenge_q_a(num):
                 """Call Scoring Function"""
                 limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
                 print(request.form)
+                print(score)
+                print(sum(score))
+                # """Display guess to user - LOADS ON REFRESH - NEED AJAX - JSONIFY?"""
+                # flash("You guessed {}!".format(
+                # request.form["guess"]
+                # ))
                 
-                """Display guess to user"""
-                flash("You guessed {}!".format(
-                request.form["guess"]
-                ))
-                
-                # print(score)
-                # print(score)
     
 
 """

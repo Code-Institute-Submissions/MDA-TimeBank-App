@@ -7,9 +7,14 @@ $(document).ready(function() {
     $('h2.hidden_title').delay(5000).show("fast").removeClass('hidden');
     $('form.hidden_title').delay(8000).show("fast").removeClass('hidden');
 
-   
+
+    // Send Ajax request for guesses
+
+
     $('.challenge_btn').click(function() {
+
         var score = $('#numScore').val();
+
         $.ajax({
             url: '/challenge_1',
             data: $('form').serialize(),
@@ -21,5 +26,12 @@ $(document).ready(function() {
                 console.log(error);
             }
         });
+    });
+
+
+    // Transitions after button click
+    $('.challenge_btn').click(function() {
+        $(this).slideUp("fast");
+        $('h1.hidden_answer').fadeIn(4000).removeClass('hidden');
     });
 });

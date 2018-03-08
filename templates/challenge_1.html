@@ -27,9 +27,9 @@
             </div>
             <div class="parent_2">
 
-                <form method='post' class="form hidden_title">
-                    <input type='number' class="form-control form-control-lg input-field input-lg" name='guess' autocomplete="off" placeholder="Your Guess..." required>
-                    <input type='button' id="numScore" class="btn-lg btn-danger challenge_btn" value='Guess' return false>
+                <form method='post' class="form hidden_title" onsubmit="return(false)">
+                    <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Your Guess..." required>
+                    <input type='button' id="numScore"  class="btn-lg btn-danger challenge_btn" value='Guess'>
                 </form>
 
                 <div>
