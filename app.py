@@ -133,22 +133,3 @@ if __name__ == "__main__":
         debug=True)
         
         
-# """
-# Final ScoreBoard
-# """
-# scoreboard = []
-
-# def final_score(username, total_score):
-#     scoreboard.append("{}: {}".format(username, total_score))
-    
-
-# """
-# Show ScoreBoard
-# """
-# def show_scoreboard():
-#     """Group messages & separate them by a `br` - need descending order"""
-#     return "<br>".join(scoreboard)
-
-# """
-# Add a function to get all of the scores and add them
-# """

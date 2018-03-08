@@ -210,6 +210,18 @@ h2 {
 /*Transitions*/
 .hidden,
 .hidden_title,
-.hidden_answer {
+.hidden_icon,
+.hidden_answer,
+.hidden_icon {
     display: none;
+}
+
+.fa-hand-point-right {
+    position: fixed;
+    top: 35%;
+    left: 55%;
+    font-size: 25rem;
+    color: #000;
+    opacity: .8;
+    z-index: 10;
 }

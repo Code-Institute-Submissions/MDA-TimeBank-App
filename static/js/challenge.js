@@ -11,19 +11,19 @@ $(document).ready(function() {
     // Send Ajax request for guesses
 
 
+    // AJAX POST Request
     $('.challenge_btn').click(function() {
-
         var score = $('#numScore').val();
-
         $.ajax({
             url: '/challenge_1',
             data: $('form').serialize(),
             type: 'POST',
+            // Define what to do with the request here?
             success: function(response) {
                 console.log(response);
             },
             error: function(error) {
-                console.log(error);
+                return false;
             }
         });
     });
@@ -33,5 +33,6 @@ $(document).ready(function() {
     $('.challenge_btn').click(function() {
         $(this).slideUp("fast");
         $('h1.hidden_answer').fadeIn(4000).removeClass('hidden');
+        $('.hidden_icon').delay( 2500 ).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400).removeClass('hidden');
     });
 });

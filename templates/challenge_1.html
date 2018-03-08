@@ -21,22 +21,23 @@
             </div>
             <div>
                 <h1 class="mb-5 challenge-page-title hidden_title">{{ challenge_data[0]["title"] }}</h1>
+                <a href="/challenge_2"><i class="fas fa-hand-point-right fa-9x hidden_icon"></i></a>
             </div>
             <div>
                 <h2 class="hidden_title">{{ challenge_data[0]["skill_question"] }}</h2>
             </div>
             <div class="parent_2">
 
-                <form method='post' class="form hidden_title" onsubmit="return(false)">
+                <form method='POST' class="form hidden_title" onsubmit="return(false)">
                     <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Your Guess..." required>
-                    <input type='button' id="numScore"  class="btn-lg btn-danger challenge_btn" value='Guess'>
+                    <input type='button' id="numScore" class="btn-lg btn-danger challenge_btn" value='Guess'>
                 </form>
-
                 <div>
                     <h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[0]["skill_answer"] }}</h1>
                 </div>
             </div>
         </div>
+
     </section>
 
 </div>
