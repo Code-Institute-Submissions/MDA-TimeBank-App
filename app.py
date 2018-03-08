@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for, jso
 
 
 
+
 app = Flask(__name__)
 app.secret_key = "some_secret"
 
@@ -16,13 +17,30 @@ user_dict = {}
 
 def store_user_info(username, email, guess=0):
     user_dict = {"username": username, "email": email, "score": [guess]}
+    
     #Write user details to user_info.txt file
     with open("data/user_info.txt", "a") as user_details:
         user_details.writelines("{0}\n{1}\n{2}\n".format(
             user_dict["username"],
             user_dict["email"],
             user_dict["score"])) 
-    print(user_dict)
+        
+        #json.dumps dict 
+        json_user = json.dumps(user_dict)
+        f = open("data/user_info.json", "a")
+        f.write(json_user)
+        f.close
+        
+
+
+    
+
+
+
+        
+
+
+
 
 
 """
@@ -71,9 +89,8 @@ def challenge_q_a(num):
                 # ))
                 
     
-
 """
-Challenge Pages
+Sign-in Page
 """
 
 @app.route('/', methods=["GET", "POST"])
@@ -84,9 +101,12 @@ def index():
     if request.method == "POST":
         store_user_info(request.form["username"], request.form["email"])
         return redirect('/challenge_1')
-    
     return render_template("index.html")
 
+
+"""
+Challenge Pages
+"""
 
 @app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
@@ -98,25 +118,35 @@ def challenge_1():
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("challenge_1.html", user = user_dict, challenge_data = data)
+    return render_template("challenge_1.html", challenge_data = data)
 
 
 @app.route('/challenge_2', methods=["GET", "POST"])
 def challenge_2():
     challenge_q_a(1)
-    """
-    Reading data from challenge.json into challenge.html
-    """
+
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
     
     return render_template("challenge_2.html", challenge_data = data)
+    
+@app.route('/challenge_3', methods=["GET", "POST"])
+def challenge_3():
+    challenge_q_a(2)
+
+    data = []
+    with open("data/challenge.json", "r") as json_data:
+        data = json.load(json_data)
+    
+    return render_template("challenge_3.html", challenge_data = data)
 
 
 
 
-
+"""
+Table Page
+"""
 @app.route('/information')
 def information():
     
