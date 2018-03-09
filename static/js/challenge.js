@@ -34,6 +34,6 @@ $(document).ready(function() {
     $('.challenge_btn').click(function() {
         $(this).slideUp("fast");
         $('h1.hidden_answer').fadeIn(4000).removeClass('hidden');
-        $('.hidden_icon').delay( 2500 ).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400).removeClass('hidden');
+        $('.hidden_icon').delay( 100 ).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400).removeClass('hidden');
     });
 });

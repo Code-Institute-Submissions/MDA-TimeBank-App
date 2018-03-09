@@ -17,29 +17,21 @@ user_dict = {}
 
 def store_user_info(username, email, guess=0):
     user_dict = {"username": username, "email": email, "score": [guess]}
+    print(user_dict)
     
     #Write user details to user_info.txt file
-    with open("data/user_info.txt", "a") as user_details:
-        user_details.writelines("{0}\n{1}\n{2}\n".format(
-            user_dict["username"],
-            user_dict["email"],
-            user_dict["score"])) 
+    # with open("data/user_info.txt", "a") as user_details:
+    #     user_details.writelines("{0}\n{1}\n{2}\n".format(
+    #         user_dict["username"],
+    #         user_dict["email"],
+    #         user_dict["score"])) 
         
         #json.dumps dict 
-        json_user = json.dumps(user_dict)
-        f = open("data/user_info.json", "a")
-        f.write(json_user)
-        f.close
+    # json_user = json.dumps(user_dict)
+    # f = open("data/user_info.json", "a")
+    # f.write(json_user)
+    # f.close
         
-
-
-    
-
-
-
-        
-
-
 
 
 
@@ -53,20 +45,26 @@ total_score = sum(score)
 """
 Scoring Function
 """
+
+
+# Testing with score variable
 def limit_number_questions(guess, answer):
     if guess <= 0:
-        return 0
+        points = 0
     elif guess == answer:
-        score.append(10)
+        points = 10
     else:
         if guess > answer + 10:
-            return 0
+            points = 0
         elif guess < answer - 10:
-            return 0
+            points = 0
         elif guess > answer and guess <= answer + 10:      
-            score.append(5)  
+            points = 5  
         elif guess < answer and guess >= answer - 10: 
-            score.append(5)
+            points = 5
+    
+    print(points)
+    score.append(points)
         
 
 
@@ -75,12 +73,14 @@ Challenge Q&A function
 """
 def challenge_q_a(num):
     if request.method == "POST":
+            print(request.form)
             with open("data/challenge.json", "r") as json_data:
                 data = json.load(json_data)
                 
                 """Call Scoring Function"""
+                print(data[num]["skill_answer"])
                 limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
-                print(request.form)
+                
                 print(score)
                 print(sum(score))
                 # """Display guess to user - LOADS ON REFRESH - NEED AJAX - JSONIFY?"""
@@ -121,6 +121,7 @@ def challenge_1():
     return render_template("challenge_1.html", challenge_data = data)
 
 
+
 @app.route('/challenge_2', methods=["GET", "POST"])
 def challenge_2():
     challenge_q_a(1)
@@ -131,6 +132,8 @@ def challenge_2():
     
     return render_template("challenge_2.html", challenge_data = data)
     
+
+
 @app.route('/challenge_3', methods=["GET", "POST"])
 def challenge_3():
     challenge_q_a(2)

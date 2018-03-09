@@ -19,3 +19,5 @@ Data Structure:
 JSON(?)
 
 Testing Methodology:
+when code developed and dependent on files, run it in replit with hypothetical variables, lists
+using python print() function in Command Line to monitor outputs of code between functions
