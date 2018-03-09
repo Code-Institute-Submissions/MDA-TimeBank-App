@@ -15,7 +15,7 @@
 }
 
 .bk-image-3 {
-    background-image: url(/static/img/wrench-web.jpeg);
+    background-image: url(/static/img/bike_wheel.jpg);
     background-repeat: no-repeat;
     background-position: 50% 5%;
     background-size: cover;
@@ -44,6 +44,20 @@
 
 .bk-image-7 {
     background-image: url(/static/img/yoga-web.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+    background-size: cover;
+}
+
+.bk-image-8 {
+    background-image: url(/static/img/knitting.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+    background-size: cover;
+}
+
+.bk-image-9 {
+    background-image: url(/static/img/guitar.jpg);
     background-repeat: no-repeat;
     background-position: 50% 5%;
     background-size: cover;

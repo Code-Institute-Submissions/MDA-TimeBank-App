@@ -15,22 +15,21 @@ Create list to user store user details and scores as game progresses
 
 user_dict = {}
 
-def store_user_info(username, email, guess=0):
-    user_dict = {"username": username, "email": email, "score": [guess]}
+def store_user_info(username, email):
+    user_dict = {"username": username, "email": email }
     print(user_dict)
     
     #Write user details to user_info.txt file
     # with open("data/user_info.txt", "a") as user_details:
-    #     user_details.writelines("{0}\n{1}\n{2}\n".format(
+    #     user_details.writelines("{0}\n{1}\n".format(
     #         user_dict["username"],
-    #         user_dict["email"],
-    #         user_dict["score"])) 
+    #         user_dict["email"]))
         
         #json.dumps dict 
-    # json_user = json.dumps(user_dict)
-    # f = open("data/user_info.json", "a")
-    # f.write(json_user)
-    # f.close
+    json_user = json.dumps(user_dict, sort_keys=True, indent=4)
+    f = open("data/user_info.json", "a")
+    f.write(json_user)
+    f.close
         
 
 
@@ -105,7 +104,7 @@ def index():
 
 
 """
-Challenge Pages
+Challenge Pages Start
 """
 
 @app.route('/challenge_1', methods=["GET", "POST"])
@@ -121,18 +120,21 @@ def challenge_1():
     return render_template("challenge_1.html", challenge_data = data)
 
 
-
 @app.route('/challenge_2', methods=["GET", "POST"])
 def challenge_2():
     challenge_q_a(1)
 
+    
+
+    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
     
+
+    
     return render_template("challenge_2.html", challenge_data = data)
     
-
 
 @app.route('/challenge_3', methods=["GET", "POST"])
 def challenge_3():
@@ -144,6 +146,7 @@ def challenge_3():
     
     return render_template("challenge_3.html", challenge_data = data)
 
+
 @app.route('/challenge_4', methods=["GET", "POST"])
 def challenge_4():
     challenge_q_a(3)
@@ -153,6 +156,7 @@ def challenge_4():
         data = json.load(json_data)
     
     return render_template("challenge_4.html", challenge_data = data)
+
 
 @app.route('/challenge_5', methods=["GET", "POST"])
 def challenge_5():
@@ -164,6 +168,7 @@ def challenge_5():
     
     return render_template("challenge_5.html", challenge_data = data)
 
+
 @app.route('/challenge_6', methods=["GET", "POST"])
 def challenge_6():
     challenge_q_a(5)
@@ -173,6 +178,7 @@ def challenge_6():
         data = json.load(json_data)
     
     return render_template("challenge_6.html", challenge_data = data)
+
 
 @app.route('/challenge_7', methods=["GET", "POST"])
 def challenge_7():
@@ -184,15 +190,25 @@ def challenge_7():
     
     return render_template("challenge_7.html", challenge_data = data)
 
+
 @app.route('/challenge_8', methods=["GET", "POST"])
 def challenge_8():
     challenge_q_a(7)
-
+    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
     
     return render_template("challenge_8.html", challenge_data = data)
+    
+"""
+Challenge Pages End
+"""
+    
+    
+
+
+    
 """
 Table Page
 """
