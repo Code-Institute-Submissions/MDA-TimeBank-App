@@ -15,7 +15,7 @@ $(document).ready(function() {
     $('.challenge_btn').click(function() {
         var score = $('#numScore').val();
         $.ajax({
-            url: '/challenge_1',
+            // Possible to amend the url or loop through jquery code?
             data: $('form').serialize(),
             type: 'POST',
             // Define what to do with the request here? Text filed black angle?

@@ -73,17 +73,17 @@ Challenge Q&A function
 """
 def challenge_q_a(num):
     if request.method == "POST":
-            print(request.form)
-            with open("data/challenge.json", "r") as json_data:
-                data = json.load(json_data)
+        print(request.form)
+        with open("data/challenge.json", "r") as json_data:
+            data = json.load(json_data)
                 
-                """Call Scoring Function"""
-                print(data[num]["skill_answer"])
-                limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
+            """Call Scoring Function"""
+            print(data[num]["skill_answer"])
+            limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
                 
-                print(score)
-                print(sum(score))
-                # """Display guess to user - LOADS ON REFRESH - NEED AJAX - JSONIFY?"""
+            print(score)
+            print(sum(score))
+                #"""Display guess to user - LOADS ON REFRESH - NEED AJAX - JSONIFY?"""
                 # flash("You guessed {}!".format(
                 # request.form["guess"]
                 # ))
@@ -144,9 +144,55 @@ def challenge_3():
     
     return render_template("challenge_3.html", challenge_data = data)
 
+@app.route('/challenge_4', methods=["GET", "POST"])
+def challenge_4():
+    challenge_q_a(3)
 
+    data = []
+    with open("data/challenge.json", "r") as json_data:
+        data = json.load(json_data)
+    
+    return render_template("challenge_4.html", challenge_data = data)
 
+@app.route('/challenge_5', methods=["GET", "POST"])
+def challenge_5():
+    challenge_q_a(4)
 
+    data = []
+    with open("data/challenge.json", "r") as json_data:
+        data = json.load(json_data)
+    
+    return render_template("challenge_5.html", challenge_data = data)
+
+@app.route('/challenge_6', methods=["GET", "POST"])
+def challenge_6():
+    challenge_q_a(5)
+
+    data = []
+    with open("data/challenge.json", "r") as json_data:
+        data = json.load(json_data)
+    
+    return render_template("challenge_6.html", challenge_data = data)
+
+@app.route('/challenge_7', methods=["GET", "POST"])
+def challenge_7():
+    challenge_q_a(6)
+
+    data = []
+    with open("data/challenge.json", "r") as json_data:
+        data = json.load(json_data)
+    
+    return render_template("challenge_7.html", challenge_data = data)
+
+@app.route('/challenge_8', methods=["GET", "POST"])
+def challenge_8():
+    challenge_q_a(7)
+
+    data = []
+    with open("data/challenge.json", "r") as json_data:
+        data = json.load(json_data)
+    
+    return render_template("challenge_8.html", challenge_data = data)
 """
 Table Page
 """

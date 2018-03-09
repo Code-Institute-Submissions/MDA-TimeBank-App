@@ -6,41 +6,42 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-2" id="interests">
         <div class="my-auto">
-
+            <h3 class="username">Insert Welcome</h3>
             {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-            <h3 class="username">{{ message }}</h3>
-            
-            {% endfor %} {% endif %} {% endwith %}
 
-            <h3 class="running_score">{{ running_score }}</h3>
+            <h3 class="running_score">{{ message }}</h3>
+            {% endfor %} {% endif %} {% endwith %}
 
 
             <div class="parent_1">
                 <div class="left input-group">
-                    <h1 class="challenge-numbers_1">{{ challenge_data[3]["need_amount"] }}</h1>
+                    <h1 class="challenge-numbers_1 hidden">{{ challenge_data[3]["need_amount"] }}</h1>
                 </div>
                 <div class="right">
-                    <h2>{{ challenge_data[3]["need_statement"] }}</h2>
+                    <h2 class="hidden">{{ challenge_data[3]["need_statement"] }}</h2>
                 </div>
             </div>
-
-            <h1 class="mb-5 challenge-page-title">{{ challenge_data[3]["title"] }}</h1>
-
-            <h2>{{ challenge_data[3]["skill_question"] }}</h2>
-
+            <div>
+                <h1 class="mb-5 challenge-page-title hidden_title">{{ challenge_data[3]["title"] }}</h1>
+                <a href="/challenge_5"><i class="fas fa-hand-point-right fa-9x hidden_icon"></i></a>
+            </div>
+            <div>
+                <h2 class="hidden_title">{{ challenge_data[3]["skill_question"] }}</h2>
+            </div>
             <div class="parent_2">
 
-                <form method='post'>
-                    <input type='text' class="input-field input-lg" name='guess' placeholder="Your Guess...">
-                    <input type='submit' class="btn-lg btn-danger" value='submit'>
+                <form method='POST' class="form hidden_title" name="guess" onsubmit="return(false)">
+                    <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Your Guess..." required>
+                    <input type='button' id="numScore" class="btn-lg btn-danger challenge_btn" value='Guess'>
                 </form>
-
-                <div class="challenge-numbers_2">{{ challenge_data[3]["skill_answer"] }}
+                <div>
+                    <h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[3]["skill_answer"] }}</h1>
                 </div>
             </div>
         </div>
+
     </section>
 
 </div>
 
-{% endblock %3
+{% endblock %}
