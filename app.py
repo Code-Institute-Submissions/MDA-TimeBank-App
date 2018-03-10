@@ -12,33 +12,15 @@ app.secret_key = "some_secret"
 Create list to user store user details and scores as game progresses
 
 """
-
-user_dict = {}
-
-def store_user_info(username, email):
-    user_dict = {"username": username, "email": email }
-    print(user_dict)
-    
-    #Write user details to user_info.txt file
-    # with open("data/user_info.txt", "a") as user_details:
-    #     user_details.writelines("{0}\n{1}\n".format(
-    #         user_dict["username"],
-    #         user_dict["email"]))
-        
-        #json.dumps dict 
-    json_user = json.dumps(user_dict, sort_keys=True, indent=4)
-    f = open("data/user_info.json", "a")
-    f.write(json_user)
-    f.close
-        
-
-
+user_list = []
+name = "name"
+email = "email"
+final_score = "score"
 
 """
 List to handle scores - CURRENTLY ADDING ALL SCORES TOGETHER - NOT BY USERNAME
 """
 score = []
-total_score = sum(score)
 
 
 """
@@ -64,6 +46,7 @@ def limit_number_questions(guess, answer):
     
     print(points)
     score.append(points)
+    
         
 
 
@@ -81,7 +64,6 @@ def challenge_q_a(num):
             limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
                 
             print(score)
-            print(sum(score))
                 #"""Display guess to user - LOADS ON REFRESH - NEED AJAX - JSONIFY?"""
                 # flash("You guessed {}!".format(
                 # request.form["guess"]
@@ -98,7 +80,15 @@ def index():
     Sign in & add details to user_info list
     """
     if request.method == "POST":
-        store_user_info(request.form["username"], request.form["email"])
+        name = request.form["username"],
+        email = request.form["email"],
+        
+        user_list.append({
+        "name": name,
+        "email": email,
+        })
+        
+        print(user_list)
         return redirect('/challenge_1')
     return render_template("index.html")
 
@@ -124,15 +114,9 @@ def challenge_1():
 def challenge_2():
     challenge_q_a(1)
 
-    
-
-    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    
-
-    
     return render_template("challenge_2.html", challenge_data = data)
     
 
@@ -140,11 +124,35 @@ def challenge_2():
 def challenge_3():
     challenge_q_a(2)
 
+    # TEST
+ 
+    print(int(sum(score)))
+    
+    final_score = int(sum(score))
+    
+    user_list.append({
+        "score": final_score})
+
+
+    print(user_list)
+
+    with open('data/user_info.txt', 'w') as outfile:  
+        json.dump(user_list, outfile)
+
+
+    # TEST
+    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
     
     return render_template("challenge_3.html", challenge_data = data)
+
+
+
+
+
+
 
 
 @app.route('/challenge_4', methods=["GET", "POST"])

@@ -20,7 +20,7 @@ $(document).ready(function() {
             type: 'POST',
             // Define what to do with the request here? Text filed black angle?
             success: function(response) {
-                alert("SUCCESS!");
+                return("SUCCESS!");
             },
             error: function(error) {
                 return false;

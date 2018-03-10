@@ -1,4 +1,1 @@
-des
-test@test.com
-workNow?
-txt@txt.com
+[{"name": ["test"], "email": ["test@test.com"]}, {"score": 10}, {"score": 15}]
