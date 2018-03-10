@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container-fluid p-0 bk-image-1">
+
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+            <h1 class="mb-0 landing-page">MDA<br>
+                <span class="text-primary landing-page">TimeBank Survey</span>
+            </h1>
+            
+            <!--Replace this with 'Your Score is....-->
+            
+            <div class="subheading mb-5">Take the Challenge<br>See the Results<br>Join Us
+            </div>
+
+            <!--Form to input username and email-->
+            <form method="POST" data-toggle="validator" role="form">
+                <div class="form-group">
+                    <input type="username" class="form-control input-lg" name="username" id="exampleInputUsername1" placeholder="username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control input-lg" name="email" id="exampleInputEmail1" placeholder="email" required>
+                </div>
+                <div class="form-group">
+                    <input type="message" class="form-control input-lg" name="message" id="exampleInputUsername1" placeholder="leave a message">
+                </div>
+                <button type="submit" class="btn btn-lg btn-info">Submit</button>
+            </form>
+
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}

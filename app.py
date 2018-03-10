@@ -4,30 +4,25 @@ from flask import Flask, render_template, request, flash, redirect, url_for, jso
 
 
 
-
 app = Flask(__name__)
 app.secret_key = "some_secret"
+
 
 """
 Create list to user store user details and scores as game progresses
 
 """
 user_list = []
-name = "name"
-email = "email"
-final_score = "score"
+
 
 """
 List to handle scores - CURRENTLY ADDING ALL SCORES TOGETHER - NOT BY USERNAME
 """
 score = []
 
-
 """
 Scoring Function
 """
-
-
 # Testing with score variable
 def limit_number_questions(guess, answer):
     if guess <= 0:
@@ -44,51 +39,31 @@ def limit_number_questions(guess, answer):
         elif guess < answer and guess >= answer - 10: 
             points = 5
     
-    print(points)
     score.append(points)
+    return points
     
-        
-
-
+    
 """
 Challenge Q&A function
 """
 def challenge_q_a(num):
     if request.method == "POST":
-        print(request.form)
         with open("data/challenge.json", "r") as json_data:
             data = json.load(json_data)
                 
             """Call Scoring Function"""
-            print(data[num]["skill_answer"])
             limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
-                
-            print(score)
-                #"""Display guess to user - LOADS ON REFRESH - NEED AJAX - JSONIFY?"""
-                # flash("You guessed {}!".format(
-                # request.form["guess"]
-                # ))
-                
+
     
 """
-Sign-in Page
+Start Page
 """
-
 @app.route('/', methods=["GET", "POST"])
 def index():
     """
     Sign in & add details to user_info list
     """
     if request.method == "POST":
-        name = request.form["username"],
-        email = request.form["email"],
-        
-        user_list.append({
-        "name": name,
-        "email": email,
-        })
-        
-        print(user_list)
         return redirect('/challenge_1')
     return render_template("index.html")
 
@@ -96,7 +71,6 @@ def index():
 """
 Challenge Pages Start
 """
-
 @app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
     challenge_q_a(0)
@@ -126,18 +100,8 @@ def challenge_3():
 
     # TEST
  
-    print(int(sum(score)))
     
-    final_score = int(sum(score))
-    
-    user_list.append({
-        "score": final_score})
 
-
-    print(user_list)
-
-    with open('data/user_info.txt', 'w') as outfile:  
-        json.dump(user_list, outfile)
 
 
     # TEST
@@ -212,7 +176,36 @@ def challenge_8():
 """
 Challenge Pages End
 """
+
+
+"""
+Result & Registration Page
+"""
+@app.route('/registration', methods=["GET", "POST"])
+def registration():
+    """
+    Sign in & add details to user_info list
+    """
+# Inc score tally
     
+    if request.method == "POST":
+        name = request.form["username"],
+        email = request.form["email"],
+        message = request.form["message"],
+        final_score = int(sum(score))
+        
+        user_list.append({
+        "name": name,
+        "email": email,
+        "message": message,
+        "score": final_score,
+        })
+        
+    with open('data/user_info.txt', 'w') as outfile:  
+        json.dump(user_list, outfile)
+        
+        # return redirect('/message_board')
+    return render_template("registration.html")
     
 
 
