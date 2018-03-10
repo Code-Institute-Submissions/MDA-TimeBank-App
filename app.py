@@ -20,6 +20,7 @@ List to handle scores - CURRENTLY ADDING ALL SCORES TOGETHER - NOT BY USERNAME
 """
 score = []
 
+
 """
 Scoring Function
 """
@@ -60,9 +61,6 @@ Start Page
 """
 @app.route('/', methods=["GET", "POST"])
 def index():
-    """
-    Sign in & add details to user_info list
-    """
     if request.method == "POST":
         return redirect('/challenge_1')
     return render_template("index.html")
@@ -75,9 +73,7 @@ Challenge Pages Start
 def challenge_1():
     challenge_q_a(0)
     
-    """
-    Reading data from challenge.json into challenge.html
-    """
+    """Reading data from challenge.json into challenge.html"""
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -87,7 +83,6 @@ def challenge_1():
 @app.route('/challenge_2', methods=["GET", "POST"])
 def challenge_2():
     challenge_q_a(1)
-
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -97,26 +92,11 @@ def challenge_2():
 @app.route('/challenge_3', methods=["GET", "POST"])
 def challenge_3():
     challenge_q_a(2)
-
-    # TEST
- 
-    
-
-
-
-    # TEST
-    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
     
     return render_template("challenge_3.html", challenge_data = data)
-
-
-
-
-
-
 
 
 @app.route('/challenge_4', methods=["GET", "POST"])
@@ -173,10 +153,6 @@ def challenge_8():
     
     return render_template("challenge_8.html", challenge_data = data)
     
-"""
-Challenge Pages End
-"""
-
 
 """
 Result & Registration Page
@@ -186,7 +162,6 @@ def registration():
     """
     Sign in & add details to user_info list
     """
-# Inc score tally
     
     if request.method == "POST":
         name = request.form["username"],
@@ -200,12 +175,15 @@ def registration():
         "message": message,
         "score": final_score,
         })
+            
+        return redirect("/message_board") 
         
     with open('data/user_info.txt', 'w') as outfile:  
         json.dump(user_list, outfile)
+               
         
-        # return redirect('/message_board')
     return render_template("registration.html")
+    
     
 
 
