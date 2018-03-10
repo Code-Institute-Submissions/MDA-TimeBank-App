@@ -1,1 +1,3 @@
-[{"message": ["er"], "score": 0, "name": ["re"], "email": ["ro@ro.com"]}, {"message": ["est"], "score": 2, "name": ["test"], "email": ["test@test.comt"]}, {"message": ["est"], "score": 10, "name": ["test"], "email": ["test@test.comt"]}]
+[{"message": ["see if append"], "score": 50, "name": ["first"], "email": ["four@four.com"]}, 
+{"message": ["append? or not"], "score": 85, "name": ["second"], "email": ["no@no.com"]}, 
+{"message": ["WTF?"], "score": 125, "name": ["third"], "email": ["append@app.com"]}]

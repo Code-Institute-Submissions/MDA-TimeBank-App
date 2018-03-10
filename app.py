@@ -20,7 +20,7 @@ user_list = []
 List to handle scores - CURRENTLY ADDING ALL SCORES TOGETHER - NOT BY USERNAME
 """
 score = []
-
+final_score = int(sum(score))
 
 """
 Scoring Function
@@ -165,6 +165,8 @@ def registration():
     """
     
     if request.method == "POST":
+        
+        
         name = request.form["username"],
         email = request.form["email"],
         message = request.form["message"],
@@ -177,11 +179,11 @@ def registration():
         "score": final_score,
         })
             
-        return redirect("/message_board") 
+        with open('data/user_info.txt', 'a') as outfile:  
+            json.dump(user_list, outfile)
+            
         
-    with open('data/user_info.txt', 'w') as outfile:  
-        json.dump(user_list, outfile)
-               
+        return redirect("/message_board") 
         
     return render_template("registration.html")
     
@@ -193,17 +195,14 @@ def registration():
 Table Page
 """
 
-    
 @app.route('/message_board')
 def message_board():
     data = []
     with open("data/user_info.txt", "r") as json_data:
         data = json.load(json_data)
-    
-    newlist = sorted(data, key=itemgetter('score'), reverse=True)
-    print(newlist)
-    
-    return render_template("message_board.html", page_title="What do you think? Leave a message", score_table = data)
+        newlist = sorted(data, key=itemgetter('score'), reverse=True)
+
+    return render_template("message_board.html", page_title="What do you think? Leave a message", score_table = newlist)
 
 
 

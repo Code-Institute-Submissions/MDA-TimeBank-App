@@ -8,9 +8,9 @@
     <br>
     <h2>{{ page_title }}</h2>
     
-
-    <h2>{{ score_table[0]["name"] }}</h2>
-
+    {% for item in score_table %}
+    <h2>{{ item.name }} {{ item.message }} {{ item.score }}</h2>
+    {% endfor %}
     
     
     
