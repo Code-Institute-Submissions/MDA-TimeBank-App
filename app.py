@@ -1,6 +1,7 @@
 import os
 import json
 from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
+from operator import itemgetter, attrgetter
 
 
 
@@ -191,16 +192,27 @@ def registration():
 """
 Table Page
 """
+
+    
+@app.route('/message_board')
+def message_board():
+    data = []
+    with open("data/user_info.txt", "r") as json_data:
+        data = json.load(json_data)
+    
+    newlist = sorted(data, key=itemgetter('score'), reverse=True)
+    print(newlist)
+    
+    return render_template("message_board.html", page_title="What do you think? Leave a message", score_table = data)
+
+
+
 @app.route('/information')
 def information():
     
     return render_template("information.html", page_title="Find out more...")
 
-    
-@app.route('/message_board')
-def message_board():
-    return render_template("message_board.html", page_title="What do you think? Leave a message")
-    
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),

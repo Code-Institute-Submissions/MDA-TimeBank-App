@@ -1,1 +1,1 @@
-[{"message": ["er"], "score": 0, "name": ["re"], "email": ["ro@ro.com"]}, {"message": ["est"], "score": 0, "name": ["test"], "email": ["test@test.comt"]}]
+[{"message": ["er"], "score": 0, "name": ["re"], "email": ["ro@ro.com"]}, {"message": ["est"], "score": 2, "name": ["test"], "email": ["test@test.comt"]}, {"message": ["est"], "score": 10, "name": ["test"], "email": ["test@test.comt"]}]
