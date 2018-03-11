@@ -206,7 +206,7 @@ def message_board():
         data = json.load(json_data)
         newlist = sorted(data, key=itemgetter('score'), reverse=True)
 
-    return render_template("message_board.html", page_title="What do you think? Leave a message", score_table = newlist)
+    return render_template("message_board.html", page_title="Who wants to get started?", score_table = newlist)
 
 
 

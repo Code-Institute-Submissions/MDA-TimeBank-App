@@ -63,6 +63,13 @@
     background-size: cover;
 }
 
+.bk-image-10 {
+    background-image: url(/static/img/hands_mess_board.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+    background-size: cover;
+}
+
 
 
 
@@ -221,6 +228,7 @@ h2 {
 }
 
 /*Transitions*/
+
 .hidden,
 .hidden_title,
 .hidden_icon,
@@ -240,9 +248,33 @@ h2 {
 }
 
 /*navBar*/
+
 .mda_logo {
     max-width: 15rem !important;
     border: none !important;
-    padding: none !important;
+    padding: 0 !important;
 }
+
+/*Table*/
+
+.table {
+    font-size: 2rem;
+    color: white;
+    overflow-y: auto;
+}
+
+
+.table td {
+    padding: 2rem;
+}
+
+.message_margin {
+    margin-top: 15%;
+    color: #fff;
+}
+
+.table-responsive {
+    width: 100%;
+}
+
 
