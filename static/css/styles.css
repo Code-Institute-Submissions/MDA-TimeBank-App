@@ -176,7 +176,7 @@ p {
 /*Navigation Bar*/
 
 .fixed-top {
-    height: 10%;
+    height: 12%;
 }
 
 .navbar-toggler-icon {
@@ -238,3 +238,11 @@ h2 {
     opacity: .8;
     z-index: 10;
 }
+
+/*navBar*/
+.mda_logo {
+    max-width: 15rem !important;
+    border: none !important;
+    padding: none !important;
+}
+
