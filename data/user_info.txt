@@ -1,3 +1,1 @@
-[{"message": ["see if append"], "score": 50, "name": ["first"], "email": ["four@four.com"]}, 
-{"message": ["append? or not"], "score": 85, "name": ["second"], "email": ["no@no.com"]}, 
-{"message": ["WTF?"], "score": 125, "name": ["third"], "email": ["append@app.com"]}]
+[{"message": ["might go bad"], "score": 35, "name": ["fifth"], "email": ["gee@gg.com"]}]

@@ -172,6 +172,9 @@ def registration():
         message = request.form["message"],
         final_score = int(sum(score))
         
+        print(name)
+        print(final_score)
+        
         user_list.append({
         "name": name,
         "email": email,
@@ -179,7 +182,7 @@ def registration():
         "score": final_score,
         })
             
-        with open('data/user_info.txt', 'a') as outfile:  
+        with open('data/user_info.txt', 'w') as outfile:  
             json.dump(user_list, outfile)
             
         

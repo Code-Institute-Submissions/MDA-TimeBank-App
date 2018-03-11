@@ -23,4 +23,4 @@ list objects (sets?) required updated as challenged progressed and made composit
 Testing Methodology:
 when code developed and dependent on files, run it in replit with hypothetical variables, lists
 using python print() function in Command Line to monitor outputs of code between functions
-Ran test on compiling of user info data (user_info_test.py file)
+Ran test on compiling of user info data (user_info_test.py file). Creating different lists to store & dump data
