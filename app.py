@@ -5,6 +5,7 @@ from operator import itemgetter, attrgetter
 
 
 
+
 app = Flask(__name__)
 app.secret_key = "some_secret"
 
@@ -40,7 +41,6 @@ def limit_number_questions(guess, answer):
             points = 5  
         elif guess < answer and guess >= answer - 10: 
             points = 5
-    
     score.append(points)
     return points
     
@@ -50,6 +50,7 @@ Challenge Q&A function
 """
 def challenge_q_a(num):
     if request.method == "POST":
+        flash("You guessed {}. Spot on!".format(int(request.form["guess"])))
         with open("data/challenge.json", "r") as json_data:
             data = json.load(json_data)
                 
@@ -195,7 +196,7 @@ def registration():
 
     
 """
-Table Page
+Message Board Pa
 """
 
 @app.route('/message_board')
