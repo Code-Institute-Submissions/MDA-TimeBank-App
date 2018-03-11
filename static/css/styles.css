@@ -71,6 +71,18 @@
 }
 
 
+/*Fonts*/
+.white {
+    color: #fff;
+}
+
+.orange {
+    color: #bf5d31 !important;
+}
+
+.font_300 {
+    font-weight: 300 !important;
+}
 
 
 /*Page Headings*/
@@ -269,12 +281,19 @@ h2 {
 }
 
 .message_margin {
-    margin-top: 15%;
+    margin-top: 10%;
     color: #fff;
 }
 
 .table-responsive {
     width: 100%;
 }
+
+/*Video*/
+.iframe {
+    width: 560;
+    height: 315;
+}
+
 
 
