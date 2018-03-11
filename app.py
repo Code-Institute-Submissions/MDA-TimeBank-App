@@ -196,16 +196,18 @@ def registration():
 
     
 """
-Message Board Pa
+Message Board Page
 """
 
-@app.route('/message_board')
+@app.route('/message_board', methods=["GET", "POST"])
 def message_board():
     data = []
     with open("data/user_info.txt", "r") as json_data:
         data = json.load(json_data)
         newlist = sorted(data, key=itemgetter('score'), reverse=True)
 
+    if request.method == "POST":
+        return redirect('/information')
     return render_template("message_board.html", page_title="Who wants to get started?", score_table = newlist)
 
 
