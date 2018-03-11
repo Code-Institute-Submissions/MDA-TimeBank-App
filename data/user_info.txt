@@ -1,5 +1,1 @@
-[{"message": "Well done!", "score": 55, "name": "Marty505", "email": "(u'd@d.com',)"},
-{"message": "Let's get started", "score": 80, "name": "Pauline", "email": "(u'd@d.com',)"},
-{"message": "", "score": 25, "name": "Aine", "email": "(u'd@d.com',)"},
-{"message": "excellent", "score": 120, "name": "P223", "email": "(u'd@d.com',)"},
-{"message": "can see the potential. I'd really like to get involved. Please contact me!", "score": 90, "name": "Pol", "email": "(u'd@d.com',)"}]
+[{"message": ["excellent!"], "score": 0, "name": ["Mikey"], "email": ["me@me.com"]}]

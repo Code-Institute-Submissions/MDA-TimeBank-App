@@ -50,14 +50,12 @@ Challenge Q&A function
 """
 def challenge_q_a(num):
     if request.method == "POST":
-        flash("You guessed {}. Spot on!".format(int(request.form["guess"])))
         with open("data/challenge.json", "r") as json_data:
             data = json.load(json_data)
                 
             """Call Scoring Function"""
             limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
 
-    
 """
 Start Page
 """
@@ -74,8 +72,8 @@ Challenge Pages Start
 @app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
     challenge_q_a(0)
-    
     """Reading data from challenge.json into challenge.html"""
+
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -166,8 +164,6 @@ def registration():
     """
     
     if request.method == "POST":
-        
-        
         name = request.form["username"],
         email = request.form["email"],
         message = request.form["message"],

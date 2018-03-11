@@ -1,22 +1,22 @@
-{% extends 'base.html' %} 
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container-fluid p-0">
-
+    
+    <!--ALERT-->
+    <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
+        <h2 class="white">What's this about?</h2>
+        <h2 class="white font_300">There are around 2,500 people living in the Markets.<br><br>
+        Over the last year 250 residents have provided information about what skills, knowledge
+        and expertise they have - and what support they could do with or would like.<br><br>
+        <strong>"We have what we need, if we use what we have."</strong><br>Edgar Cahn
+        
+        
+        
+    </div>
+    
     <section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-2" id="interests">
         <div class="my-auto">
-            {% with messages = get_flashed_messages() %} 
-            {% if messages %} 
-            {% for message in messages %}
-
-            <h3 class="username">{{ message }}</h3>
-            
-            {% endfor %} 
-            {% endif %} 
-            {% endwith %}
-
-
             <div class="parent_1">
                 <div class="left input-group">
                     <h1 class="challenge-numbers_1 hidden">{{ challenge_data[0]["need_amount"] }}</h1>

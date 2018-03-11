@@ -295,5 +295,17 @@ h2 {
     height: 315;
 }
 
-
+/*Page-Alerts*/
+.alert {
+  font-size: 4rem;
+  font-weight: 200;
+  color: #fff;
+  background-color: #000;
+  box-shadow: 12px 10px 9px #525050;
+  width: 80%;
+  position: fixed;
+  top: 15%;
+  left: 10%;
+  opacity: .9;
+  z-index: 10; }
 

@@ -20,6 +20,13 @@ Data Structure:
 list updated & .txt storage
 list objects (sets?) required updated as challenged progressed and made composite at end. Suited best
 
+User feedback
+Required ajax as logging scores and HTTP requests were forcing page reload. Messy user experience
+and poor functionality (fade-ins)
+Could not use Flask's Flash method to show scores back, so used jquery
+Flask method was used to thank people for registering
+
+
 Testing Methodology:
     when code developed and dependent on files, run it in replit with hypothetical variables, lists
 using python print() function in Command Line to monitor outputs of code between functions
