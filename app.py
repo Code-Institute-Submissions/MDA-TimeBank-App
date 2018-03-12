@@ -56,6 +56,10 @@ def challenge_q_a(num):
             """Call Scoring Function"""
             limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
 
+
+
+
+
 """
 Start Page
 """

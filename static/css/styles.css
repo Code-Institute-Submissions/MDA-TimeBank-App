@@ -128,41 +128,41 @@
     text-shadow: 5px -2px black;
 }
 
-.challenge-page-title {
-    font-size: 11rem;
-    line-height: 8rem;
-    color: #3273a6;
-    margin: 4.5rem 0rem !important;
-}
+/*.challenge-page-title {*/
+/*    font-size: 11rem;*/
+/*    line-height: 8rem;*/
+/*    color: #3273a6;*/
+/*    margin: 4.5rem 0rem !important;*/
+/*}*/
 
-.challenge-numbers_1 {
-    font-family: 'Knewave', cursive;
-    font-size: 20rem;
-    line-height: 5rem;
-    color: #2e72aa !important;
-}
+/*.challenge-numbers_1 {*/
+/*    font-family: 'Knewave', cursive;*/
+/*    font-size: 20rem;*/
+/*    line-height: 5rem;*/
+/*    color: #2e72aa !important;*/
+/*}*/
 
-.challenge-numbers_2 {
-    font-family: 'Knewave', cursive;
-    font-size: 20rem;
-    line-height: 5rem;
-    color: #bd5d38!important;
-    margin-top: 5rem;
-    text-shadow: 7px -3px black;
-}
+/*.challenge-numbers_2 {*/
+/*    font-family: 'Knewave', cursive;*/
+/*    font-size: 20rem;*/
+/*    line-height: 5rem;*/
+/*    color: #bd5d38!important;*/
+/*    margin-top: 5rem;*/
+/*    text-shadow: 7px -3px black;*/
+/*}*/
 
-.answer_txt {
-    font-family: 'Knewave', cursive;
-    font-size: 3rem;
-    margin-top: 1rem;
-    color: white !important;
-    background-color: #bd5d38;
-}
+/*.answer_txt {*/
+/*    font-family: 'Knewave', cursive;*/
+/*    font-size: 3rem;*/
+/*    margin-top: 1rem;*/
+/*    color: white !important;*/
+/*    background-color: #bd5d38;*/
+/*}*/
 
-.subheading {
-    font-size: 3.5rem;
-    color: #fafafa;
-}
+/*.subheading {*/
+/*    font-size: 3.5rem;*/
+/*    color: #fafafa;*/
+/*}*/
 
 .username {
     color: #fff;
@@ -220,7 +220,7 @@
 h1,
 h2,
 p {
-    padding: 1rem !important;
+    padding: 1rem;
 
 }
 
