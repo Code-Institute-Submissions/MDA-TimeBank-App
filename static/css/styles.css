@@ -97,18 +97,29 @@
 
 /*}*/
 
-.heading {
-    color: #fafafa;
-    position: fixed;
-    font-size: 5rem;
-    z-index: 1;
-    top: 12%;
-    left: 30%;
-    text-align: right;
-    background-color: #492c2c80;
-    padding-right: 1rem;
-    text-shadow: 5px -2px black;
-}
+/*.heading {*/
+
+/*    color: #fafafa;*/
+
+/*    position: fixed;*/
+
+/*    font-size: 5rem;*/
+
+/*    z-index: 1;*/
+
+/*    top: 12%;*/
+
+/*    left: 30%;*/
+
+/*    text-align: right;*/
+
+/*    background-color: #492c2c80;*/
+
+/*    padding-right: 1rem;*/
+
+/*    text-shadow: 5px -2px black;*/
+
+/*}*/
 
 .landing-page {
     font-size: 13rem !important;
@@ -183,10 +194,6 @@
 
 /*Paragraphs*/
 
-p {
-    color: black !important;
-}
-
 /*Navigation Bar*/
 
 .fixed-top {
@@ -211,7 +218,8 @@ p {
 }
 
 h1,
-h2 {
+h2,
+p {
     padding: 1rem !important;
 
 }
@@ -300,23 +308,30 @@ h2 {
 .alert {
     font-size: 4rem;
     font-family: 'Saira Extra Condensed', serif;
-    font-weight: 200;
-    color: #fff;
     background-color: #000;
     box-shadow: 12px 10px 9px #525050;
     width: 80%;
     position: fixed;
     top: 15%;
     left: 10%;
-    opacity: .9;
     z-index: 10;
     border-radius: 25px;
 }
 
-.alert p {
+.alert>p {
     font-size: 3.5rem;
-    color: #fff;
+    color: white;
+    font-weight: 400;
+    line-height: 1.1;
 }
+
+.alert>h2 {
+    color: #bf5d31;
+}
+
+/*.alert p {*/
+/*    color: #fff;*/
+/*}*/
 
 
 #time_bank_img {
