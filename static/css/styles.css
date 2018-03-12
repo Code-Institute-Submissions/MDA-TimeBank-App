@@ -86,6 +86,9 @@
 }
 
 
+
+
+
 /*Page Headings*/
 
 /*.p-0 {*/
@@ -121,8 +124,6 @@
     margin: 4.5rem 0rem !important;
 }
 
-
-
 .challenge-numbers_1 {
     font-family: 'Knewave', cursive;
     font-size: 20rem;
@@ -137,6 +138,14 @@
     color: #bd5d38!important;
     margin-top: 5rem;
     text-shadow: 7px -3px black;
+}
+
+.answer_txt {
+    font-family: 'Knewave', cursive;
+    font-size: 3rem;
+    margin-top: 1rem;
+    color: white !important;
+    background-color: #bd5d38;
 }
 
 .subheading {
@@ -253,6 +262,10 @@ h2 {
     padding: 0 !important;
 }
 
+
+
+
+
 /*Table*/
 
 .table {
@@ -318,4 +331,3 @@ hr {
 ul {
     list-style-type: none;
 }
-

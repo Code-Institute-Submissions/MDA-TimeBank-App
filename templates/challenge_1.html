@@ -8,7 +8,7 @@
         <h2 class="orange">What's this about?</h2>
         <hr>
         <p class="white font_300">There are around 2,500 people living in the Markets.<br><br>
-        Over the last year 250 residents have provided information about what skills, knowledge
+        Over the last year 226 residents have provided information about what skills, knowledge
         and expertise they have - and what support they could do with or would like.<br></p>
         <h2 class="orange">Take the challenge and see how resourceful your neighbours are!</h2>
         <h2 class="white font_300">
@@ -38,7 +38,10 @@
                 <form method='POST' class="form hidden_title" name="guess" onsubmit="return(false)">
                     <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Your Guess..." required>
                     <input type='button' id="numScore" class="btn-lg btn-danger challenge_btn" value='Guess'>
+                    <h2 class="hidden_answer answer_txt">The correct answer is...</h2>
                 </form>
+                    
+                
                 <div>
                     <h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[0]["skill_answer"] }}</h1>
                 </div>

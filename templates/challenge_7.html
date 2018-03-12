@@ -36,6 +36,7 @@
                 <form method='POST' class="form hidden_title" name="guess" onsubmit="return(false)">
                     <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Your Guess..." required>
                     <input type='button' id="numScore" class="btn-lg btn-danger challenge_btn" value='Guess'>
+                    <h2 class="hidden_answer answer_txt">The correct answer is...</h2>
                 </form>
                 <div>
                     <h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[6]["skill_answer"] }}</h1>
