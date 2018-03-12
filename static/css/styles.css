@@ -145,26 +145,11 @@
 }
 
 .username {
-    position: fixed;
-    top: 16%;
-    left: 74%;
     color: #fff;
     background-color: #000;
-    opacity: .8;
-    font-size: 3rem !important;
     padding: 1rem;
 }
 
-.running_score {
-    position: fixed;
-    top: 88%;
-    left: 6%;
-    color: #fff;
-    background-color: #000;
-    opacity: .8;
-    font-size: 3rem !important;
-    padding: 1rem;
-}
 
 .parent_1 {
     display: flex;

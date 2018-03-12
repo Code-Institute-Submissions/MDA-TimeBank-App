@@ -160,9 +160,14 @@ Result & Registration Page
 """
 @app.route('/registration', methods=["GET", "POST"])
 def registration():
+    
+    flash("Your final score is '{}'".format(int(sum(score))))
+
     """
     Sign in & add details to user_info list
     """
+    final_score = int(sum(score))
+    print(final_score)
     
     if request.method == "POST":
         name = request.form["username"],
@@ -184,7 +189,7 @@ def registration():
         
         return redirect("/message_board") 
         
-    return render_template("registration.html")
+    return render_template("registration.html", score_sub="See how everyone else did & find out more...")
     
     
 

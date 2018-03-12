@@ -7,11 +7,14 @@
             <h1 class="mb-0 landing-page">MDA<br>
                 <span class="text-primary landing-page">TimeBank Survey</span>
             </h1>
+
+
+            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <h1 class="username">{{ message }}</h1>
+            {% endfor %} {% endif %} {% endwith %}
             
-            <!--Replace this with 'Your Score is....-->
-            
-            <div class="subheading mb-5">Take the Challenge<br>See the Results<br>Join Us
-            </div>
+            <h2> {{ score_sub }} </h2>
+
             <!--Form to input username and email-->
             <form method="POST" data-toggle="validator" role="form">
                 <div class="form-group">
