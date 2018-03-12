@@ -150,7 +150,8 @@ def challenge_8():
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    
+        print(score)
+
     return render_template("challenge_8.html", challenge_data = data)
     
 
@@ -169,8 +170,6 @@ def registration():
         message = request.form["message"],
         final_score = int(sum(score))
         
-        print(name)
-        print(final_score)
         
         user_list.append({
         "name": name,
@@ -178,7 +177,7 @@ def registration():
         "message": message,
         "score": final_score,
         })
-            
+  
         with open('data/user_info.txt', 'w') as outfile:  
             json.dump(user_list, outfile)
             

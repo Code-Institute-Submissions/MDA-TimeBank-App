@@ -72,8 +72,9 @@
 
 
 /*Fonts*/
+
 .white {
-    color: #fff;
+    color: #fff !important;
 }
 
 .orange {
@@ -290,22 +291,46 @@ h2 {
 }
 
 /*Video*/
+
 .iframe {
     width: 560;
     height: 315;
 }
 
 /*Page-Alerts*/
+
 .alert {
-  font-size: 4rem;
-  font-weight: 200;
-  color: #fff;
-  background-color: #000;
-  box-shadow: 12px 10px 9px #525050;
-  width: 80%;
-  position: fixed;
-  top: 15%;
-  left: 10%;
-  opacity: .9;
-  z-index: 10; }
+    font-size: 4rem;
+    font-family: 'Saira Extra Condensed', serif;
+    font-weight: 200;
+    color: #fff;
+    background-color: #000;
+    box-shadow: 12px 10px 9px #525050;
+    width: 80%;
+    position: fixed;
+    top: 15%;
+    left: 10%;
+    opacity: .9;
+    z-index: 10;
+    border-radius: 25px;
+}
+
+.alert p {
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+
+#time_bank_img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+hr {
+    width: 90%;
+}
+
+ul {
+    list-style-type: none;
+}
 

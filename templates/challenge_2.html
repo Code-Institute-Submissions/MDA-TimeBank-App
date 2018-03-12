@@ -1,18 +1,17 @@
-{% extends 'base.html' %} 
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container-fluid p-0">
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-3" id="interests">
         <div class="my-auto">
-            <h3 class="username">Insert Welcome</h3>
-            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-
-            <h3 class="running_score">{{ message }}</h3>
-            {% endfor %} {% endif %} {% endwith %}
-
-
+            <div class="alert alert-dismissible alert-warning">
+                <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
+                <h2 class="orange">What is a TimeBank?</h2>
+                <hr>
+                <p class="white font_300">TimeBanking is a tool with which a group of 
+                people create alternative economic relationships by sharing and exchanging their 
+                time, skills & resources rather than buying goods and services with money.</p>
+            </div>
             <div class="parent_1">
                 <div class="left input-group">
                     <h1 class="challenge-numbers_1 hidden">{{ challenge_data[1]["need_amount"] }}</h1>

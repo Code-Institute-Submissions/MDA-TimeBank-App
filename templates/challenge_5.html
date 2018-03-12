@@ -1,16 +1,22 @@
-{% extends 'base.html' %} 
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container-fluid p-0">
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-6" id="interests">
         <div class="my-auto">
-            <h3 class="username">Insert Welcome</h3>
-            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
 
-            <h3 class="running_score">{{ message }}</h3>
-            {% endfor %} {% endif %} {% endwith %}
+            <div class="alert alert-dismissible alert-warning">
+                <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
+                <h2 class="orange">The Values Behind a Timebank</h2>
+                <hr>
+
+                <h2>Reciprocity.</h2>
+                <p>Its not about 'helping'. Its about building together.</p>
+
+            </div>
+
+
+
 
 
             <div class="parent_1">
