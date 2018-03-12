@@ -10,17 +10,15 @@ $(document).ready(function() {
         $('form.hidden_title').delay(6500).show("fast").removeClass('hidden');
     });
 
-    // Send Ajax request for guesses
-
 
     // AJAX POST Request
     $('.challenge_btn').click(function() {
         var score = $('#numScore').val();
         $.ajax({
-            // Possible to amend the url or loop through jquery code?
+ 
             data: $('form').serialize(),
             type: 'POST',
-            // Define what to do with the request here? Text filed black angle?
+            
             success: function(response) {
                 return ("SUCCESS!");
             },
@@ -29,7 +27,6 @@ $(document).ready(function() {
             }
         });
     });
-
 
 
     // Transitions after button click
@@ -41,16 +38,9 @@ $(document).ready(function() {
     });
 
 
-    // PAge Alerts
+    // Page Alerts removed
     $("body").click(function() {
         $(".alert").hide("fast");
     });
     
-    
-
-
-
-
-
-
 });

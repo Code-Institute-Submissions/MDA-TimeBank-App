@@ -1,7 +1,7 @@
 section.resume-section {
   border-bottom: 1px solid $gray-300;
   padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
+  // padding-bottom: 5rem !important;
   .resume-item {
     .resume-content {}
     .resume-date {
@@ -23,6 +23,6 @@ section.resume-section {
 @media (min-width: 992px) {
   section.resume-section {
     padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+    // padding-bottom: 3rem !important;
   }
 }

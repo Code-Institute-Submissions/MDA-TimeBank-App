@@ -309,37 +309,6 @@ section>p {
     height: 315;
 }
 
-/*Page-Alerts*/
-
-.alert {
-    font-size: 4rem;
-    font-family: 'Saira Extra Condensed', serif;
-    background-color: #000;
-    box-shadow: 12px 10px 9px #525050;
-    width: 80%;
-    position: fixed;
-    top: 15%;
-    left: 10%;
-    z-index: 10;
-    border-radius: 25px;
-}
-
-.alert>p {
-    font-size: 3.5rem;
-    color: white;
-    font-weight: 400;
-    line-height: 1.1;
-}
-
-.alert>h2 {
-    color: #bf5d31;
-}
-
-/*.alert p {*/
-
-/*    color: #fff;*/
-
-/*}*/
 
 #time_bank_img {
     max-width: 100%;
