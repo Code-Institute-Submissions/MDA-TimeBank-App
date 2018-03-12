@@ -208,7 +208,7 @@ def message_board():
 
     if request.method == "POST":
         return redirect('/information')
-    return render_template("message_board.html", page_title="Who wants to get started?", score_table = newlist)
+    return render_template("message_board.html", page_title="How did you get on?", score_table = newlist)
 
 
 

@@ -224,6 +224,12 @@ p {
 
 }
 
+section>p {
+    font-family: 'Saira Extra Condensed', serif;
+    font-size: 3rem;
+    color: #fff;
+}
+
 
 
 /*Buttons*/
@@ -330,9 +336,10 @@ p {
 }
 
 /*.alert p {*/
-/*    color: #fff;*/
-/*}*/
 
+/*    color: #fff;*/
+
+/*}*/
 
 #time_bank_img {
     max-width: 100%;
