@@ -36,4 +36,5 @@ using python print() function in Command Line to monitor outputs of code between
     to transfer and empty. resolved with 'w' - final capture of info - overwrite previous
 
 Bugs:
-Background Image element losing proportion when scaled down(challenge_2, _4, _6, _8, message_board - erratically
+Background Image element losing proportion when scaled down(challenge_2, _4, _6, _8, message_board - erratically (vendor prefix?)
+Displaying 2 Total Scores on Registration page if hae not completed quiz start to finish (normal for temporary session?)

@@ -234,14 +234,14 @@ section>p {
 
 /*Buttons*/
 
-.btn-lg {
-    padding: 1.5rem 4rem;
-    font-size: 2rem;
-    line-height: 1.5;
-    border-radius: 2rem;
-    margin-top: 1rem;
-    opacity: .8;
-}
+/*.btn-lg {*/
+/*    padding: 1.5rem 4rem;*/
+/*    font-size: 2rem;*/
+/*    line-height: 1.5;*/
+/*    border-radius: 2rem;*/
+/*    margin-top: 1rem;*/
+/*    opacity: .8;*/
+/*}*/
 
 /*.input-lg {*/
 /*    font-size: 3rem;*/
@@ -250,13 +250,13 @@ section>p {
 
 /*Transitions*/
 
-.hidden,
-.hidden_title,
-.hidden_icon,
-.hidden_answer,
-.hidden_icon {
-    display: none;
-}
+/*.hidden,*/
+/*.hidden_title,*/
+/*.hidden_icon,*/
+/*.hidden_answer,*/
+/*.hidden_icon {*/
+/*    display: none;*/
+/*}*/
 
 .fa-hand-point-right {
     position: fixed;
@@ -282,25 +282,25 @@ section>p {
 
 /*Table*/
 
-.table {
-    font-size: 2rem;
-    color: white;
-    overflow-y: auto;
-}
+/*.table {*/
+/*    font-size: 2rem;*/
+/*    color: white;*/
+/*    overflow-y: auto;*/
+/*}*/
 
 
-.table td {
-    padding: 2rem;
-}
+/*.table td {*/
+/*    padding: 2rem;*/
+/*}*/
 
-.message_margin {
-    margin-top: 10%;
-    color: #fff;
-}
+/*.message_margin {*/
+/*    margin-top: 10%;*/
+/*    color: #fff;*/
+/*}*/
 
-.table-responsive {
-    width: 100%;
-}
+/*.table-responsive {*/
+/*    width: 100%;*/
+/*}*/
 
 /*Video*/
 

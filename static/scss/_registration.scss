@@ -1,15 +1,8 @@
-// See how everyone did
+// Styled to diplay appropriately across all breakpoints
 section h2 {
     color: $orange;
     background-color: black;
-    // text-shadow: 4px 0px black;
 }
-
-//  Reg Score
-// h1 {
-//     font-size: 7rem;
-//     line-height: 5.5rem;
-// }
 
 .username {
     color: $white;
@@ -22,9 +15,7 @@ section h2 {
     padding: 1rem;
 }
 
-// heading - MDA
 .reg-page {
-    // font-size: 10rem !important;
     font-size: 10rem;
     line-height: 8.5rem;
     color: white;
@@ -35,7 +26,6 @@ section h2 {
     color: $orange !important;
 }
 
-// form
 .input-lg {
     font-size: 2rem;
     max-width: 50%;
