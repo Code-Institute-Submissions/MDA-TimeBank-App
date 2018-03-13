@@ -165,7 +165,7 @@ Result & Registration Page
 @app.route('/registration', methods=["GET", "POST"])
 def registration():
     
-    flash("Your final score is '{}'".format(int(sum(score))))
+    flash("You scored {} points!".format(int(sum(score))))
 
     """
     Sign in & add details to user_info list

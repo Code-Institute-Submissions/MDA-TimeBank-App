@@ -164,11 +164,11 @@
 /*    color: #fafafa;*/
 /*}*/
 
-.username {
-    color: #fff;
-    background-color: #000;
-    padding: 1rem;
-}
+/*.username {*/
+/*    color: #fff;*/
+/*    background-color: #000;*/
+/*    padding: 1rem;*/
+/*}*/
 
 
 .parent_1 {
@@ -243,10 +243,10 @@ section>p {
     opacity: .8;
 }
 
-.input-lg {
-    font-size: 3rem;
-    max-width: 70%;
-}
+/*.input-lg {*/
+/*    font-size: 3rem;*/
+/*    max-width: 70%;*/
+/*}*/
 
 /*Transitions*/
 

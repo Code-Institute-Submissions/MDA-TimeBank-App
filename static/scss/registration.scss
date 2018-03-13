@@ -1,3 +1,42 @@
-@media (min-width: 992px) {
+// See how everyone did
+section h2 {
+    color: $orange;
+    background-color: black;
+    // text-shadow: 4px 0px black;
+}
 
+//  Reg Score
+// h1 {
+//     font-size: 7rem;
+//     line-height: 5.5rem;
+// }
+
+.username {
+    color: $white;
+    font: {
+        size: 5rem;
+        family: 'Skranji', cursive;
+    }
+    line-height: 5.5rem;
+    background-color: #000;
+    padding: 1rem;
+}
+
+// heading - MDA
+.reg-page {
+    // font-size: 10rem !important;
+    font-size: 10rem;
+    line-height: 8.5rem;
+    color: white;
+    text-shadow: 5px -2px black;
+}
+
+.text-primary {
+    color: $orange !important;
+}
+
+// form
+.input-lg {
+    font-size: 2rem;
+    max-width: 50%;
 }

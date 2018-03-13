@@ -3,6 +3,7 @@ Markets Development Association: TimeBank App
 Purpose:
 
 Target Group:
+Accessibility issues and temporary use. Large fonts and one breakpoint. 
 
 Functionality:
 
