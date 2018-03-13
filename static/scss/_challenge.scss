@@ -1,10 +1,94 @@
-// Hidden for jquery event
+// Background Images
+.bk-image-1 {
+    background-image: url(/static/img/hands.jpeg);
+    @include background-image
+}
+
+.bk-image-2 {
+    background-image: url(/static/img/computer-web.jpeg);
+    @include background-image
+}
+
+.bk-image-3 {
+    background-image: url(/static/img/bike_wheel.jpg);
+    @include background-image
+}
+
+.bk-image-4 {
+    background-image: url(/static/img/decorate-web.jpg);
+    @include background-image
+}
+
+.bk-image-5 {
+    background-image: url(/static/img/wrench-web.jpeg);
+    @include background-image
+}
+
+.bk-image-6 {
+    background-image: url(/static/img/car-web.jpeg);
+    @include background-image
+}
+
+.bk-image-7 {
+    background-image: url(/static/img/yoga-web.jpeg);
+    @include background-image
+}
+
+.bk-image-8 {
+    background-image: url(/static/img/knitting.jpg);
+    @include background-image
+}
+
+.bk-image-9 {
+    background-image: url(/static/img/guitar.jpg);
+    @include background-image
+}
+
+.bk-image-10 {
+    background-image: url(/static/img/hands_mess_board.jpeg);
+    @include background-image
+}
+
+// Elements idden for jquery event
 .hidden,
 .hidden_title,
 .hidden_icon,
 .hidden_answer,
 .hidden_icon {
     display: none;
+}
+
+
+// Flexbox styling for Headers & subheadings
+.parent_1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    opacity: .8;
+    margin: 1rem;
+}
+
+.parent_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    opacity: .8;
+    margin: 1rem;
+}
+
+.parent>div {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 2rem;
 }
 
 // FONTS for Challenge Pages

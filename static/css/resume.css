@@ -142,12 +142,100 @@ a {
     .alert h2 {
       font-size: 2rem;
       color: #bf5d31; } }
+.bk-image-1 {
+  background-image: url(/static/img/hands.jpeg);
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: cover; }
+
+.bk-image-2 {
+  background-image: url(/static/img/computer-web.jpeg);
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: cover; }
+
+.bk-image-3 {
+  background-image: url(/static/img/bike_wheel.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: cover; }
+
+.bk-image-4 {
+  background-image: url(/static/img/decorate-web.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: cover; }
+
+.bk-image-5 {
+  background-image: url(/static/img/wrench-web.jpeg);
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: cover; }
+
+.bk-image-6 {
+  background-image: url(/static/img/car-web.jpeg);
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: cover; }
+
+.bk-image-7 {
+  background-image: url(/static/img/yoga-web.jpeg);
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: cover; }
+
+.bk-image-8 {
+  background-image: url(/static/img/knitting.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: cover; }
+
+.bk-image-9 {
+  background-image: url(/static/img/guitar.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: cover; }
+
+.bk-image-10 {
+  background-image: url(/static/img/hands_mess_board.jpeg);
+  background-repeat: no-repeat;
+  background-position: 50% 5%;
+  background-size: cover; }
+
 .hidden,
 .hidden_title,
 .hidden_icon,
 .hidden_answer,
 .hidden_icon {
   display: none; }
+
+.parent_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  opacity: .8;
+  margin: 1rem; }
+
+.parent_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  opacity: .8;
+  margin: 1rem; }
+
+.parent > div {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 2rem; }
 
 .challenge-page-title {
   font-size: 11rem;

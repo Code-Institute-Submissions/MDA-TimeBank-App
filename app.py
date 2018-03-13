@@ -60,6 +60,11 @@ def challenge_q_a(num):
             """Call Scoring Function"""
             limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
 
+"""
+Display Score Tally
+"""
+def display_score(): 
+    flash('Your Score = {}'.format(int(sum(score))))
 
 
 
@@ -93,7 +98,7 @@ def challenge_1():
 @app.route('/challenge_2', methods=["GET", "POST"])
 def challenge_2():
     challenge_q_a(1)
-    flash('Your Score = {}'.format(int(sum(score))))
+    display_score()
     
     data = []
     with open("data/challenge.json", "r") as json_data:
@@ -104,8 +109,7 @@ def challenge_2():
 @app.route('/challenge_3', methods=["GET", "POST"])
 def challenge_3():
     challenge_q_a(2)
-    print(sum(score))
-    flash('Your Score = {}'.format(int(sum(score))))   
+    display_score()   
     
     data = []
     with open("data/challenge.json", "r") as json_data:
@@ -117,7 +121,7 @@ def challenge_3():
 @app.route('/challenge_4', methods=["GET", "POST"])
 def challenge_4():
     challenge_q_a(3)
-    flash('Your Score = {}'.format(int(sum(score))))
+    display_score()
     
     data = []
     with open("data/challenge.json", "r") as json_data:
@@ -129,7 +133,7 @@ def challenge_4():
 @app.route('/challenge_5', methods=["GET", "POST"])
 def challenge_5():
     challenge_q_a(4)
-    flash('Your Score = {}'.format(int(sum(score))))
+    display_score()
     
     data = []
     with open("data/challenge.json", "r") as json_data:
@@ -141,7 +145,7 @@ def challenge_5():
 @app.route('/challenge_6', methods=["GET", "POST"])
 def challenge_6():
     challenge_q_a(5)
-    flash('Your Score = {}'.format(int(sum(score))))
+    display_score()
     
     data = []
     with open("data/challenge.json", "r") as json_data:
@@ -153,7 +157,7 @@ def challenge_6():
 @app.route('/challenge_7', methods=["GET", "POST"])
 def challenge_7():
     challenge_q_a(6)
-    flash('Your Score = {}'.format(int(sum(score))))
+    display_score()
     
     data = []
     with open("data/challenge.json", "r") as json_data:
@@ -165,7 +169,7 @@ def challenge_7():
 @app.route('/challenge_8', methods=["GET", "POST"])
 def challenge_8():
     challenge_q_a(7)
-    flash('Your Score = {}'.format(int(sum(score))))
+    display_score()
     
     data = []
     with open("data/challenge.json", "r") as json_data:
