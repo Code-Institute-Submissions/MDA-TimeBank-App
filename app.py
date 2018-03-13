@@ -74,9 +74,11 @@ Start Page
 """
 @app.route('/', methods=["GET", "POST"])
 def index():
+    
+    # Trigger start of new game
     if request.method == "POST":
         
-        """Clear list for next player"""
+        # Clear scoring list for new player
         score[:]=[]
         return redirect('/challenge_1')
     return render_template("index.html")
@@ -87,9 +89,11 @@ Challenge Pages Start
 """
 @app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
+    
+    # Q & A and Scoring Function
     challenge_q_a(0)
     
-    data = []
+    # Read challenge.js data for rendering
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("challenge_1.html", challenge_data = data)
@@ -99,8 +103,6 @@ def challenge_1():
 def challenge_2():
     challenge_q_a(1)
     display_score()
-    
-    data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("challenge_2.html", challenge_data = data)
@@ -110,11 +112,8 @@ def challenge_2():
 def challenge_3():
     challenge_q_a(2)
     display_score()   
-    
-    data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    
     return render_template("challenge_3.html", challenge_data = data)
 
 
@@ -122,11 +121,8 @@ def challenge_3():
 def challenge_4():
     challenge_q_a(3)
     display_score()
-    
-    data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    
     return render_template("challenge_4.html", challenge_data = data)
 
 
@@ -134,11 +130,8 @@ def challenge_4():
 def challenge_5():
     challenge_q_a(4)
     display_score()
-    
-    data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    
     return render_template("challenge_5.html", challenge_data = data)
 
 
@@ -146,11 +139,8 @@ def challenge_5():
 def challenge_6():
     challenge_q_a(5)
     display_score()
-    
-    data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    
     return render_template("challenge_6.html", challenge_data = data)
 
 
@@ -158,11 +148,8 @@ def challenge_6():
 def challenge_7():
     challenge_q_a(6)
     display_score()
-    
-    data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    
     return render_template("challenge_7.html", challenge_data = data)
 
 
@@ -170,12 +157,8 @@ def challenge_7():
 def challenge_8():
     challenge_q_a(7)
     display_score()
-    
-    data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
- 
-
     return render_template("challenge_8.html", challenge_data = data)
     
 
@@ -225,7 +208,6 @@ Message Board Page
 
 @app.route('/message_board', methods=["GET", "POST"])
 def message_board():
-    data = []
     with open("data/user_info.txt", "r") as json_data:
         data = json.load(json_data)
         newlist = sorted(data, key=itemgetter('score'), reverse=True)
