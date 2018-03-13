@@ -36,6 +36,10 @@ $(document).ready(function() {
         $('h1.hidden_answer').delay(2000).show("fast").removeClass('hidden');
         $('.hidden_icon').delay(4000).fadeIn(400).fadeOut(400).fadeIn(400).fadeOut(400).fadeIn(400).removeClass('hidden');
     });
+    
+    
+    // Display Score
+    $('.username').slideDown(3000).removeClass('hidden');
 
 
     // Page Alerts removed

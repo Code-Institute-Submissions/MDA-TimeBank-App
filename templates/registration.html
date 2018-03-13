@@ -9,7 +9,7 @@
 
 
             {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-            <h1 class="username">{{ message }}</h1>
+            <h1 class="username hidden">{{ message }}</h1>
             {% endfor %} {% endif %} {% endwith %}
             
             <h2 id="end-score"> {{ score_sub }} </h2><br>
