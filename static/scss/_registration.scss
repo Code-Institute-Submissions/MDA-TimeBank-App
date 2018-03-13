@@ -1,5 +1,5 @@
 // Styled to diplay appropriately across all breakpoints
-section h2 {
+#end-score {
     color: $orange;
     background-color: black;
 }
@@ -10,6 +10,7 @@ section h2 {
         size: 5rem;
         family: 'Skranji', cursive;
     }
+    text-align: center;
     line-height: 5.5rem;
     background-color: #000;
     padding: 1rem;

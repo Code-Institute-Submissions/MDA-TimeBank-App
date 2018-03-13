@@ -34,7 +34,8 @@ section h2 {
     margin-top: 5rem;
     padding: 0rem;
     text-shadow: 7px -3px black;
-    box-sizing: none;
+    -webkit-box-sizing: none;
+            box-sizing: none;
 }
 
 .answer_txt {
