@@ -268,15 +268,15 @@ section>p {
 /*    display: none;*/
 /*}*/
 
-.fa-hand-point-right {
-    position: fixed;
-    top: 35%;
-    left: 55%;
-    font-size: 25rem;
-    color: #000;
-    opacity: .8;
-    z-index: 10;
-}
+/*.fa-hand-point-right {*/
+/*    position: fixed;*/
+/*    top: 35%;*/
+/*    left: 55%;*/
+/*    font-size: 25rem;*/
+/*    color: #000;*/
+/*    opacity: .8;*/
+/*    z-index: 10;*/
+/*}*/
 
 /*navBar*/
 

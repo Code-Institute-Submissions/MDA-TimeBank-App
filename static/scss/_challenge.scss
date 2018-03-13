@@ -23,6 +23,7 @@ section h2 {
     @include challenge-font;
     font-size: 20rem;
     line-height: 5rem;
+    padding-top: 1rem;
     color: $blue;
 }
 
@@ -35,7 +36,7 @@ section h2 {
     padding: 0rem;
     text-shadow: 7px -3px black;
     -webkit-box-sizing: none;
-            box-sizing: none;
+    box-sizing: none;
 }
 
 .answer_txt {
@@ -57,13 +58,23 @@ section h2 {
 }
 
 
+// Icon
+.fa-hand-point-right {
+    position: fixed;
+    top: 35%;
+    left: 55%;
+    font-size: 25rem;
+    color: #000;
+    opacity: .8;
+    z-index: 10;
+}
 
 
 
 @media (min-width: 992px) {
     // FONTS for Challenge Pages
     .challenge-numbers_1 {
-        font-size: 15rem;
+        font-size: 17rem;
     }
 
     .challenge-numbers_2 {
@@ -75,12 +86,16 @@ section h2 {
     }
 
     section h2 {
-        font-size: 3rem;
-    }
-
-    // Margins
+        font-size: 4rem;
+    } // Margins
     .input-group {
         width: 35%;
     }
 
+    .fa-hand-point-right {
+        position: fixed;
+        top: 20%;
+        left: 70%;
+        font-size: 20rem;
+    }
 }
