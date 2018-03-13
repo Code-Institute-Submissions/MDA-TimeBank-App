@@ -13,6 +13,11 @@
                 <h2>3. Reciprocity</h2>
                 <p>The question: “How can I help you?” needs to change so we ask: “How can we help each other build the world we all will live in?”.</p>
 
+                <!--Flash Message for Score Tally-->
+                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                <h2>{{ message }}</h2>
+                {% endfor %} {% endif %} {% endwith %}
+
             </div>
 
 

@@ -18,9 +18,13 @@ user_list = []
 
 
 """
-List to handle scores - CURRENTLY ADDING ALL SCORES TOGETHER - NOT BY USERNAME
+List to handle scores
+
 """
 score = []
+
+
+
 final_score = int(sum(score))
 
 """
@@ -42,7 +46,7 @@ def limit_number_questions(guess, answer):
         elif guess < answer and guess >= answer - 10: 
             points = 5
     score.append(points)
-    return points
+
     
     
 """
@@ -66,6 +70,9 @@ Start Page
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
+        
+        """Clear list for next player"""
+        score[:]=[]
         return redirect('/challenge_1')
     return render_template("index.html")
 
@@ -76,8 +83,7 @@ Challenge Pages Start
 @app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
     challenge_q_a(0)
-    """Reading data from challenge.json into challenge.html"""
-
+    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -87,6 +93,8 @@ def challenge_1():
 @app.route('/challenge_2', methods=["GET", "POST"])
 def challenge_2():
     challenge_q_a(1)
+    flash('Your Score = {}'.format(int(sum(score))))
+    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -96,6 +104,9 @@ def challenge_2():
 @app.route('/challenge_3', methods=["GET", "POST"])
 def challenge_3():
     challenge_q_a(2)
+    print(sum(score))
+    flash('Your Score = {}'.format(int(sum(score))))   
+    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -106,7 +117,8 @@ def challenge_3():
 @app.route('/challenge_4', methods=["GET", "POST"])
 def challenge_4():
     challenge_q_a(3)
-
+    flash('Your Score = {}'.format(int(sum(score))))
+    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -117,7 +129,8 @@ def challenge_4():
 @app.route('/challenge_5', methods=["GET", "POST"])
 def challenge_5():
     challenge_q_a(4)
-
+    flash('Your Score = {}'.format(int(sum(score))))
+    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -128,7 +141,8 @@ def challenge_5():
 @app.route('/challenge_6', methods=["GET", "POST"])
 def challenge_6():
     challenge_q_a(5)
-
+    flash('Your Score = {}'.format(int(sum(score))))
+    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -139,7 +153,8 @@ def challenge_6():
 @app.route('/challenge_7', methods=["GET", "POST"])
 def challenge_7():
     challenge_q_a(6)
-
+    flash('Your Score = {}'.format(int(sum(score))))
+    
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -150,11 +165,12 @@ def challenge_7():
 @app.route('/challenge_8', methods=["GET", "POST"])
 def challenge_8():
     challenge_q_a(7)
+    flash('Your Score = {}'.format(int(sum(score))))
     
     data = []
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-        print(score)
+ 
 
     return render_template("challenge_8.html", challenge_data = data)
     
@@ -170,8 +186,8 @@ def registration():
     """
     Sign in & add details to user_info list
     """
-    final_score = int(sum(score))
-    print(final_score)
+    # final_score = int(sum(score))
+    # print(final_score)
     
     if request.method == "POST":
         name = request.form["username"],

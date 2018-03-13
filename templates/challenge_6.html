@@ -1,6 +1,4 @@
-{% extends 'base.html' %} 
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container-fluid p-0">
 
@@ -10,8 +8,14 @@
                 <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
                 <h2>TimeBank: Core Values</h2>
                 <hr>
-                      <h2>4. Social Networks</h2> 
-                      <p>People joined together in shared purpose are stronger than individuals and can create communities of support, strength & trust.</p>
+                <h2>4. Social Networks</h2>
+                <p>People joined together in shared purpose are stronger than individuals and can create communities of support, strength & trust.</p>
+
+                <!--Flash Message for Score Tally-->
+                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                <h2>{{ message }}</h2>
+                {% endfor %} {% endif %} {% endwith %}
+
             </div>
 
 

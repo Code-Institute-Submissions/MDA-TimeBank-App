@@ -11,10 +11,17 @@
                     <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
                     <h2>Is it possible?</h2>
                     <hr>
-                    <p>"We have what we need, if we use what we have."<br>Edgar Cahn</p><hr>
+                    
+                    <!--Flash Message for Score Tally-->
+                    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                    <h2>{{ message }}</h2>
+                    {% endfor %} {% endif %} {% endwith %}
+
+                    <p>"We have what we need, if we use what we have."<br>Edgar Cahn</p>
+                    <hr>
                     <h2>Watch the video after sign-in to see a TimeBank in action!</h2>
-                    
-                    
+
+
                 </div>
                 <div class="left input-group">
                     <h1 class="challenge-numbers_1 hidden">{{ challenge_data[7]["need_amount"] }}</h1>

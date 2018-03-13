@@ -9,41 +9,46 @@
                 <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
                 <h2>TimeBank: Core Values</h2>
                 <hr>
-                    <h2>1. Assets</h2>
-                    <p>We all have something to give.<br>We all have something of value to contribute.</p>
-              </div>
+                <h2>1. Assets</h2>
+                <p>We all have something to give.<br><br>We all have something of value to contribute.</p>
+                
+                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                <h2>{{ message }}</h2>
+                {% endfor %} {% endif %} {% endwith %}
+                
+            </div>
 
 
-                <div class="parent_1">
-                    <div class="left input-group">
-                        <h1 class="challenge-numbers_1 hidden">{{ challenge_data[2]["need_amount"] }}</h1>
-                    </div>
-                    <div class="right">
-                        <h2 class="hidden">{{ challenge_data[2]["need_statement"] }}</h2>
-                    </div>
+            <div class="parent_1">
+                <div class="left input-group">
+                    <h1 class="challenge-numbers_1 hidden">{{ challenge_data[2]["need_amount"] }}</h1>
                 </div>
-                <div>
-                    <h1 class="mb-5 challenge-page-title hidden_title">{{ challenge_data[2]["title"] }}</h1>
-                    <a href="/challenge_4"><i class="fas fa-hand-point-right fa-9x hidden_icon"></i></a>
-                </div>
-                <div>
-                    <h2 class="hidden_title">{{ challenge_data[2]["skill_question"] }}</h2>
-                </div>
-                <div class="parent_2">
-
-                    <form method='POST' class="form hidden_title" onsubmit="return(false)">
-                        <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Guess" required>
-                        <input type='button' id="numScore" class="btn-lg btn-danger challenge_btn" value='Go!'>
-                        <h2 class="hidden_answer answer_txt">The correct answer is...</h2>
-                    </form>
-                    <div>
-                        <h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[2]["skill_answer"] }}</h1>
-                    </div>
+                <div class="right">
+                    <h2 class="hidden">{{ challenge_data[2]["need_statement"] }}</h2>
                 </div>
             </div>
+            <div>
+                <h1 class="mb-5 challenge-page-title hidden_title">{{ challenge_data[2]["title"] }}</h1>
+                <a href="/challenge_4"><i class="fas fa-hand-point-right fa-9x hidden_icon"></i></a>
+            </div>
+            <div>
+                <h2 class="hidden_title">{{ challenge_data[2]["skill_question"] }}</h2>
+            </div>
+            <div class="parent_2">
+
+                <form method='POST' class="form hidden_title" onsubmit="return(false)">
+                    <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Guess" required>
+                    <input type='button' id="numScore" class="btn-lg btn-danger challenge_btn" value='Go!'>
+                    <h2 class="hidden_answer answer_txt">The correct answer is...</h2>
+                </form>
+                <div>
+                    <h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[2]["skill_answer"] }}</h1>
+                </div>
+            </div>
+        </div>
 
     </section>
 
-    </div>
+</div>
 
-    {% endblock %}
+{% endblock %}
