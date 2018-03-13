@@ -23,8 +23,6 @@ List to handle scores
 """
 score = []
 
-
-
 final_score = int(sum(score))
 
 """
@@ -48,7 +46,6 @@ def limit_number_questions(guess, answer):
     score.append(points)
 
     
-    
 """
 Challenge Q&A function
 """
@@ -67,6 +64,8 @@ def display_score():
     flash('Your Score = {}'.format(int(sum(score))))
 
 
+ 
+       
 
 
 """
@@ -168,20 +167,15 @@ Result & Registration Page
 @app.route('/registration', methods=["GET", "POST"])
 def registration():
     
+    # Display total score
     flash("You scored {} points!".format(int(sum(score))))
 
-    """
-    Sign in & add details to user_info list
-    """
-    # final_score = int(sum(score))
-    # print(final_score)
-    
+    # Sign in & add details to user_info list
     if request.method == "POST":
         name = request.form["username"],
         email = request.form["email"],
         message = request.form["message"],
         final_score = int(sum(score))
-        
         
         user_list.append({
         "name": name,
@@ -189,39 +183,33 @@ def registration():
         "message": message,
         "score": final_score,
         })
-  
+        
         with open('data/user_info.txt', 'w') as outfile:  
             json.dump(user_list, outfile)
-            
-        
         return redirect("/message_board") 
-        
     return render_template("registration.html", score_sub="See how everyone else did & find out more...")
     
-    
-
-
     
 """
 Message Board Page
 """
-
 @app.route('/message_board', methods=["GET", "POST"])
 def message_board():
     with open("data/user_info.txt", "r") as json_data:
         data = json.load(json_data)
         newlist = sorted(data, key=itemgetter('score'), reverse=True)
-
     if request.method == "POST":
         return redirect('/information')
     return render_template("message_board.html", page_title="How did you get on?", score_table = newlist)
 
 
-
+"""
+More Information Page
+"""
 @app.route('/information')
 def information():
-    
     return render_template("information.html", page_title="Find out more...")
+
 
 
 if __name__ == "__main__":
