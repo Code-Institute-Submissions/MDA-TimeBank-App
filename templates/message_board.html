@@ -1,11 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 <section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-10" id="interests">
 
+    <!--Score Table Header-->
+    
     <h1 class="message_margin">{{ page_title }}</h1>
 
 
 
-
+    <!--Score Table read from Registration Page Input and data/user_info.txt-->
+    
     <table class="table table-responsive">
         <thead>
             <tr>
@@ -29,6 +32,8 @@
     <form method="POST" data-toggle="validator" role="form">
         <button type="submit" class="btn btn-lg btn-info">Find out more!</button>
     </form>
+    
+    <!--Refresh Page every 5 seconds for community stall events-->
     
     <script>
         // setTimeout(function() {

@@ -4,6 +4,9 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-8" id="interests">
         <div class="my-auto">
+            
+            <!--ALERT Message with TimeBank values details-->
+
             <div class="alert alert-dismissible alert-warning">
                 <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
                 <h2>TimeBank: Core Values</h2>
@@ -12,12 +15,14 @@
                 <p>People joined together in shared purpose are stronger than individuals and can create communities of support, strength & trust.</p>
 
                 <!--Flash Message for Score Tally-->
+                
                 {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
                 <h2>{{ message }}</h2>
                 {% endfor %} {% endif %} {% endwith %}
 
             </div>
 
+            <!--Challenge 6 Details from data/challenge.json-->
 
             <div class="parent_1">
                 <div class="left input-group">
@@ -35,6 +40,8 @@
                 <h2 class="hidden_title">{{ challenge_data[5]["skill_question"] }}</h2>
             </div>
             <div class="parent_2">
+
+                <!-- Guess Button (Ajax Request) -->
 
                 <form method='POST' class="form hidden_title" name="guess" onsubmit="return(false)">
                     <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Guess" required>

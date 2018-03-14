@@ -7,6 +7,9 @@
 
 
             <div class="parent_1">
+
+            <!--ALERT Message with TimeBank Quote details-->
+
                 <div class="alert alert-dismissible alert-warning">
                     <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
                     <h2>Is it possible?</h2>
@@ -21,6 +24,7 @@
                     <hr>
                     <h2>Watch the video after sign-in to see a TimeBank in action!</h2>
 
+            <!--Challenge 8 Details from data/challenge.json-->
 
                 </div>
                 <div class="left input-group">
@@ -38,6 +42,8 @@
                 <h2 class="hidden_title">{{ challenge_data[7]["skill_question"] }}</h2>
             </div>
             <div class="parent_2">
+
+                <!-- Guess Button (Ajax Request) -->
 
                 <form method='POST' class="form hidden_title" name="guess" onsubmit="return(false)">
                     <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Guess" required>
