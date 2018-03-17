@@ -207,11 +207,11 @@
 /*Navigation Bar*/
 
 .fixed-top {
-    height: 16%;
+    height: 12%;
 }
 
 .navbar-toggler-icon {
-    font-size: 4rem !important;
+    font-size: 2.5rem !important;
 }
 
 /*Icons*/
@@ -281,7 +281,7 @@ section>p {
 /*navBar*/
 
 .mda_logo {
-    max-width: 15rem !important;
+    max-width: 12rem !important;
     border: none !important;
     padding: 0 !important;
 }

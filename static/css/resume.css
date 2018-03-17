@@ -87,7 +87,7 @@ hr {
           #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
             display: block; } }
 section.resume-section {
-  height: 100vh;
+  min-height: 100vh;
   border-bottom: 1px solid #dee2e6;
   padding-top: 5rem !important; }
   section.resume-section .resume-item .resume-date {
@@ -257,7 +257,8 @@ section h2 {
   font-size: 20rem;
   line-height: 5rem;
   padding-top: 1rem;
-  color: #2e72aa; }
+  color: #2e72aa;
+  opacity: .9; }
 
 .challenge-numbers_2 {
   font-family: 'Skranji', cursive;
