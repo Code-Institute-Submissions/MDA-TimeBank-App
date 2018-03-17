@@ -7,7 +7,7 @@
             box-shadow: 12px 10px 9px #525050;
     width: 90%;
     position: fixed;
-    top: 15%;
+    top: 20%;
     left: 5%;
     z-index: 10;
     border-radius: 25px;
@@ -22,6 +22,10 @@
         color: #bf5d31;
     }
 
+.close {
+    font-size: 5rem;
+    color: white;
+}
 }
 
 @media (min-width: 992px) {

@@ -87,6 +87,7 @@ hr {
           #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
             display: block; } }
 section.resume-section {
+  height: 100vh;
   border-bottom: 1px solid #dee2e6;
   padding-top: 5rem !important; }
   section.resume-section .resume-item .resume-date {
@@ -118,7 +119,7 @@ a {
   box-shadow: 12px 10px 9px #525050;
   width: 90%;
   position: fixed;
-  top: 15%;
+  top: 20%;
   left: 5%;
   z-index: 10;
   border-radius: 25px;
@@ -130,6 +131,9 @@ a {
   .alert h2 {
     font-size: 3rem;
     color: #bf5d31; }
+  .alert .close {
+    font-size: 5rem;
+    color: white; }
 
 @media (min-width: 992px) {
   .alert {
