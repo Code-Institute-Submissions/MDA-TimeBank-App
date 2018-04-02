@@ -16,7 +16,7 @@ List to user store user details
 
 """
 user_list = []
-
+   
 
 """
 List to handle scores as game progresses
@@ -201,8 +201,6 @@ def message_board():
         data = json.load(json_data)
         
         newlist = sorted(data, key=itemgetter('score'), reverse=True)
-        
-        print(newlist)
     
     # Redirect to Information Page
     if request.method == "POST":
