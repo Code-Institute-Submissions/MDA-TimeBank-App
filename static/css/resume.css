@@ -301,6 +301,9 @@ section h2 {
   opacity: .8;
   z-index: 10; }
 
+@media (min-width: 768px) {
+  .challenge-page-title {
+    margin: 1.5rem 0rem; } }
 @media (min-width: 992px) {
   .challenge-numbers_1 {
     font-size: 17rem; }
@@ -309,6 +312,7 @@ section h2 {
     font-size: 15rem; }
 
   .challenge-page-title {
+    margin: 1.5rem 0rem;
     font-size: 10rem; }
 
   section h2 {
@@ -363,7 +367,7 @@ section h2 {
   text-align: center;
   height: 60%; }
   .table td {
-    padding: 2rem; }
+    padding: 2.5rem; }
 
 .message_margin {
   margin-top: 15%;

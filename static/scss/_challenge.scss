@@ -97,6 +97,7 @@
     line-height: 8rem;
     color: $blue;
     margin: 4.5rem 0rem;
+
 }
 
 section h2 {
@@ -154,7 +155,11 @@ section h2 {
     z-index: 10;
 }
 
-
+@media (min-width: 768px) {
+    .challenge-page-title {
+        margin: 1.5rem 0rem;
+    }
+}
 
 @media (min-width: 992px) {
     // FONTS for Challenge Pages
@@ -167,6 +172,7 @@ section h2 {
     }
 
     .challenge-page-title {
+        margin: 1.5rem 0rem;
         font-size: 10rem;
     }
 
