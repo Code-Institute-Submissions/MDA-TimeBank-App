@@ -2,14 +2,9 @@ section.resume-section {
   min-height: 100vh;
   border-bottom: 1px solid $gray-300;
   padding-top: 5rem !important;
-  // padding-bottom: 5rem !important;
-  .resume-item {
-    .resume-content {}
-    .resume-date {
-      min-width: none;
-    }
-  }
+  min-width: none;
 }
+
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;
@@ -21,9 +16,7 @@ section.resume-section {
     }
   }
 }
+
 @media (min-width: 992px) {
-  section.resume-section {
-    padding-top: 3rem !important;
-    // padding-bottom: 3rem !important;
-  }
+  section.resume-section {}
 }
