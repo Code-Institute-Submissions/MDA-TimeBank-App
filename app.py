@@ -2,6 +2,7 @@ import os
 import json
 from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
 from operator import itemgetter, attrgetter
+from scoring import user_list, score, limit_number_questions, challenge_q_a, display_score
 
 
 
@@ -10,59 +11,6 @@ app = Flask(__name__)
 app.secret_key = "some_secret"
 
 
-
-"""
-List to user store user details
-
-"""
-user_list = []
-   
-
-"""
-List to handle scores as game progresses
-
-"""
-score = []
-
-
-"""
-Scoring Function
-"""
-# Testing with score variable
-def limit_number_questions(guess, answer):
-    if guess <= 0:
-        points = 0
-    elif guess == answer:
-        points = 10
-    else:
-        if guess > answer + 10:
-            points = 0
-        elif guess < answer - 10:
-            points = 0
-        elif guess > answer and guess <= answer + 10:      
-            points = 5  
-        elif guess < answer and guess >= answer - 10: 
-            points = 5
-    score.append(points)
-
-    
-"""
-Challenge Q&A function
-"""
-def challenge_q_a(num):
-    if request.method == "POST":
-        with open("data/challenge.json", "r") as json_data:
-            data = json.load(json_data)
-                
-            # Call Scoring Function
-            limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
-
-
-"""
-Display Score Tally
-"""
-def display_score(): 
-    flash('Your Score = {}'.format(int(sum(score))))
 
 
 """
@@ -87,7 +35,7 @@ Challenge Pages
 @app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
     
-    # Q & A and Scoring Function (repreated each Challenge)
+    # Q & A and Scoring Function (repeated each Challenge)
     challenge_q_a(0)
     
     # Read challenge.js data for rendering (repeated each Challenge Page)
