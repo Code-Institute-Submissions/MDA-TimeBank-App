@@ -1,6 +1,3 @@
-# Markets Development Association: TimeBank App
-Write a README.md file for your project that explains what the project does and the need that it fulfills. It should also describe the functionality of the project, as well as the technologies used. If some of the work was based on other code, explain what was kept and how it was changed to fit your need. A project submitted without a README.md file will FAIL.
-
 ## General Information
 ### Developer
 Dessie Donnelly (email: des_donn@mailbox.org)
@@ -10,20 +7,21 @@ Market Development Association C/O Market Community Centre Belfast BT1 3JD (tel:
 Contact: Fionntan Hargey (email: fionntanh@hotmail.com)
 
 ### Project Overview
-The Markets Development Association (MDA): TimeBank App is a guessing game based on the
-results of 226 surveys carried out by residents in the Markets area of Belfast 
-themselves regarding community needs and skills.
+The <strong>Markets Development Association (MDA): TimeBank App</strong> is a guessing game based on the
+results of peer-to-peer research (226 surveys) carried out by residents in the Markets area of Belfast.
+ The research aimed to get a snapshot of priority social, economic and cultural 
+ needs in the community as well as a detailed skills audit.
 
-As participants work their way through the game, they are progressively introduced
+As participants work their way through the TimeBank App, they are progressively introduced
 to the concept of Timebanking and its resonance with the survey results.
 
-The MDA: TimeBank App is used at specific community events
-to generate discussion and interest. It has the capacity, per session, to store
-useful comments and emails of people who want more information.
+The TimeBank App is to be used at specific community events to generate discussion 
+and interest. It has the capacity, per session, to store useful comments and 
+emails of people who want more information.
 
 ## Functionality:
 ### Description
-The MDA: TimeBank App has the following functionalities:
+The TimeBank App has the following functionalities:
 <ul>
 <li>Landing Page with Start Game Button and navbar - further info and start</li>
 <li>Animated Challenge Pages</li>
@@ -39,16 +37,18 @@ The MDA: TimeBank App has the following functionalities:
 The Questions and Answers were written and stored in .json format (challenge.json) 
 and rendered into html using the Python Flask microframework.
 
-The Game Logic was written in Python and deployed utilising the Flask microframework, specifically:
+The <strong>Game Logic</strong> was protoyped in Python shell and deployed utilising 
+the Flask microframework, specifically:
 <ul>
-<li>keeping score - user guesses are stored in a temporary python list (score). The score 
+<li><strong>keeping score</strong> - user guesses are stored in a temporary python list (score). The score 
     is tallied following the last question and appended to a seprate python list (final_score). 
     json.dump is used to store the final score (alongside user registration details)
-    in a .txt outfile (user_info.txt). The temporary score list is emptied once a user starts a new game.</li>
-<li>displaying score - flask's flash() method is used to provide users with an ongoing score 
+    in a .txt outfile (user_info.txt). The temporary score list is emptied once a user starts a new game,
+    and the process repeats.</li>
+<li><strong>displaying score</strong> - flask's flash() method is used to provide users with an ongoing score 
     update prior to each new question. The flash() method is used again to display 
     user's Final Score on the registration page</li>
-<li>page progression - flask's redirect() function is used to automatically guide 
+<li><strong>page progression</strong> - flask's redirect() function is used to automatically guide 
     the user through the questions once the game has started</li>
 <li>registration - user input (name, email address & comments) is captured by 
     using a HTTP POST request and appended to the outfile (user_info.txt)</li>
@@ -65,10 +65,13 @@ are kept up to date for community events</li>
 
 A CSS bootstrap theme (https://blackrockdigital.github.io/startbootstrap-resume/) 
 was utilised during initial implementation stages, but heavily edited and added to 
-as the design developed to match functionalities required for the MDA: TimeBank App. 
-The original navigation bar colour and drop-down functionality, header font, as 
+as the design developed to match functionalities required for the TimeBank App.
+
+The original navigation bar colour and drop-down functionality, default header font, as 
 well as the flexbox formatting is retained, the rest of the styling was created 
-for the MDA: Timebank App. The original source code is demaracted in the SCSS files.
+by the developer specifically for the Timebank App. 
+
+
 
 ### Deployment
 The MDA: TimeBank app was deployed to the cloud platform Heroku (insert link)
@@ -77,7 +80,7 @@ The MDA: TimeBank app was deployed to the cloud platform Heroku (insert link)
 ### Testing
 "In this section, summarise your approach to testing and provide pseudocode you have written to develop your tests"
 
-There were four distinct appraoches taken to testing durig this project:
+There were three distinct approaches taken to testing durig this project:
 a) prototype development
 b) testing before deployment
 c) testing on functions
@@ -85,8 +88,8 @@ c) testing on functions
 Each stage required refactoring post-testing.
 
 
-A Prototype of the MDA: TimeBank App was first developed and tested on Command 
-Line Interface to determine the functions required to run the game (/testing/timeBankTeaser_proto.py)
+A <strong>Prototype</strong> of the TimeBank App was first developed and tested in a python interpreter 
+to determine the functions required to run the game (/testing/timeBankTeaser_proto.py)
 PSUEDOCODE
 
 Tests were developed on the following functionalities:
