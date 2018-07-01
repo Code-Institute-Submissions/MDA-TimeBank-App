@@ -12,7 +12,6 @@ app.secret_key = "some_secret"
 
 
 
-
 """
 Start Page
 """
@@ -31,7 +30,7 @@ def index():
 """
 Challenge Pages
 """
-# Challenge Page 1
+"""Challenge Page 1"""
 @app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
     
@@ -43,7 +42,7 @@ def challenge_1():
         data = json.load(json_data)
     return render_template("challenge_1.html", challenge_data = data)
 
-# Challenge Page 2
+"""Challenge Page 2"""
 @app.route('/challenge_2', methods=["GET", "POST"])
 def challenge_2():
     challenge_q_a(1)
@@ -52,7 +51,7 @@ def challenge_2():
         data = json.load(json_data)
     return render_template("challenge_2.html", challenge_data = data)
     
-# Challenge Page 3
+"""Challenge Page 3"""
 @app.route('/challenge_3', methods=["GET", "POST"])
 def challenge_3():
     challenge_q_a(2)
@@ -61,7 +60,7 @@ def challenge_3():
         data = json.load(json_data)
     return render_template("challenge_3.html", challenge_data = data)
 
-# Challenge Page 4
+"""Challenge Page 4"""
 @app.route('/challenge_4', methods=["GET", "POST"])
 def challenge_4():
     challenge_q_a(3)
@@ -70,7 +69,7 @@ def challenge_4():
         data = json.load(json_data)
     return render_template("challenge_4.html", challenge_data = data)
 
-# Challenge Page 5
+"""Challenge Page 5"""
 @app.route('/challenge_5', methods=["GET", "POST"])
 def challenge_5():
     challenge_q_a(4)
@@ -79,7 +78,7 @@ def challenge_5():
         data = json.load(json_data)
     return render_template("challenge_5.html", challenge_data = data)
 
-# Challenge Page 6
+"""Challenge Page 6"""
 @app.route('/challenge_6', methods=["GET", "POST"])
 def challenge_6():
     challenge_q_a(5)
@@ -88,7 +87,7 @@ def challenge_6():
         data = json.load(json_data)
     return render_template("challenge_6.html", challenge_data = data)
 
-# Challenge Page 7
+"""Challenge Page 7"""
 @app.route('/challenge_7', methods=["GET", "POST"])
 def challenge_7():
     challenge_q_a(6)
@@ -97,7 +96,7 @@ def challenge_7():
         data = json.load(json_data)
     return render_template("challenge_7.html", challenge_data = data)
 
-# Challenge Page 8
+"""Challenge Page 8"""
 @app.route('/challenge_8', methods=["GET", "POST"])
 def challenge_8():
     challenge_q_a(7)
@@ -123,14 +122,12 @@ def registration():
         message = request.form["message"]
         final_score = int(sum(score))
         
-
         user_list.append({
         "name": name,
         "email": email,
         "message": message,
         "score": final_score,
         })
-        
         
         with open('data/user_info.txt', 'w') as outfile:  
             json.dump(user_list, outfile)
@@ -162,7 +159,6 @@ More Information Page
 @app.route('/information')
 def information():
     return render_template("information.html", page_title="Find out more...")
-
 
 
 if __name__ == "__main__":
