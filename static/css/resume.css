@@ -97,6 +97,7 @@ hr {
           display: block; }
           #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
             display: block; } }
+
 section.resume-section {
   min-height: 100vh;
   border-bottom: 1px solid #dee2e6;
@@ -108,11 +109,14 @@ section.resume-section {
     min-height: 100vh; }
     section.resume-section .resume-item .resume-date {
       min-width: 18rem; } }
+
 .bg-primary {
   background-color: #BD5D38 !important; }
 
+
 .text-primary {
   color: #BD5D38 !important; }
+
 
 a {
   color: #BD5D38; }
