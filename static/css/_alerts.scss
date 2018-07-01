@@ -3,7 +3,6 @@
         family: 'Saira Extra Condensed', serif;
     }
     background-color: #000;
-        -webkit-box-shadow: 12px 10px 9px #525050;
     box-shadow: 12px 10px 9px #525050;
     width: 90%;
     position: fixed;
@@ -14,17 +13,17 @@
     line-height: 1;
     
     p {
-        font-size: 3rem;
+        font-size: 1.5rem;
         color: white;
         font-weight: 400;
     }
     h2 {
-        font-size: 3rem;
+        font-size: 2rem;
         color: #bf5d31;
     }
 
     .close {
-        font-size: 5rem;
+        font-size: 3rem;
         color: white;
     }
 }
@@ -42,10 +41,6 @@
             font-size: 2rem;
             color: white;
             font-weight: 400;
-        }
-        h2 {
-            font-size: 2rem;
-            color: #bf5d31;
         }
 
     }
