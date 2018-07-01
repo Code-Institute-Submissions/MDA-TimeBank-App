@@ -1,36 +1,31 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+<div class="container-fluid p-0">
 
-<div class="container-fluid p-0 bk-image-2">
-    
     <!--ALERT Message with TimeBank survey details-->
     <div class="alert alert-dismissible alert-warning">
         <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
         <h2>What's this about?</h2>
         <hr>
-        <p>There are around 2,500 people living in the Markets.<br><br>
-        Over the last year 226 residents provided information about the skills, knowledge
-        and expertise they have - and what support they could do with or would like.<br></p>
+        <p>There are around 2,500 people living in the Markets.<br><br> Over the last year 226 residents provided information about the skills, knowledge and expertise they have - and what support they could do with or would like.<br></p>
         <h2>Take the challenge and see how resourceful your neighbours are!</h2><br>
         <h2>
             <strong>'Right Answer'..................10 points<br><br>
             'Close Enough' (+/- 10)..........5 points</strong></h2>
     </div>
-    
+
     <!--Challenge 1 Details from data/challenge.json-->
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
-        <div class="my-auto">
-            <div class="parent_1">
-                <div class="left input-group">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-2">
+            <div class="parent_1 challenge-body">
+                <!--<div class="left input-group">-->
                     <h1 class="challenge-numbers_1 hidden">{{ challenge_data[0]["need_amount"] }}</h1>
-                </div>
-                <div class="right">
+                <!--</div>-->
+                <!--<div class="right">-->
                     <h2 class="hidden">{{ challenge_data[0]["need_statement"] }}</h2>
-                </div>
+                <!--</div>-->
             </div>
             <div>
-                <h1 class="mb-5 challenge-page-title hidden_title">{{ challenge_data[0]["title"] }}</h1>
+                <h1 class="challenge-page-title hidden_title">{{ challenge_data[0]["title"] }}</h1>
                 <a href="/challenge_2"><i class="fas fa-hand-point-right fa-9x hidden_icon"></i></a>
             </div>
             <div>
@@ -38,7 +33,7 @@
             </div>
             <div class="parent_2">
 
-                <!-- Guess Button (Ajax Request) -->
+                <!--Guess Button (Ajax Request) -->
                 <form method='POST' class="form hidden_title" name="guess" onsubmit="return(false)">
                     <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Guess" required>
                     <input type='button' id="numScore" class="btn-lg btn-danger challenge_btn" value='Go!'>
@@ -48,9 +43,7 @@
                     <h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[0]["skill_answer"] }}</h1>
                 </div>
             </div>
-        </div>
     </section>
-
 </div>
 
 {% endblock %}

@@ -1,3 +1,17 @@
+/*My code*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Saira Extra Condensed', serif;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+h2 {
+  font-size: 2.5rem; }
+
 /*Home page heading*/
 .landing-page {
   font-size: 8rem !important;
@@ -11,23 +25,21 @@
 h1 {
   font-size: 6rem; }
 
+/*Challenge fonts*/
+.challenge-page-title {
+  font-size: 8rem;
+  color: #2e72aa; }
+  @media (min-width: 768px) {
+    .challenge-page-title {
+      margin: 1.5rem 0rem; } }
+  @media (min-width: 992px) {
+    .challenge-page-title {
+      font-size: 10rem; } }
+
 body {
   font-family: 'Open Sans', serif;
   padding-top: 54px;
   color: #868e96; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Saira Extra Condensed', serif;
-  font-weight: 700;
-  text-transform: uppercase; }
-
-h2 {
-  font-size: 3.5rem; }
 
 .subheading {
   text-transform: uppercase;
@@ -51,6 +63,11 @@ hr {
 Boostrap provided theme - https://blackrockdigital.github.io/startbootstrap-resume/
 adapted for size, colour and shadows
 */
+.mda_logo {
+  max-width: 12rem !important;
+  border: none !important;
+  padding: 0 !important; }
+
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
   font-family: 'Open Sans';
@@ -82,10 +99,8 @@ adapted for size, colour and shadows
       margin: auto auto 0;
       padding: 0.5rem; }
       #sideNav .navbar-brand .img-profile {
-        max-width: 30rem;
-        max-height: 30rem;
-        box-shadow: 5px 6px 13px black;
-        border: 0.5rem solid rgba(255, 255, 255, 0.2); }
+        max-width: 12rem;
+        box-shadow: 5px 6px 13px black; }
     #sideNav .navbar-collapse {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -108,17 +123,6 @@ adapted for size, colour and shadows
           display: block; }
           #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
             display: block; } }
-section.resume-section {
-  min-height: 100vh;
-  border-bottom: 1px solid #dee2e6;
-  padding-top: 5rem !important;
-  min-width: none; }
-
-@media (min-width: 768px) {
-  section.resume-section {
-    min-height: 100vh; }
-    section.resume-section .resume-item .resume-date {
-      min-width: 18rem; } }
 .bg-primary {
   background-color: #BD5D38 !important; }
 
@@ -130,7 +134,6 @@ a {
 .alert {
   font-family: 'Saira Extra Condensed', serif;
   background-color: #000;
-  -webkit-box-shadow: 12px 10px 9px #525050;
   box-shadow: 12px 10px 9px #525050;
   width: 90%;
   position: fixed;
@@ -140,14 +143,14 @@ a {
   border-radius: 25px;
   line-height: 1; }
   .alert p {
-    font-size: 3rem;
+    font-size: 1.5rem;
     color: white;
     font-weight: 400; }
   .alert h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #bf5d31; }
   .alert .close {
-    font-size: 5rem;
+    font-size: 3rem;
     color: white; }
 
 @media (min-width: 992px) {
@@ -157,71 +160,76 @@ a {
     top: 20%;
     left: 30%; }
     .alert p {
-      font-size: 2rem;
-      color: white;
-      font-weight: 400; }
-    .alert h2 {
-      font-size: 2rem;
-      color: #bf5d31; } }
+      font-size: 2rem; } }
 .bk-image-1 {
   background-image: url(/static/img/hands.jpeg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-position: center; }
 
 .bk-image-2 {
   background-image: url(/static/img/computer-web.jpeg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-position: center; }
 
 .bk-image-3 {
   background-image: url(/static/img/bike_wheel.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-position: center; }
 
 .bk-image-4 {
   background-image: url(/static/img/decorate-web.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-position: center; }
 
 .bk-image-5 {
   background-image: url(/static/img/wrench-web.jpeg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-position: center; }
 
 .bk-image-6 {
   background-image: url(/static/img/car-web.jpeg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-position: center; }
 
 .bk-image-7 {
   background-image: url(/static/img/yoga-web.jpeg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-position: center; }
 
 .bk-image-8 {
   background-image: url(/static/img/knitting.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-position: center; }
 
 .bk-image-9 {
   background-image: url(/static/img/guitar.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-position: center; }
 
 .bk-image-10 {
   background-image: url(/static/img/hands_mess_board.jpeg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover; }
+  background-attachment: fixed;
+  background-position: center; }
 
 .hidden,
 .hidden_title,
@@ -230,46 +238,32 @@ a {
 .hidden_icon {
   display: none; }
 
+/*Spacing*/
+.challenge-body {
+  margin-top: 8rem; }
+
+/*Code adapted from bootstrap theme*/
 .parent_1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  width: 100%;
   background-color: white;
-  opacity: .8;
-  margin: 1rem; }
+  opacity: .8; }
 
 .parent_2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   opacity: .8;
   margin: 1rem; }
 
 .parent > div {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
   padding: 2rem; }
-
-.challenge-page-title {
-  font-size: 11rem;
-  line-height: 8rem;
-  color: #2e72aa;
-  margin: 4.5rem 0rem; }
 
 section h2 {
   color: #343a40; }
 
 .challenge-numbers_1 {
   font-family: 'Skranji', cursive;
-  font-size: 20rem;
+  font-size: 10rem;
   line-height: 5rem;
   padding-top: 1rem;
   color: #2e72aa;
@@ -277,18 +271,20 @@ section h2 {
 
 .challenge-numbers_2 {
   font-family: 'Skranji', cursive;
-  font-size: 20rem;
+  font-size: 11rem;
   line-height: 5rem;
   color: #BD5D38;
   margin-top: 5rem;
   padding: 0rem;
   text-shadow: 7px -3px black;
-  -webkit-box-sizing: none;
   box-sizing: none; }
+  @media (min-width: 992px) {
+    .challenge-numbers_2 {
+      font-size: 15rem; } }
 
 .answer_txt {
   font-family: 'Skranji', cursive;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 1rem;
   color: white;
   background-color: #BD5D38; }
@@ -302,26 +298,16 @@ section h2 {
 
 .fa-hand-point-right {
   position: fixed;
-  top: 35%;
-  left: 55%;
-  font-size: 25rem;
+  top: 10%;
+  left: 65%;
+  font-size: 10rem;
   color: #000;
   opacity: .8;
   z-index: 10; }
 
-@media (min-width: 768px) {
-  .challenge-page-title {
-    margin: 1.5rem 0rem; } }
 @media (min-width: 992px) {
   .challenge-numbers_1 {
     font-size: 17rem; }
-
-  .challenge-numbers_2 {
-    font-size: 15rem; }
-
-  .challenge-page-title {
-    margin: 1.5rem 0rem;
-    font-size: 10rem; }
 
   section h2 {
     font-size: 4rem; }
@@ -334,6 +320,17 @@ section h2 {
     top: 20%;
     left: 70%;
     font-size: 20remgit status; } }
+section.resume-section {
+  min-height: 100vh;
+  min-width: 100%;
+  border-bottom: 1px solid #dee2e6;
+  min-width: none; }
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: 100vh; }
+    section.resume-section .resume-item .resume-date {
+      min-width: 18rem; } }
 #end-score {
   color: #BD5D38;
   background-color: black; }

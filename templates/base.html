@@ -14,12 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Skranji:700" rel="stylesheet">
 
-    <!--Delete - from bootstrap-->
-    <!--<link href="{{ url_for('static', filename='vendor/devicons/css/devicons.min.css') }}" rel="stylesheet">-->
-    <!--<link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">-->
-
+    <!--Font-awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-
 
     <!-- Custom styles -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}" type="text/css" />
@@ -30,17 +26,13 @@
 
 
 <body id="page-top">
-    
-    <!--Collapsable navbar-->
+
+<!--Collapsable navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id='sideNav'>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-    <a class="navbar-brand js-scroll-trigger">
-        <span class="d-lg-none"><img class="mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo"></span>
-        <span class="d-none d-lg-block">
-         <img class="img-fluid img-profile mb-2 mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo">
-        </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <a class="navbar-brand">
+        <span class="d-lg-none"><img class="img-profile mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo"></span>
+        <span class="d-none d-lg-block"><img class="img-profile mb-2 mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo"></span>
     </a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -54,21 +46,27 @@
         </div>
     </nav>
 
-    {% block content %} {% endblock %}
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+{% block content %} {% endblock %}
 
-    <!-- Plugin JavaScript -->
-    <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+<!--JQuery-->
+<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
 
-    <!--Font-awesome JavaScript-->
-    <script src="https://use.fontawesome.com/0ac03ef31e.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="{{ url_for('static', filename='js/resume.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/challenge.js') }}"></script>
+<!--Materialize JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+<!--Font-awesome JavaScript-->
+<script src="https://use.fontawesome.com/0ac03ef31e.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="{{ url_for('static', filename='js/resume.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/challenge.js') }}"></script>
 
 </body>
 

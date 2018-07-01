@@ -3,6 +3,12 @@ Boostrap provided theme - https://blackrockdigital.github.io/startbootstrap-resu
 adapted for size, colour and shadows
 */
 
+.mda_logo {
+    max-width: 12rem !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
 
 
 #sideNav {
@@ -11,6 +17,7 @@ adapted for size, colour and shadows
       weight: 600;
       family: 'Open Sans';
     }
+
     @media (min-width: 992px) {
       font-size: 1.5rem;
     }
@@ -18,7 +25,6 @@ adapted for size, colour and shadows
     background-color: $orange;
   }
 }
-
 
 
 @media (min-width: 992px) {
@@ -29,9 +35,7 @@ adapted for size, colour and shadows
     left: 0;
 
     display: -webkit-box;
-
     display: -ms-flexbox;
-
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -50,10 +54,10 @@ adapted for size, colour and shadows
       padding: 0.5rem;
       
       .img-profile {
-        max-width: 30rem;
-        max-height: 30rem;
+        max-width: 12rem;
+        // max-height: auto;
         box-shadow: 5px 6px 13px black;
-        border: 0.5rem solid fade-out($white, 0.8);
+        // border: 0.5rem solid fade-out($white, 0.8);
       }
     }
     .navbar-collapse {

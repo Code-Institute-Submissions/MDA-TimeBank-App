@@ -217,10 +217,10 @@
 
 /*Padding and Margins*/
 
-.my-auto {
-    margin-top: 10rem;
-    padding-left: 2rem;
-}
+/*.my-auto {*/
+/*    margin-top: 10rem;*/
+/*    padding-left: 2rem;*/
+/*}*/
 
 h1,
 h2,
@@ -275,11 +275,6 @@ section>p {
 
 /*navBar*/
 
-.mda_logo {
-    max-width: 12rem !important;
-    border: none !important;
-    padding: 0 !important;
-}
 
 
 

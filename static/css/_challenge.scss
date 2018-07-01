@@ -1,3 +1,5 @@
+//*My code*/
+
 // Background Images
 .bk-image-1 {
     background-image: url(/static/img/hands.jpeg);
@@ -59,54 +61,46 @@
 }
 
 
+/*Spacing*/
+.challenge-body {
+    margin-top: 8rem;
+}
+
+
+/*Code adapted from bootstrap theme*/
+
 // Flexbox styling for Headers & subheadings
 .parent_1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    width: 100%;
     background-color: white;
     opacity: .8;
-    margin: 1rem;
 }
 
 .parent_2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     opacity: .8;
     margin: 1rem;
 }
 
 .parent>div {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    // flex: 1;
     padding: 2rem;
 }
 
 // FONTS for Challenge Pages
-.challenge-page-title {
-    font-size: 11rem;
-    line-height: 8rem;
-    color: $blue;
-    margin: 4.5rem 0rem;
 
-}
 
 section h2 {
     color: $gray-800;
 }
 
+
+
 .challenge-numbers_1 {
     @include challenge-font;
-    font-size: 20rem;
+    font-size: 10rem;
     line-height: 5rem;
     padding-top: 1rem;
     color: $blue;
@@ -115,19 +109,22 @@ section h2 {
 
 .challenge-numbers_2 {
     @include challenge-font;
-    font-size: 20rem;
+    font-size: 11rem;
     line-height: 5rem;
     color: $orange;
     margin-top: 5rem;
     padding: 0rem;
     text-shadow: 7px -3px black;
-    -webkit-box-sizing: none;
     box-sizing: none;
+    
+    @media (min-width: 992px) {
+        font-size: 15rem;
+    }
 }
 
 .answer_txt {
     @include challenge-font;
-    font-size: 3rem;
+    font-size: 2rem;
     margin-top: 1rem;
     color: white;
     background-color: $orange;
@@ -147,33 +144,19 @@ section h2 {
 // Icon
 .fa-hand-point-right {
     position: fixed;
-    top: 35%;
-    left: 55%;
-    font-size: 25rem;
+    top: 10%;
+    left: 65%;
+    font-size: 10rem;
     color: #000;
     opacity: .8;
     z-index: 10;
 }
 
-@media (min-width: 768px) {
-    .challenge-page-title {
-        margin: 1.5rem 0rem;
-    }
-}
 
 @media (min-width: 992px) {
     // FONTS for Challenge Pages
     .challenge-numbers_1 {
         font-size: 17rem;
-    }
-
-    .challenge-numbers_2 {
-        font-size: 15rem;
-    }
-
-    .challenge-page-title {
-        margin: 1.5rem 0rem;
-        font-size: 10rem;
     }
 
     section h2 {
@@ -189,4 +172,29 @@ section h2 {
         left: 70%;
         font-size: 20remgit status;
     }
+}
+
+
+section.resume-section {
+  min-height: 100vh;
+  min-width: 100%;
+  border-bottom: 1px solid $gray-300;
+  // padding-top: 5rem !important;
+  min-width: none;
+}
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: 100vh;
+    .resume-item {
+      .resume-content {}
+      .resume-date {
+        min-width: 18rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  section.resume-section {}
 }

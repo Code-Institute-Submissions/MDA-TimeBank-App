@@ -1,13 +1,5 @@
-// Mixins
+/*My code*/
 // Bootstrap Button Variant
-@mixin background-cover {
-  background-repeat: no-repeat;
-  background-position: 50% 5%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 
 @mixin nav-font {
   font-family: 'Open Sans', serif;
@@ -23,9 +15,10 @@
 }
 
 @mixin background-image {
-  background-repeat: no-repeat;
-  background-position: 50% 5%;
-  background-size: cover;
+    background: {
+        size: cover;
+        repeat: no-repeat;
+        attachment: fixed;
+        position: center;
+    }
 }
-
-
