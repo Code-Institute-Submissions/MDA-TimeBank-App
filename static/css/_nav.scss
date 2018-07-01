@@ -7,6 +7,7 @@ adapted for size, colour and shadows
     max-width: 12rem !important;
     border: none !important;
     padding: 0 !important;
+    box-shadow: 5px 6px 13px black;
 }
 
 
@@ -53,12 +54,9 @@ adapted for size, colour and shadows
       margin: auto auto 0;
       padding: 0.5rem;
       
-      .img-profile {
-        max-width: 12rem;
-        // max-height: auto;
-        box-shadow: 5px 6px 13px black;
-        // border: 0.5rem solid fade-out($white, 0.8);
-      }
+      // .img-profile {
+      //   max-width: 12rem;
+      // }
     }
     .navbar-collapse {
       display: -webkit-box;
