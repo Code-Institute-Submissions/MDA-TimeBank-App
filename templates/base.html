@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>MDA timeBank</title>
 
@@ -12,17 +13,18 @@
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Skranji:700" rel="stylesheet">
-    <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='vendor/devicons/css/devicons.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <!--Delete - from bootstrap-->
+    <!--<link href="{{ url_for('static', filename='vendor/devicons/css/devicons.min.css') }}" rel="stylesheet">-->
+    <!--<link href="{{ url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">-->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
 
-    <!-- Custom styles for this template -->
-    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/resume.min.css') }}" type="text/css" />-->
+    <!-- Custom styles -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
-<!--Above sheets to be sorted - delete styles.css following emptying into scss-->
+    <!--Above sheets to be sorted - delete styles.css following emptying into scss-->
 
 
 
@@ -37,7 +39,7 @@
         <a class="navbar-brand js-scroll-trigger">
         <span class="d-block d-lg-none"><img class="mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo"></span>
         <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile mx-auto mb-2 mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo">
+         <i class="fab fa-accessible-icon"></i><img class="img-fluid img-profile mx-auto mb-2 mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo">
         </span>
       </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,8 +58,6 @@
     </nav>
 
 
-    <!--Body Copied END-->
-
     {% block content %} {% endblock %}
 
     <!-- Bootstrap core JavaScript -->
@@ -67,13 +67,15 @@
     <!-- Plugin JavaScript -->
     <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
-
-
+    <!--Font-awesome JavaScript-->
+    <script src="https://use.fontawesome.com/0ac03ef31e.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='js/resume.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/challenge.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/scoring.js') }}"></script>
+
+    <!--Delete - does not exist-->
+    <!--<script src="{{ url_for('static', filename='js/scoring.js') }}"></script>-->
 
 </body>
 
