@@ -26,37 +26,33 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
     <!--Above sheets to be sorted - delete styles.css following emptying into scss-->
 
-
-
 </head>
 
 
-<!--Body Copied START-->
-
 <body id="page-top">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-        <a class="navbar-brand js-scroll-trigger">
-        <span class="d-block d-lg-none"><img class="mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo"></span>
-        <span class="d-none d-lg-block">
-         <img class="img-fluid img-profile mx-auto mb-2 mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo">
-        </span>
-      </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    
+    <!--Collapsable navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id='sideNav'>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
+        </button>
+    <a class="navbar-brand js-scroll-trigger">
+        <span class="d-lg-none"><img class="mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo"></span>
+        <span class="d-none d-lg-block">
+         <img class="img-fluid img-profile mb-2 mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo">
+        </span>
+    </a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url_for('index') }}">Start the Challenge!</a>
+                    <a class="nav-link" href="{{ url_for('index') }}">Start the Challenge!</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url_for('information') }}">More Information</a>
+                    <a class="nav-link" href="{{ url_for('information') }}">More Information</a>
                 </li>
             </ul>
         </div>
     </nav>
-
 
     {% block content %} {% endblock %}
 
@@ -73,9 +69,6 @@
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='js/resume.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/challenge.js') }}"></script>
-
-    <!--Delete - does not exist-->
-    <!--<script src="{{ url_for('static', filename='js/scoring.js') }}"></script>-->
 
 </body>
 

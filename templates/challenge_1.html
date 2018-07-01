@@ -1,9 +1,10 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block content %}
 
 <div class="container-fluid p-0 bk-image-2">
     
     <!--ALERT Message with TimeBank survey details-->
-    
     <div class="alert alert-dismissible alert-warning">
         <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
         <h2>What's this about?</h2>
@@ -18,7 +19,6 @@
     </div>
     
     <!--Challenge 1 Details from data/challenge.json-->
-    
     <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
         <div class="my-auto">
             <div class="parent_1">
@@ -38,22 +38,17 @@
             </div>
             <div class="parent_2">
 
-
                 <!-- Guess Button (Ajax Request) -->
-                
                 <form method='POST' class="form hidden_title" name="guess" onsubmit="return(false)">
                     <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Guess" required>
                     <input type='button' id="numScore" class="btn-lg btn-danger challenge_btn" value='Go!'>
                     <h2 class="hidden_answer answer_txt">The correct answer is...</h2>
                 </form>
-                    
-                
                 <div>
                     <h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[0]["skill_answer"] }}</h1>
                 </div>
             </div>
         </div>
-
     </section>
 
 </div>
