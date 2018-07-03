@@ -14,16 +14,13 @@ h2 {
 
 /*Home page heading*/
 .landing-page {
-  font-size: 8rem !important;
-  line-height: 6.5rem !important;
+  font-size: 10rem;
+  line-height: 9.5rem !important;
   color: white;
   text-shadow: 5px -2px black; }
 
 .text-primary {
   color: #BD5D38 !important; }
-
-h1 {
-  font-size: 6rem; }
 
 /*Challenge fonts*/
 .challenge-page-title {
@@ -42,6 +39,9 @@ body {
   color: #868e96; }
 
 .subheading {
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  color: #fafafa;
   text-transform: uppercase;
   font-weight: 500;
   font-family: 'Saira Extra Condensed', serif; }
@@ -141,11 +141,11 @@ a {
   border-radius: 25px;
   line-height: 1; }
   .alert p {
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     color: white;
     font-weight: 400; }
   .alert h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #bf5d31; }
   .alert .close {
     font-size: 3rem;
@@ -286,10 +286,6 @@ section h2 {
   color: white;
   background-color: #BD5D38; }
 
-.subheading {
-  font-size: 3.5rem;
-  color: #fafafa; }
-
 .input-group {
   width: 45%; }
 
@@ -355,7 +351,7 @@ section.resume-section {
   max-width: 50%; }
 
 .btn-lg {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   line-height: 1.5;
   border-radius: 18px !important;
   margin: 1rem; }
