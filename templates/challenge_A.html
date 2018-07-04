@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %}
+
+<body class="bk-image-2">
+
+    <div class="container">
+
+        <!--ALERT Message with TimeBank survey details-->
+        <div class="alert alert-dismissible alert-warning">
+            <button type="button" class="close btn-lg" data-dismiss="alert">&#10006;</button>
+            <h2>What's this about?</h2>
+            <hr>
+            <p>There are around 2,500 people living in the Markets.<br><br> Over the last year 226 residents provided information about the skills, knowledge and expertise they have - and what support they could do with or would like.<br></p>
+            <h2>Take the challenge and see how resourceful your neighbours are!</h2><br>
+            <h2>
+                <strong>'Right Answer'..................10 points<br><br>
+            'Close Enough' (+/- 10)..........5 points</strong></h2>
+        </div>
+
+        <!--Challenge 1 Details from data/challenge.json-->
+        <div class="row challenge-body">
+            <div class="col-xs-12">
+                <h2 class="challenge-numbers_1 hidden">{{ challenge_data[0]["need_amount"] }}</h2>
+            </div>
+            <div class="col-xs-12">
+                <h2 class="challenge_statement hidden">{{ challenge_data[0]["need_statement"] }}</h2>
+            </div>
+
+            <div class="col-xs-12">
+                <h1 class="challenge-page-title hidden_title">{{ challenge_data[0]["title"] }}</h1>
+            </div>
+            <div class="col-xs-12">
+                <a href="/challenge_2"><i class="fas fa-hand-point-right fa-9x hidden_icon"></i></a>
+            </div>
+            <div class="col-xs-12">
+                <h2 class="challenge_statement_2 hidden_title">{{ challenge_data[0]["skill_question"] }}</h2>
+            </div>
+            <!--Guess Button (Ajax Request) -->
+            <div class="col-xs-12">
+                <form method='POST' class="form hidden_title" name="guess" onsubmit="return(false)">
+                    <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Guess" required>
+                    <input type="button" id="numScore" class="btn-lg btn-danger challenge_btn" value='Go!'>
+                </form>
+                <h2 class="hidden_answer answer_txt">The correct answer is...</h2>
+                <h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[0]["skill_answer"] }}</h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

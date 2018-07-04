@@ -31,7 +31,7 @@ def index():
 Challenge Pages
 """
 """Challenge Page 1"""
-@app.route('/challenge_A', methods=["GET", "POST"])
+@app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
     
     # Q & A and Scoring Function (repeated each Challenge)

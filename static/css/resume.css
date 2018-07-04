@@ -10,7 +10,7 @@ h6 {
   text-transform: uppercase; }
 
 h2 {
-  font-size: 2.5rem; }
+  font-size: 1.5rem; }
 
 /*Home page heading*/
 .landing-page {
@@ -24,7 +24,7 @@ h2 {
 
 /*Challenge fonts*/
 .challenge-page-title {
-  font-size: 8rem;
+  font-size: 6rem;
   color: #2e72aa; }
   @media (min-width: 768px) {
     .challenge-page-title {
@@ -35,7 +35,6 @@ h2 {
 
 body {
   font-family: 'Open Sans', serif;
-  padding-top: 54px;
   color: #868e96; }
 
 .subheading {
@@ -64,10 +63,13 @@ Boostrap provided theme - https://blackrockdigital.github.io/startbootstrap-resu
 adapted for size, colour and shadows
 */
 .mda_logo {
-  max-width: 12rem !important;
+  max-width: 9rem !important;
   border: none !important;
   padding: 0 !important;
   box-shadow: 5px 6px 13px black; }
+
+.navbar-toggler-icon {
+  font-size: 1.5rem !important; }
 
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
@@ -167,7 +169,7 @@ a {
   background-position: center; }
 
 .bk-image-2 {
-  background-image: url(/static/img/computer-web.jpeg);
+  background: url(/static/img/computer-web.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -236,24 +238,8 @@ a {
 .hidden_icon {
   display: none; }
 
-/*Spacing*/
 .challenge-body {
-  margin-top: 8rem; }
-
-.parent_1 {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  opacity: .8; }
-
-.parent_2 {
-  display: flex;
-  align-items: center;
-  opacity: .8;
-  margin: 1rem; }
-
-.parent > div {
-  padding: 2rem; }
+  margin-top: 10rem; }
 
 section h2 {
   color: #343a40; }
@@ -264,24 +250,33 @@ section h2 {
   line-height: 5rem;
   padding-top: 1rem;
   color: #2e72aa;
-  opacity: .9; }
+  opacity: .9;
+  text-shadow: 5px 5px 16px black; }
 
 .challenge-numbers_2 {
   font-family: 'Skranji', cursive;
-  font-size: 11rem;
+  font-size: 7rem;
   line-height: 5rem;
   color: #BD5D38;
-  margin-top: 5rem;
-  padding: 0rem;
+  margin-top: 1rem;
   text-shadow: 7px -3px black;
-  box-sizing: none; }
+  text-align: right; }
   @media (min-width: 992px) {
     .challenge-numbers_2 {
       font-size: 15rem; } }
 
+.challenge_statement {
+  background-color: white;
+  padding: .2rem; }
+
+.challenge_statement_2 {
+  background-color: black;
+  padding: .2rem;
+  color: white; }
+
 .answer_txt {
-  font-family: 'Skranji', cursive;
-  font-size: 2rem;
+  font-family: 'Open Sans', serif;
+  font-size: 1rem;
   margin-top: 1rem;
   color: white;
   background-color: #BD5D38; }
@@ -291,39 +286,18 @@ section h2 {
 
 .fa-hand-point-right {
   position: fixed;
-  top: 10%;
+  top: 15%;
   left: 65%;
-  font-size: 10rem;
+  font-size: 7rem;
   color: #000;
   opacity: .8;
   z-index: 10; }
 
-@media (min-width: 992px) {
-  .challenge-numbers_1 {
-    font-size: 17rem; }
+.input-lg {
+  font-size: 1rem;
+  max-width: 50%;
+  margin-left: 1rem; }
 
-  section h2 {
-    font-size: 4rem; }
-
-  .input-group {
-    width: 35%; }
-
-  .fa-hand-point-right {
-    position: fixed;
-    top: 20%;
-    left: 70%;
-    font-size: 20remgit status; } }
-section.resume-section {
-  min-height: 100vh;
-  min-width: 100%;
-  border-bottom: 1px solid #dee2e6;
-  min-width: none; }
-
-@media (min-width: 768px) {
-  section.resume-section {
-    min-height: 100vh; }
-    section.resume-section .resume-item .resume-date {
-      min-width: 18rem; } }
 #end-score {
   color: #BD5D38;
   background-color: black; }
@@ -346,12 +320,8 @@ section.resume-section {
 .text-primary {
   color: #BD5D38 !important; }
 
-.input-lg {
-  font-size: 2rem;
-  max-width: 50%; }
-
 .btn-lg {
-  font-size: 2.5rem;
+  font-size: 1rem;
   line-height: 1.5;
   border-radius: 18px !important;
   margin: 1rem; }

@@ -4,12 +4,15 @@ adapted for size, colour and shadows
 */
 
 .mda_logo {
-    max-width: 12rem !important;
+    max-width: 9rem !important;
     border: none !important;
     padding: 0 !important;
     box-shadow: 5px 6px 13px black;
 }
 
+.navbar-toggler-icon {
+    font-size: 1.5rem !important;
+}
 
 
 #sideNav {
