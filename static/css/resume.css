@@ -33,7 +33,9 @@ h2 {
   @media (min-width: 768px) {
     .challenge-page-title {
       margin: 1.5rem 0rem;
-      font-size: 8rem; } }
+      font-size: 8rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem; } }
   @media (min-width: 992px) {
     .challenge-page-title {
       font-size: 10rem; } }
@@ -330,7 +332,8 @@ a {
   margin-left: 1rem; }
   @media (min-width: 768px) {
     .input-lg {
-      font-size: 2rem; } }
+      font-size: 2rem;
+      margin-top: 2rem; } }
 
 #end-score {
   color: #BD5D38;
