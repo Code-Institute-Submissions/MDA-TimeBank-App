@@ -35,5 +35,9 @@ $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
 // Page Variables
-
 $sidebar-base-width: 17rem;
+
+/*Media breakpoints*/
+$break-small: 768px;
+$break-medium: 992px;
+$break-large: 1200px;

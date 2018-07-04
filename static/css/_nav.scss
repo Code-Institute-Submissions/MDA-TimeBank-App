@@ -5,6 +5,11 @@ adapted for size, colour and shadows
 
 .mda_logo {
     max-width: 9rem !important;
+    
+    @media (min-width: $break-small) {
+      max-width: 12rem !important;
+    }
+    
     border: none !important;
     padding: 0 !important;
     box-shadow: 5px 6px 13px black;

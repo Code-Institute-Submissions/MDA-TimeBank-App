@@ -40,8 +40,9 @@
                     <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Guess" required>
                     <input type="button" id="numScore" class="btn-lg btn-danger challenge_btn" value='Go!'>
                 </form>
+            
                 <h2 class="hidden_answer answer_txt">The correct answer is...</h2>
-                <h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[0]["skill_answer"] }}</h1>
+                <span><h1 class="hidden_answer challenge-numbers_2">{{ challenge_data[0]["skill_answer"] }}</h1></span>
             </div>
         </div>
     </div>

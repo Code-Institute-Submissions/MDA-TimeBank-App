@@ -12,6 +12,9 @@ h6 {
 
 h2 {
   font-size: 1.5rem;
+  @media (min-width: $break-small) {
+    font-size: 2rem;
+  }
 }
 
 /*Home page heading*/
@@ -34,9 +37,10 @@ h2 {
   font-size: 6rem;
   color: $blue;
 
-  @media (min-width: 768px) {
+  @media (min-width: $break-small) {
     margin: 1.5rem 0rem;
-  }
+    font-size: 8rem;
+    }
 
   @media (min-width: 992px) {
     font-size: 10rem;

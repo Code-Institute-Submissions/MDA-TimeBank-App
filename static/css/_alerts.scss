@@ -13,18 +13,20 @@
     line-height: 1;
     
     p {
-        font-size: 3.5rem;
+        font-size: 1rem;
         color: white;
         font-weight: 400;
     }
     h2 {
-        font-size: 3rem;
+        font-size: 1.2rem;
         color: #bf5d31;
+        text-align: center;
     }
 
     .close {
-        font-size: 3rem;
+        font-size: 2rem;
         color: white;
+        padding: 0;
     }
 }
 
@@ -32,7 +34,7 @@
     .alert {
         width: 60%;
         position: fixed;
-        top: 20%;
+        top: 5%;
         left: 30%;
 
         p {
@@ -40,4 +42,8 @@
         }
 
     }
+}
+
+.alert-warning {
+    padding: 1rem;
 }

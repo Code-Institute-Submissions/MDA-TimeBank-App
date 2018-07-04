@@ -1,3 +1,4 @@
+/*Media breakpoints*/
 /*My code*/
 h1,
 h2,
@@ -11,6 +12,9 @@ h6 {
 
 h2 {
   font-size: 1.5rem; }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 2rem; } }
 
 /*Home page heading*/
 .landing-page {
@@ -28,7 +32,8 @@ h2 {
   color: #2e72aa; }
   @media (min-width: 768px) {
     .challenge-page-title {
-      margin: 1.5rem 0rem; } }
+      margin: 1.5rem 0rem;
+      font-size: 8rem; } }
   @media (min-width: 992px) {
     .challenge-page-title {
       font-size: 10rem; } }
@@ -67,6 +72,9 @@ adapted for size, colour and shadows
   border: none !important;
   padding: 0 !important;
   box-shadow: 5px 6px 13px black; }
+  @media (min-width: 768px) {
+    .mda_logo {
+      max-width: 12rem !important; } }
 
 .navbar-toggler-icon {
   font-size: 1.5rem !important; }
@@ -143,24 +151,29 @@ a {
   border-radius: 25px;
   line-height: 1; }
   .alert p {
-    font-size: 3.5rem;
+    font-size: 1rem;
     color: white;
     font-weight: 400; }
   .alert h2 {
-    font-size: 3rem;
-    color: #bf5d31; }
+    font-size: 1.2rem;
+    color: #bf5d31;
+    text-align: center; }
   .alert .close {
-    font-size: 3rem;
-    color: white; }
+    font-size: 2rem;
+    color: white;
+    padding: 0; }
 
 @media (min-width: 992px) {
   .alert {
     width: 60%;
     position: fixed;
-    top: 20%;
+    top: 5%;
     left: 30%; }
     .alert p {
       font-size: 2rem; } }
+.alert-warning {
+  padding: 1rem; }
+
 .bk-image-1 {
   background-image: url(/static/img/hands.jpeg);
   background-size: cover;
@@ -240,9 +253,9 @@ a {
 
 .challenge-body {
   margin-top: 10rem; }
-
-section h2 {
-  color: #343a40; }
+  @media (min-width: 768px) {
+    .challenge-body {
+      margin-top: 17rem; } }
 
 .challenge-numbers_1 {
   font-family: 'Skranji', cursive;
@@ -252,6 +265,9 @@ section h2 {
   color: #2e72aa;
   opacity: .9;
   text-shadow: 5px 5px 16px black; }
+  @media (min-width: 768px) {
+    .challenge-numbers_1 {
+      font-size: 13rem; } }
 
 .challenge-numbers_2 {
   font-family: 'Skranji', cursive;
@@ -261,6 +277,9 @@ section h2 {
   margin-top: 1rem;
   text-shadow: 7px -3px black;
   text-align: right; }
+  @media (min-width: 768px) {
+    .challenge-numbers_2 {
+      font-size: 8rem; } }
   @media (min-width: 992px) {
     .challenge-numbers_2 {
       font-size: 15rem; } }
@@ -268,11 +287,17 @@ section h2 {
 .challenge_statement {
   background-color: white;
   padding: .2rem; }
+  @media (min-width: 768px) {
+    .challenge_statement {
+      margin-top: 2rem; } }
 
 .challenge_statement_2 {
   background-color: black;
   padding: .2rem;
   color: white; }
+  @media (min-width: 992px) {
+    .challenge_statement_2 {
+      margin-top: 3rem; } }
 
 .answer_txt {
   font-family: 'Open Sans', serif;
@@ -280,6 +305,9 @@ section h2 {
   margin-top: 1rem;
   color: white;
   background-color: #BD5D38; }
+  @media (min-width: 768px) {
+    .answer_txt {
+      font-size: 2rem; } }
 
 .input-group {
   width: 45%; }
@@ -292,11 +320,17 @@ section h2 {
   color: #000;
   opacity: .8;
   z-index: 10; }
+  @media (min-width: 768px) {
+    .fa-hand-point-right {
+      font-size: 13rem; } }
 
 .input-lg {
   font-size: 1rem;
   max-width: 50%;
   margin-left: 1rem; }
+  @media (min-width: 768px) {
+    .input-lg {
+      font-size: 2rem; } }
 
 #end-score {
   color: #BD5D38;
@@ -325,6 +359,9 @@ section h2 {
   line-height: 1.5;
   border-radius: 18px !important;
   margin: 1rem; }
+  @media (min-width: 768px) {
+    .btn-lg {
+      font-size: 2rem; } }
 
 .table {
   font-size: 2rem;
