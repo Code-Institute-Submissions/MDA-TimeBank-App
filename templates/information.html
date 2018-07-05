@@ -1,18 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 
-<section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-10">
-    <h1 class="message_margin orange">{{ page_title }}</h1>
+<body class="bk-image-10">
+    
+    <h1 class="message_margin">{{ page_title }}</h1>
     
     <!--TimeBank Context Message-->
-    
-    <h2 class="white font_300">TimeBanks are part of the Solidarity Economy.</h2><br>
-    <p>There are TimeBanks in over 34 countries across the world, made up of tens of 
+    <h2 class="info-head">TimeBanks are part of the Solidarity Economy.</h2><br>
+    <p class="info-p">There are TimeBanks in over 34 countries across the world, made up of tens of 
     thousands of people.</h2><br><br>
 
     <!--TimeRepublik Youtube Video-->
-    <iframe width=100% height="600" src="https://www.youtube.com/embed/1kyF2xAHl5c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
+    <iframe width=50% height="300" src="https://www.youtube.com/embed/1kyF2xAHl5c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
      
      <!--Email Contact info-->
-    <p>Interested in starting a TimeBank in the Markets?</p><br>
-    <h2 class="orange"><strong>Contact Fionntan (MDA): fionntanh@hotmail.com</strong></h2>
+    <p class="info-p">Interested in starting a TimeBank in the Markets?</p><br>
+    <h2 class="info-foot"><strong>Contact Fionntan (MDA): fionntanh@hotmail.com</strong></h2>
+    
+</body>
     {% endblock %}

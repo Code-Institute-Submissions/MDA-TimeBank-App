@@ -54,7 +54,7 @@ Boostrap provided theme - https://blackrockdigital.github.io/startbootstrap-resu
 adapted for size, colour and shadows
 */
 .mda_logo {
-  max-width: 9rem !important;
+  max-width: 8rem !important;
   border: none !important;
   padding: 0 !important;
   box-shadow: 5px 6px 13px black; }
@@ -392,6 +392,9 @@ a {
   margin-top: 8rem;
   color: #bf5d31;
   text-align: center; }
+  @media (min-width: 768px) {
+    .message_margin {
+      font-size: 3.5rem; } }
 
 .table-responsive {
   width: 100%; }
@@ -436,5 +439,26 @@ a {
   @media (min-width: 992px) {
     .home-body {
       margin-top: 14rem; } }
+
+.info-p {
+  color: #fff;
+  font-size: 1rem;
+  background: #000;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .info-p {
+      font-size: 2rem; } }
+
+.info-head {
+  color: white;
+  font-weight: 300;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .info-head {
+      font-size: 3rem; } }
+
+.info-foot {
+  color: #BD5D38;
+  text-align: center; }
 
 /*# sourceMappingURL=resume.css.map */

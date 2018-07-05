@@ -13,6 +13,9 @@
     margin-top: 8rem;
     color: #bf5d31;
     text-align: center;
+    @media (min-width: $break-small) {
+        font-size: 3.5rem;
+    }
 }
 
 .table-responsive {
