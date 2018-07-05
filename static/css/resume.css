@@ -8,7 +8,8 @@ h5,
 h6 {
   font-family: 'Saira Extra Condensed', serif;
   font-weight: 700;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: 1; }
 
 h2 {
   font-size: 1.5rem; }
@@ -58,14 +59,11 @@ hr {
 
 @media (min-width: 768px) {
   h1 {
-    line-height: 3.5rem; } }
+    line-height: 7.5rem; } }
 @media (min-width: 992px) {
   body {
     padding-top: 0;
-    padding-left: 17rem; }
-
-  h1 {
-    line-height: 3.5rem; } }
+    padding-left: 17rem; } }
 /*
 Boostrap provided theme - https://blackrockdigital.github.io/startbootstrap-resume/
 adapted for size, colour and shadows
@@ -153,27 +151,36 @@ a {
   z-index: 10;
   border-radius: 25px;
   line-height: 1; }
+  @media (min-width: 992px) {
+    .alert {
+      width: 60%;
+      position: fixed;
+      top: 5%;
+      left: 30%; } }
+  @media (min-width: 1200px) {
+    .alert {
+      width: 50%;
+      left: 30%;
+      top: 25%; } }
   .alert p {
     font-size: 1rem;
     color: white;
     font-weight: 400; }
+    @media (min-width: 768px) {
+      .alert p {
+        font-size: 2rem; } }
   .alert h2 {
     font-size: 1.2rem;
     color: #bf5d31;
     text-align: center; }
+    @media (min-width: 768px) {
+      .alert h2 {
+        font-size: 2rem; } }
   .alert .close {
     font-size: 2rem;
     color: white;
     padding: 0; }
 
-@media (min-width: 992px) {
-  .alert {
-    width: 60%;
-    position: fixed;
-    top: 5%;
-    left: 30%; }
-    .alert p {
-      font-size: 2rem; } }
 .alert-warning {
   padding: 1rem; }
 

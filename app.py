@@ -31,7 +31,7 @@ def index():
 Challenge Pages
 """
 """Challenge Page 1"""
-@app.route('/challenge_A', methods=["GET", "POST"])
+@app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
     
     # Q & A and Scoring Function (repeated each Challenge)
@@ -40,7 +40,7 @@ def challenge_1():
     # Read challenge.js data for rendering (repeated each Challenge Page)
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("challenge_A.html", challenge_data = data)
+    return render_template("challenge_1.html", challenge_data = data)
 
 """Challenge Page 2"""
 @app.route('/challenge_2', methods=["GET", "POST"])

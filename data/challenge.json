@@ -23,7 +23,7 @@
         {
         "title": "Music",
         "need_amount": 17,
-        "need_statement": "would like to learn or develop their skills in playing",
+        "need_statement": "are interested in learning or developing their skills in playing",
         "skill_question": "How many said they would have enough experience and/or qualification to teach music?",
         "skill_answer":3
         }, 
@@ -45,7 +45,7 @@
         "title": "Health and Fitness",    
         "need_amount": 16,
         "need_statement": "are eager to learn yoga and take other courses in", 
-        "skill_question": "What number do you think said they could provide this?",
+        "skill_question": "What number of people responded saying they could provide this?",
         "skill_answer": 7
         },
         {

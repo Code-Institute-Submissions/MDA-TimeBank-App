@@ -8,19 +8,37 @@
     position: fixed;
     top: 20%;
     left: 5%;
+    @media (min-width: $break-medium) {
+        width: 60%;
+        position: fixed;
+        top: 5%;
+        left: 30%;
+    }
+    @media (min-width: $break-large) {
+        width: 50%;
+        left: 30%;
+        top: 25%;
+    }
     z-index: 10;
     border-radius: 25px;
     line-height: 1;
-    
+
     p {
         font-size: 1rem;
         color: white;
         font-weight: 400;
+        @media (min-width: $break-small) {
+            font-size: 2rem;
+        }
     }
+
     h2 {
         font-size: 1.2rem;
         color: #bf5d31;
         text-align: center;
+        @media (min-width: $break-small) {
+            font-size: 2rem;
+        }
     }
 
     .close {
@@ -28,20 +46,8 @@
         color: white;
         padding: 0;
     }
-}
 
-@media (min-width: 992px) {
-    .alert {
-        width: 60%;
-        position: fixed;
-        top: 5%;
-        left: 30%;
-
-        p {
-            font-size: 2rem;
-        }
-
-    }
+    
 }
 
 .alert-warning {
