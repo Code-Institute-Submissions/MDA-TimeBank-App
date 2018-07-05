@@ -36,7 +36,6 @@ h2 {
 .challenge-page-title {
   font-size: 6rem;
   color: $blue;
-
   @media (min-width: $break-small) {
     margin: 1.5rem 0rem;
     font-size: 8rem;
@@ -48,6 +47,7 @@ h2 {
 
   @media (min-width: 992px) {
     font-size: 10rem;
+    margin-top: 6rem;
   }
 
 }

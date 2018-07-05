@@ -1,5 +1,4 @@
 //*My code*/
-
 // Background Images
 .bk-image-1 {
     background-image: url(/static/img/hands.jpeg);
@@ -64,7 +63,13 @@
 .challenge-body {
     margin-top: 10rem;
     @media (min-width: $break-small) {
-    margin-top: 17rem;
+        margin-top: 17rem;
+    }
+    @media (min-width: $break-medium) {
+        margin: {
+            top: 8rem;
+            left: 1rem;
+        }
     }
 }
 
@@ -72,8 +77,6 @@
 // section h2 {
 //     color: $gray-800;
 // }
-
-
 .challenge-numbers_1 {
     @include challenge-font;
     font-size: 10rem;
@@ -85,9 +88,9 @@
     color: $blue;
     opacity: .9;
     text-shadow: 5px 5px 16px black;
-    
-    
-    
+
+
+
 }
 
 .challenge-numbers_2 {
@@ -99,11 +102,12 @@
     line-height: 5rem;
     color: $orange;
     margin-top: 1rem;
-    text-shadow: 7px -3px black;
-    text-align: right;
-    
+    text: {
+        shadow: 7px -3px black;
+        align: right;
+    }
     @media (min-width: 992px) {
-        font-size: 15rem;
+        font-size: 9rem;
     }
 }
 
@@ -146,16 +150,20 @@
 
 // Icon
 .fa-hand-point-right {
+    color: #000;
+    opacity: .8;
+    z-index: 10;
     position: fixed;
-    top: 15%;
-    left: 65%;
     font-size: 7rem;
     @media (min-width: $break-small) {
         font-size: 13rem;
     }
-    color: #000;
-    opacity: .8;
-    z-index: 10;
+    top: 15%;
+    left: 65%;
+    @media (min-width: $break-medium) {
+        top: 72%;
+        left: 75%;
+    }
 }
 
 

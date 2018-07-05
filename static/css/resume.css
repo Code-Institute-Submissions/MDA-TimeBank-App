@@ -38,7 +38,8 @@ h2 {
       margin-bottom: 3rem; } }
   @media (min-width: 992px) {
     .challenge-page-title {
-      font-size: 10rem; } }
+      font-size: 10rem;
+      margin-top: 6rem; } }
 
 body {
   font-family: 'Open Sans', serif;
@@ -258,6 +259,10 @@ a {
   @media (min-width: 768px) {
     .challenge-body {
       margin-top: 17rem; } }
+  @media (min-width: 992px) {
+    .challenge-body {
+      margin-top: 8rem;
+      margin-left: 1rem; } }
 
 .challenge-numbers_1 {
   font-family: 'Skranji', cursive;
@@ -284,7 +289,7 @@ a {
       font-size: 8rem; } }
   @media (min-width: 992px) {
     .challenge-numbers_2 {
-      font-size: 15rem; } }
+      font-size: 9rem; } }
 
 .challenge_statement {
   background-color: white;
@@ -315,16 +320,20 @@ a {
   width: 45%; }
 
 .fa-hand-point-right {
-  position: fixed;
-  top: 15%;
-  left: 65%;
-  font-size: 7rem;
   color: #000;
   opacity: .8;
-  z-index: 10; }
+  z-index: 10;
+  position: fixed;
+  font-size: 7rem;
+  top: 15%;
+  left: 65%; }
   @media (min-width: 768px) {
     .fa-hand-point-right {
       font-size: 13rem; } }
+  @media (min-width: 992px) {
+    .fa-hand-point-right {
+      top: 72%;
+      left: 75%; } }
 
 .input-lg {
   font-size: 1rem;
