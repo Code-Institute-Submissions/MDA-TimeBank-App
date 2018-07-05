@@ -17,13 +17,6 @@ h2 {
     h2 {
       font-size: 2rem; } }
 
-/*Home page heading*/
-.landing-page {
-  font-size: 10rem;
-  line-height: 9.5rem !important;
-  color: white;
-  text-shadow: 5px -2px black; }
-
 .text-primary {
   color: #BD5D38 !important; }
 
@@ -402,5 +395,40 @@ a {
 @media (min-width: 992px) {
   .message_margin {
     margin-top: 2%; } }
+/*Home page heading*/
+.landing-header {
+  font-size: 5rem;
+  line-height: 4rem !important;
+  color: white;
+  text-shadow: 5px -2px black; }
+  @media (min-width: 768px) {
+    .landing-header {
+      font-size: 7rem;
+      line-height: 7rem !important; } }
+  @media (min-width: 992px) {
+    .landing-header {
+      font-size: 9rem; } }
+
+.subheading {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  color: #fafafa;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Saira Extra Condensed', serif; }
+  @media (min-width: 768px) {
+    .subheading {
+      font-size: 3.5rem;
+      line-height: 3.5rem; } }
+
+.home-body {
+  margin-top: 8rem;
+  margin-left: .3rem; }
+  @media (min-width: 768px) {
+    .home-body {
+      margin-top: 20rem; } }
+  @media (min-width: 992px) {
+    .home-body {
+      margin-top: 14rem; } }
 
 /*# sourceMappingURL=resume.css.map */

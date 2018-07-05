@@ -1,7 +1,6 @@
 // Global styling for this template
 body {
   @include nav-font;
-  // padding-top: 54px;
   color: $gray-600;
 }
 
@@ -24,7 +23,6 @@ hr {
   h1 {
     line-height: 7.5rem;
   }
-
 }
 
 @media (min-width: 992px) {
@@ -32,7 +30,4 @@ hr {
     padding-top: 0;
     padding-left: $sidebar-base-width;
   }
-  // h1 {
-  //   line-height: 3.5rem;
-  // }
 }

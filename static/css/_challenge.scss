@@ -59,7 +59,6 @@
     display: none;
 }
 
-
 .challenge-body {
     margin-top: 10rem;
     @media (min-width: $break-small) {
@@ -73,10 +72,6 @@
     }
 }
 
-
-// section h2 {
-//     color: $gray-800;
-// }
 .challenge-numbers_1 {
     @include challenge-font;
     font-size: 10rem;
@@ -88,9 +83,6 @@
     color: $blue;
     opacity: .9;
     text-shadow: 5px 5px 16px black;
-
-
-
 }
 
 .challenge-numbers_2 {
@@ -128,7 +120,6 @@
     }
 }
 
-
 .answer_txt {
     @include nav-font;
     font-size: 1rem;
@@ -140,13 +131,10 @@
     background-color: $orange;
 }
 
-
-
 // Margins
 .input-group {
     width: 45%;
 }
-
 
 // Icon
 .fa-hand-point-right {
@@ -165,7 +153,6 @@
         left: 75%;
     }
 }
-
 
 .input-lg {
     font-size: 1rem;

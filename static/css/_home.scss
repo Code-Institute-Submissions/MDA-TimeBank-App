@@ -1,0 +1,43 @@
+/*Home page heading*/
+
+.landing-header {
+    font-size: 5rem;
+    line-height: 4rem !important;
+    @media (min-width: $break-small) {
+        font-size: 7rem;
+        line-height: 7rem !important;
+    }
+    @media (min-width: $break-medium) {
+        font-size: 9rem;
+    }
+    color: white;
+    text-shadow: 5px -2px black;
+}
+
+.subheading {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    @media (min-width: $break-small) {
+        font-size: 3.5rem;
+        line-height: 3.5rem
+    }
+    color: #fafafa;
+    text-transform: uppercase;
+    font-weight: 500;
+    @include heading-font;
+}
+
+.home-body {
+    margin: {
+        top: 8rem;
+        left: .3rem;
+    }
+    @media (min-width: $break-small) {
+        margin: {
+            top: 20rem;
+        }
+    }
+    @media (min-width: $break-medium) {
+        margin-top: 14rem;
+    }
+}
