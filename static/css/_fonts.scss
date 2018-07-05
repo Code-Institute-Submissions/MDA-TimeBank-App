@@ -10,7 +10,6 @@ h6 {
   line-height: 1;
 }
 
-
 h2 {
   font-size: 1.5rem;
   @media (min-width: $break-small) {
@@ -21,7 +20,6 @@ h2 {
 .text-primary {
   color: $primary !important;
 }
-
 
 /*Challenge fonts*/
 
@@ -35,12 +33,10 @@ h2 {
       top: 3rem;
       bottom: 3rem;
     }
-    }
+  }
 
   @media (min-width: 992px) {
     font-size: 10rem;
     margin-top: 6rem;
   }
-
 }
-
