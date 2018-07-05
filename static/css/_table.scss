@@ -1,27 +1,28 @@
 .table {
-    font-size: 2rem;
+    font-size: .7rem;
+    @media (min-width: $break-small) {
+        font-size: 1.5rem;
+    }
     color: white;
     overflow: auto;
-    text-align: center;
+    text-align: justify;
     height: 60%;
-    td {
-        padding: 2.5rem;
-    }
-
 }
 
 .message_margin {
-    margin-top: 15%;
+    margin-top: 8rem;
     color: #bf5d31;
     text-align: center;
 }
 
 .table-responsive {
     width: 100%;
+    @media (min-width: $break-medium) {
+        width: 80%;
+        margin: {
+            left: 5%;
+            right: 5%;
+        }
+    }
 }
 
-@media (min-width: 992px) {
-    .message_margin {
-    margin-top: 2%;
-}
-}
