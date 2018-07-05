@@ -342,12 +342,12 @@ a {
 
 .username {
   color: #fff;
-  font-size: 5rem;
+  font-size: 2rem;
   font-family: 'Skranji', cursive;
   text-align: center;
-  line-height: 5.5rem;
   background-color: #058599;
-  padding: 1rem; }
+  padding: 1rem;
+  line-height: 1 !important; }
 
 .reg-page {
   font-size: 10rem;
@@ -357,6 +357,14 @@ a {
 
 .text-primary {
   color: #BD5D38 !important; }
+
+.input-reg {
+  font-size: 1rem;
+  max-width: 90%;
+  margin-left: 1rem; }
+  @media (min-width: 768px) {
+    .input-reg {
+      max-width: 50%; } }
 
 .btn-lg {
   font-size: 1rem;
@@ -418,7 +426,7 @@ a {
   margin-left: .3rem; }
   @media (min-width: 768px) {
     .home-body {
-      margin-top: 20rem; } }
+      margin-top: 17rem; } }
   @media (min-width: 992px) {
     .home-body {
       margin-top: 14rem; } }

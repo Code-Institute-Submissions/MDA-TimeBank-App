@@ -5,15 +5,15 @@
 }
 
 .username {
-    color: $white;
+    color: #fff;
     font: {
-        size: 5rem;
+        size: 2rem;
         family: 'Skranji', cursive;
     }
     text-align: center;
-    line-height: 5.5rem;
     background-color: #058599;
     padding: 1rem;
+    line-height: 1 !important;
 }
 
 .reg-page {
@@ -27,4 +27,11 @@
     color: $orange !important;
 }
 
-
+.input-reg {
+    font-size: 1rem;
+    max-width: 90%;
+    @media (min-width: $break-small) {
+        max-width: 50%;
+    }
+    margin-left: 1rem;
+}

@@ -1,38 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container-fluid p-0 bk-image-1">
+<body class="bk-image-1">
+    <div class="container">
+        <div class="row home-body">
+            <div class='col-xs-12'>
+                <h1 class="landing-header">MDA<br>
+                    <span class="text-primary">TimeBank Survey</span></h1>
 
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-            <h1 class="mb-0 reg-page">MDA <span class="text-primary reg-page">TimeBank Survey</span>
-            </h1>
 
-            <!--Flash Final Score
-            -->
-            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-            <h1 class="username hidden">{{ message }}</h1>
-            {% endfor %} {% endif %} {% endwith %}
-            
-            <h2 id="end-score"> {{ score_sub }} </h2><br>
+                <!--Flash Final Score-->
+                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
 
-            <!--Form to input username and email-->
-            
-            <form method="POST" data-toggle="validator" role="form">
-                <div class="form-group">
-                    <input type="username" class="form-control input-lg" name="username" id="exampleInputUsername1" placeholder="username" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control input-lg" name="email" id="exampleInputEmail1" placeholder="email" required>
-                </div>
-                <div class="form-group">
-                    <input type="message" class="form-control input-lg" name="message" id="exampleInputUsername1" placeholder="leave a message">
-                </div>
-                <button type="submit" class="btn btn-lg btn-info">Submit</button>
-            </form>
+                <h1 class="username hidden">{{ message }}</h1><br> {% endfor %} {% endif %} {% endwith %}
+                <h2 id="end-score"> {{ score_sub }} </h2><br>
 
+                <!--Form to input username and email-->
+                <form method="POST" data-toggle="validator" role="form">
+                    <div class="form-group">
+                        <input type="username" class="form-control input-reg" name="username" id="exampleInputUsername1" placeholder="username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control input-reg" name="email" id="exampleInputEmail1" placeholder="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="message" class="form-control input-reg" name="message" id="exampleInputUsername1" placeholder="leave a message">
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-info">Submit</button>
+                </form>
+            </div>
         </div>
-    </section>
-
-</div>
+    </div>
+</body>
 
 {% endblock %}
