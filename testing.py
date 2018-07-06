@@ -48,23 +48,27 @@ def allocate_points(guess, answer):
     if guess <= 0:
         score.append(0)
         return int(sum(score))
-    if guess >= answer + 10:
+    elif guess >= answer + 10:
         score.append(0)
         return int(sum(score))    
-    if guess <= answer - 10:
+    elif guess <= answer - 10:
         score.append(0)
         return int(sum(score))
     
     # 10 points
-    if guess == answer:
+    elif guess == answer:
         score.append(10)
         return int(sum(score))
 
-    # 5 points
-    if guess <= answer - 10:
+    # 5 points (15 in total)
+    elif guess < answer and guess >= answer - 10: 
+        score.append(5)
+        return int(sum(score))    
+    
+    # 5 points (20 in total)
+    elif guess > answer and guess <= answer + 10: 
         score.append(5)
         return int(sum(score))
-
 
 
 assert allocate_points(0, 8) == 0, "Guess is 0, score is 0"
@@ -72,8 +76,8 @@ assert allocate_points(-5, 8) == 0, "Guess is below 0, score is 0"
 assert allocate_points(20, 8) == 0, "Guess 10 or more greater than answer, score is 0"
 assert allocate_points(6, 18) == 0, "Guess 10 or more fewer than answer, score is 0"
 assert allocate_points(8, 8) == 10, "Guess is equal to answer, score is 10"
-assert allocate_points(8, 8) == 5, "Guess is equal to answer, score is 10"
-
+assert allocate_points(9, 18) == 15, "Guess is within 10- point range of answer, score is 5"
+assert allocate_points(22, 18) == 20, "Guess is within 10+ point range of answer, score is 5"
 
 
 
