@@ -22,6 +22,7 @@ def guess_range(guess, answer):
     # return False catches all guesses not targeted
     return False
 
+
 assert guess_range(0, 4) == True, "Guess is 0"
 # assert guess_range(1, 4) == False, "Guess is 0"
 assert guess_range(-5, 4) == True, "Guess is less than 0"
@@ -38,8 +39,9 @@ assert guess_range(2, 15) == True, "Guess 10 or more fewer than answer"
 # assert guess_range(12, 15) == False, "Guess 10 or more fewer than answer"
 
 
+
 """
-score_test based on guess range relative to answer
+Score based on guess range relative to answer
 """
 score_test = []
 
@@ -72,17 +74,44 @@ def allocate_points(guess, answer):
         return int(sum(score_test))
 
 
-assert allocate_points(0, 8) == 0, "Guess is 0, score_test is 0"
-assert allocate_points(-5, 8) == 0, "Guess is below 0, score_test is 0"
-assert allocate_points(20, 8) == 0, "Guess 10 or more greater than answer, score_test is 0"
-assert allocate_points(6, 18) == 0, "Guess 10 or more fewer than answer, score_test is 0"
-assert allocate_points(8, 8) == 10, "Guess is equal to answer, score_test is 10"
-assert allocate_points(9, 18) == 15, "Guess is within 10- point range of answer, score_test is 5"
-assert allocate_points(22, 18) == 20, "Guess is within 10+ point range of answer, score_test is 5"
+assert allocate_points(0, 8) == 0, "Guess is 0, score is 0"
+assert allocate_points(-5, 8) == 0, "Guess is below 0, score is 0"
+assert allocate_points(20, 8) == 0, "Guess 10 or more greater than answer, score is 0"
+assert allocate_points(6, 18) == 0, "Guess 10 or more fewer than answer, score is 0"
+assert allocate_points(8, 8) == 10, "Guess is equal to answer, score is 10"
+assert allocate_points(9, 18) == 15, "Guess is within 10- point range of answer, score is 5"
+assert allocate_points(22, 18) == 20, "Guess is within 10+ point range of answer, score is 5"
 
 
+"""
+Refactored code
+"""
+score = []
 
+def calc_score(guess, answer):
+    if guess <= 0:
+        points = 0
+    elif guess == answer:
+        points = 10
+    else:
+        if guess > answer + 10:
+            points = 0
+        elif guess < answer - 10:
+            points = 0
+        elif guess > answer and guess <= answer + 10:      
+            points = 5  
+        elif guess < answer and guess >= answer - 10: 
+            points = 5
+    score.append(points)
+    return int(sum(score))
 
+assert calc_score(0, 8) == 0, "Guess is 0, score is 0"
+assert calc_score(-5, 8) == 0, "Guess is below 0, score is 0"
+assert calc_score(20, 8) == 0, "Guess 10 or more greater than answer, score is 0"
+assert calc_score(6, 18) == 0, "Guess 10 or more fewer than answer, score is 0"
+assert calc_score(8, 8) == 10, "Guess is equal to answer, score is 10"
+assert calc_score(9, 18) == 15, "Guess is within 10- point range of answer, score is 5"
+assert calc_score(22, 18) == 20, "Guess is within 10+ point range of answer, score is 5"
 
 
 print("All tests passed")
