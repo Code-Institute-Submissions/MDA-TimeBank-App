@@ -2,7 +2,8 @@ import unittest
 
 def calc_score(guess, answer):
     if guess <= 0:
-        return score == 0
+        score == 0
+        return True
     if guess == answer:
         return True
     if guess >= answer + 10:
@@ -29,7 +30,7 @@ assert calc_score(12, 15) == False, "Guess 10 or more fewer than answer"
 
 
 # Score based on guess range relative to answer
-assert calc_score(0, 6) == score == 0, "Score is 0"
+assert calc_score(0, 6) == True, score == 0, "Score is 0"
 
 
 print("All tests passed")
