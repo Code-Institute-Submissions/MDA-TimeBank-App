@@ -21,7 +21,7 @@ score = []
 Scoring Function
 """
 # Testing with score variable
-def limit_number_questions(guess, answer):
+def calc_score(guess, answer):
     if guess <= 0:
         points = 0
     elif guess == answer:
@@ -47,7 +47,7 @@ def challenge_q_a(num):
             data = json.load(json_data)
                 
             # Call Scoring Function
-            limit_number_questions(int(request.form["guess"]), int(data[num]["skill_answer"]))
+            calc_score(int(request.form["guess"]), int(data[num]["skill_answer"]))
 
 
 """
