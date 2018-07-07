@@ -49,10 +49,6 @@ hr {
   body {
     padding-top: 0;
     padding-left: 17rem; } }
-/*
-Boostrap provided theme - https://blackrockdigital.github.io/startbootstrap-resume/
-adapted for size, colour and shadows
-*/
 .mda_logo {
   max-width: 8rem !important;
   border: none !important;
@@ -74,6 +70,10 @@ adapted for size, colour and shadows
     #sideNav .navbar-nav .nav-item .nav-link {
       font-size: 1.5rem; } }
 
+/*
+Boostrap provided theme - https://blackrockdigital.github.io/startbootstrap-resume/
+adapted for size, logo, color and shadow
+*/
 @media (min-width: 992px) {
   #sideNav {
     text-align: left;
