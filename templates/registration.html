@@ -9,9 +9,16 @@
 
 
                 <!--Flash Final Score-->
-                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                {% with messages = get_flashed_messages() %} 
+                {% if messages %} 
+                {% for message in messages %}
 
-                <h1 class="username hidden">{{ message }}</h1><br> {% endfor %} {% endif %} {% endwith %}
+                <h1 class="username hidden">{{ message }}</h1><br> 
+                
+                {% endfor %} 
+                {% endif %} 
+                {% endwith %}
+                
                 <h2 id="end-score"> {{ score_sub }} </h2><br>
 
                 <!--Form to input username and email-->
