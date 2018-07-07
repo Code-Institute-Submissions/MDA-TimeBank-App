@@ -2,14 +2,11 @@ import os
 import json
 from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
 from operator import itemgetter, attrgetter
-from scoring import user_list, score, limit_number_questions, challenge_q_a, display_score
-
-
+from scoring import user_list, score, calc_score, challenge_q_a, display_score
 
 
 app = Flask(__name__)
 app.secret_key = "some_secret"
-
 
 
 """
@@ -30,6 +27,7 @@ def index():
 """
 Challenge Pages
 """
+
 """Challenge Page 1"""
 @app.route('/challenge_1', methods=["GET", "POST"])
 def challenge_1():
@@ -115,7 +113,7 @@ def registration():
     # Display total score
     flash("You scored {} points!".format(int(sum(score))))
 
-    # # Sign in & append details to user_info list
+    # Sign in & append details to user_info list
     if request.method == "POST":
         name = request.form["username"]
         email = request.form["email"]
