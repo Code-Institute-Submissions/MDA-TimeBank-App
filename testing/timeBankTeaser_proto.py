@@ -77,12 +77,6 @@ def ask_questions():
             Something to do wit the type conversion of answer variable and 
             performing math operation on it
             """
-            
-        # elif (guess answer + 10) and (guess >= answer +1):
-        #     score += 1
-        #     print("Close enough")
-        #     print("So far you've got {0} correct out of {1}".format(score, number_of_questions))
-        #     print("")
         
         else:
             print("Wrong!")
