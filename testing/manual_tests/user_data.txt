@@ -1,1 +1,0 @@
-[{"score": 15, "name": "pol", "email": "me@me.com"}, {"score": 20, "name": "des", "email": "u@u.com"}, {"score": 30, "name": "mark", "email": "three@three.com"}]
