@@ -22,7 +22,7 @@ The site is styled with **Bootstrap** and **JQuery** code. The Bootstrap grid la
 
 The information for each challenge is stored in the ```data/challenge.json``` file and rendered onto the templates by passing the json formatted information through the relevant views and rendered onto the corresponding templates. 
 
-Participants scores are recorded in a list and compiled with user information logged at the registration stage of the app - which acts as a gateway to further information. These details are stored in a list of dictionaries, per session, in a ````data/user_info``` file.
+Participants scores are recorded in a list and compiled with user information logged at the registration stage of the app - which acts as a gateway to further information. These details are stored in a list of dictionaries, per session, in a ```data/user_info``` file.
 
 **AWS Cloud9** has been used to manage package dependencies for deployment of site on github pages. 
 
@@ -56,124 +56,131 @@ Participants scores are recorded in a list and compiled with user information lo
 
 
 ## Testing
-The MDA TimeBank App was first prototyped on the python shell (see file ```timeBankTeaser_proto.py```) to identify the core features and functionalities that would be required for the flow of the challenge.
+The MDA TimeBank App was first prototyped on the python shell (see file ```testing/timeBankTeaser_proto.py```) to identify the core features and functionalities that would be required for the flow of the challenge.
 
-Two main functions were identified - one to assess the guess range relative to the answer, and one to attribute scores based on that guess.
+**Two main functions** were identified: 
+* assess how close to/far off the guess was to the answer,
+* attribute a score based on that guess.
 
-A Test Driven Development approach was used to develop this code using the folllowing steps:
+A **Test Driven Development** approach was used to develop this code using the folllowing steps:
 
 1. Identify the functionality that needs to be built and write pseudocode
-2. Write a test for this feature
-3. Run a failing test
-4. Edit and make it pass
-5. Refactor code
-6. Repeat each of these steps for every new feature with every test written up until that point passing
+2. Write the code
+3. Write a test for this function
+3. Run a deliberately failing test
+4. Edit the test and make it pass
+5. Refactor code if necessary
+6. Repeat each of these steps for each new feature. Tests should continue to pass as the function is constructed.
 
 #### 1. Identify the functionality that needs to be built and write pseudocode
 Here is an example of the pseudocode developed for the two main functions involved in calculating user score:
 
-> Guess range relative to answer
-Test: 
-*if guess is 0 or less
-*if guess and answer are equal
-*if guess is within a 10+ range of answer
-*if guess is within a 10- range of answer
+**Guess range relative to answer Test:** 
+> * GUESS is less than 0 (invalid GUESS)
+> * GUESS and ANSWER are equal
+> * GUESS is within a +10 range of ANSWER
+> * GUESS is within a -10 range of ANSWER
 
-> Score based on guess range relative to answer
-Test:
-*if guess is equal to 0 or less then score is 0
-*if guess is equal to answer then score is 10
-*if guess is 10 or more numbers greater than answer, score is 0
-*if guess is 10 or more numbers fewer than answer, score is 0
+**Score based on GUESS range relative to ANSWER Test:**
+> * if GUESS is less than 0, score is 0
+> * if GUESS is equal to ANSWER, score is 10
+> * if GUESS is 10 or more numbers greater than ANSWER, score is 0
+> * if GUESS is 10 or more numbers fewer than ANSWER, score is 0
 
 
 ### 2. Write a test for this feature
-Each separate step in these functions was tested individually and added to only once all of the preceding tests were passing the latest test.
+Each new feature in the function was tested and used only once all of the tests in the test suite were passing.
 
-For example here is the first code developed for the guess_range() function:
+*For example here is the first code developed for the guess_range() function:*
 
-> """
-Guess range relative to answer
-"""
-def guess_range(guess, answer):
-    if guess <= 0:
-        return True
+> GUESS is less than 0 (invalid GUESS)*
 
+
+    def guess_range(guess, answer):
+        if guess < 0:
+            return True
+    
 ### 3. Run a failing test
-The above code was then tested with a deliberately failing outcome:
+*The above code was then tested with a deliberately failing outcome:*
 
-> assert guess_range(3, 4) == True, "Guess is 0"
+    assert guess_range(3, 4) == True, "Guess is less than 0"
+    print("All tests passed!")
 
-> $ python3 testing/testing.py
-> Traceback (most recent call last):
-  File "testing/testing.py", line 25, in <module>
-    assert guess_range(3, 4) == True, "Guess is 0"
-AssertionError: Guess is 0
+    $ python3 testing/testing.py
+    Traceback (most recent call last):
+        File "testing/testing.py", line 25, in <module>
+        assert guess_range(3, 4) == True, "Guess is 0"
+        AssertionError: Guess is 0
 
 ### 4. Edit and make it pass
-The test was then amended to produce a passing outcome:
+*The test was then amended to produce a passing outcome:*
 
-> assert guess_range(0, 4) == True, "Guess is 0"
+    assert guess_range(-2, 4) == True, "Guess is less than 0"
 
-> $ python3 testing/testing.py
-> All tests passed
+    $ python3 testing/testing.py
+    "All tests passed!"
 
-The next feature was then added to the existing code:
+*The next feature was then added to the existing existing function:*
 
-> def guess_range(guess, answer):
-    if guess <= 0:
+    def guess_range(guess, answer):
+        if guess < 0:
         return True
-    > <!--new line of code-->
+    <!--new line of code-->
     elif guess == answer:
         return True
 
-and tested, first proudcing a failing outcome then edited to produce a pass (ensuring the preceding code also passed):
+*and tested, first producing a failing outcome, then edited to pass:*
 
-> assert guess_range(0, 4) == True, "Guess is 0"
-assert guess_range(-5, 4) == True, "Guess is less than 0"
-assert guess_range(15, 15) == True, "Guess is equal to answer"
+    assert guess_range(-5, 4) == True, "Guess is less than 0"
+    assert guess_range(15, 15) == True, "Guess is equal to answer"
+    "All tests passed!"
 
 ### 5. Refactor code
-### 6. Repeat previous steps
 Steps 1-4 were repeated until the function had been completed and as the two functions were to be merged, the code was refactored when the individual functions had been tested separately. For example:
 
-> """
-Guess range relative to answer
-"""
-def guess_range(guess, answer):
-    if guess <= 0:
-        return True
 
-and 
+*Assessing the accuracy of the guess*
 
-> score_test = []
+    def guess_range(guess, answer):
+        if guess < 0:
+            return True
 
-> def allocate_points(guess, answer):
-    # 0 points
-    if guess <= 0:
-        score_test.append(0)
-        return int(sum(score_test))
+*and calculating a score based on this guess*
 
-was refactored to:
+    score_test = []
 
-> score = []
+    def allocate_points(guess, answer):
+        0 points
+        if guess < 0:
+            score_test.append(0)
+            return int(sum(score_test))
 
-> def calc_score(guess, answer):
-    if guess <= 0:
-        points = 0
-    score.append(points)
-    return int(sum(score))
+*was refactored to:*
 
-and tested, with the scores accumulating as they would during the challenge:
+    score = []
 
-> assert calc_score(0, 8) == 0, "Guess is 0, score is 0"
-assert calc_score(-5, 8) == 0, "Guess is below 0, score is 0"
-...
-assert calc_score(8, 8) == 10, "Guess is equal to answer, score is 10"
-assert calc_score(9, 18) == 15, "Guess is within 10- point range of answer, score is 5"
-assert calc_score(22, 18) == 20, "Guess is within 10+ point range of answer, score is 5
+    def calc_score(guess, answer):
+        if guess < 0:
+            points = 0
+            score.append(points)
+            return int(sum(score))
+
+*and tested, with the scores accumulating as they would during the challenge:*
+
+    assert calc_score(-5, 8) == 0, "Guess is below 0, score is 0"
+    ...
+    assert calc_score(8, 8) == 10, "Guess is equal to answer, score is 10"
+    assert calc_score(9, 18) == 15, "Guess is within 10- point range of answer, score is 5"
+    assert calc_score(22, 18) == 20, "Guess is within 10+ point range of answer, score is 5
+    "All tests passed!"
+
+### 6. Repeat previous steps
+These steps were repeated until all tests were passing and the code was refactored.
+
+The registration function was also tested manually by mimicking the .txt (```test_user_data```) file storage.
 
 The testing suite (with development code) is found in ```testing/testing.py``` 
+
 
 ## Contributing
 This project is customisable by entering your own relevant surevy information into the ```data/challenge.json``` file and changing the background images in the static files.
@@ -197,84 +204,3 @@ Dessie Donnelly (email: des_donn@mailbox.org)
 ### Partner
 Market Development Association C/O Market Community Centre Belfast BT1 3JD (tel: 028 90312272)
 Contact: Fionntan Hargey (email: fionntanh@hotmail.com)
-
-
-
-
-
-
-### Project Overview
-The <strong>Markets Development Association (MDA): TimeBank App</strong> is a guessing game based on the results of peer-to-peer research (226 surveys) carried out by residents in the Markets area of Belfast.
-
-The research aimed to get a snapshot of priority social, economic and cultural needs in the community as well as a sample skills audit of community members.
-
-The TimeBank App is to be used at specific community events to generate discussion and interest.
-
-## Functionality:
-### Description
-The TimeBank App has the following functionalities:
-<ul>
-<li>Landing Page with Start Game Button and navbar - further info and start</li>
-<li>Animated Challenge Pages</li>
-<li>Scoring: user input, storing user input, attributing points based on accuracy, 
-    updating & displaying ongoing score, tallying, logging and displaying total score</li>
-<li>Alert Messages</li>
-<li>Registration</li>
-<li>League Table with collated points and message</li>
-<li>Further Information</li>
-</ul>
-
-### Technologies
-The Questions and Answers were written and stored in .json format (challenge.json) 
-and rendered into html using the Python Flask microframework.
-
-The <strong>Game Logic</strong> was protoyped in Python shell and deployed utilising the Flask microframework, specifically:
-<ul>
-<li><strong>keeping score</strong> - user guesses are stored in a temporary  list (score). The score is tallied following the last question and appended to a seprate python list (final_score). json.dump is used to store the final score (alongside user registration details)
-    in a .txt outfile (user_info.txt). The temporary score list is emptied once a user starts a new game,
-    and the process repeats.</li>
-<li><strong>displaying score</strong> - flask's flash() method is used to provide users with an ongoing score 
-    update prior to each new question. The flash() method is used again to display 
-    user's Final Score on the registration page</li>
-<li><strong>page progression</strong> - flask's redirect() function is used to automatically guide 
-    the user through the questions once the game has started</li>
-<li>registration - user input (name, email address & comments) is captured by 
-    using a HTTP POST request and appended to the outfile (user_info.txt)</li>
-</ul>
-
-Page transitions and animations to enhacne UX and guide user through the application 
-were written using Javascript and the JS library jQuery. Javascript was also used:
-<ul>
-<li>to process user input by attaching an AJAX Request to a jQuery button in order to 
-avoid page reload</li>
-<li>to refresh the Message Board every 10 seconds and ensure score table and comments
-are kept up to date for community events</li>
-</ul>
-
-A CSS bootstrap theme (https://blackrockdigital.github.io/startbootstrap-resume/) 
-was utilised during initial implementation stages, but heavily edited and added to 
-as the design developed to match functionalities required for the TimeBank App.
-
-The original navigation bar colour and drop-down functionality, default header font, as 
-well as the flexbox formatting is retained, the rest of the styling was created 
-by the developer specifically for the Timebank App. 
-
-
-
-### Deployment
-The MDA: TimeBank app was deployed to the cloud platform Heroku (insert link)
-
-
-### Testing
-"In this section, summarise your approach to testing and provide pseudocode you have written to develop your tests"
-
-There were three distinct approaches taken to testing durig this project:
-a) prototype development
-b) testing before deployment
-c) testing on functions
-
-Each stage required refactoring post-testing.
-
-
-
-
