@@ -22,7 +22,7 @@ Participants guess answers to a series of questions based on the results of a co
 ### How does it work
 The application uses the **Flask** microframework to route participants through the challenge and executive the programme. The programme is written in **python 2.7.6**
 
-The site is styled with **Bootstrap** and **JQuery** code. The Bootstrap grid layout is used to make the application responsive across mobile, tablet and desktop devices. The site is designed using a **mobile-first** design and can be viewed [HERE](insert link following deployment). JQuery is employed to provide animations on each of the quiz/challenge pages.
+The site is styled with **Bootstrap** and **JQuery** code. The Bootstrap grid layout is used to make the application responsive across mobile, tablet and desktop devices. The site is designed using a **mobile-first** design and can be viewed [HERE](https://mda-timebank.herokuapp.com/). JQuery is employed to provide animations on each of the quiz/challenge pages.
 
 The information for each challenge is stored in the ```data/challenge.json``` file and rendered onto the templates by passing the json formatted information through the relevant views and rendered onto the corresponding templates. 
 
@@ -31,7 +31,7 @@ Participants scores are recorded in a list and compiled with user information lo
 **AWS Cloud9** has been used to manage package dependencies for deployment of site on github pages. 
 
 
-## Tech Used
+## Technology Used
 
 ### Specific technology used on the application includes:
 
@@ -60,9 +60,9 @@ Participants scores are recorded in a list and compiled with user information lo
 
 
 ## Testing
-The MDA TimeBank App was first prototyped on the python shell (see file ```testing/timeBankTeaser_proto.py```) to identify the core features and functionalities that would be required for the flow of the challenge.
+The MDA TimeBank App was first prototyped in the python shell (see file ```testing/timeBankTeaser_proto.py```) to identify the core features and functionalities that would be required for the challenge.
 
-**Two main functions** were identified: 
+**Two main functions** were identified as necessary : 
 * assess how close to/far off the guess was to the answer,
 * attribute a score based on that guess.
 
@@ -79,13 +79,13 @@ A **Test Driven Development** approach was used to develop this code using the f
 #### 1. Identify the functionality that needs to be built and write pseudocode
 Here is an example of the pseudocode developed for the two main functions involved in calculating user score:
 
-**Guess range relative to answer Test:** 
+##### Guess range relative to answer Test:
 > * GUESS is less than 0 (invalid GUESS)
 > * GUESS and ANSWER are equal
 > * GUESS is within a +10 range of ANSWER
 > * GUESS is within a -10 range of ANSWER
 
-**Score based on GUESS range relative to ANSWER Test:**
+##### Score based on GUESS range relative to ANSWER Test:
 > * if GUESS is less than 0, score is 0
 > * if GUESS is equal to ANSWER, score is 10
 > * if GUESS is 10 or more numbers greater than ANSWER, score is 0
@@ -148,26 +148,43 @@ Steps 1-4 were repeated until the function had been completed and as the two fun
     def guess_range(guess, answer):
         if guess < 0:
             return True
-
+        elif guess >= answer + 10:
+            return True
+        elif guess <= answer - 10:
+            return True
+            
 *and calculating a score based on this guess*
 
-    score_test = []
-
+    """
+    Score based on accuracy of guess
+    """
+    score_list = []
     def allocate_points(guess, answer):
-        0 points
+        
+        # 0 points
         if guess < 0:
-            score_test.append(0)
-            return int(sum(score_test))
+            score_list.append(0)
+            return int(sum(score_list))
+        elif guess >= answer + 10:
+            score_list.append(0)
+            return int(sum(score_list))    
+        elif guess <= answer - 10:
+            score_list.append(0)
+            return int(sum(score_list))
 
 *was refactored to:*
 
     score = []
-
     def calc_score(guess, answer):
         if guess < 0:
             points = 0
-            score.append(points)
-            return int(sum(score))
+        elif guess > answer + 10:
+                points = 0
+        elif guess < answer - 10:
+            points = 0
+        score.append(points)
+        return int(sum(score))
+
 
 *and tested, with the scores accumulating as they would during the challenge:*
 
@@ -187,12 +204,13 @@ The testing suite (with development code) is found in ```testing/testing.py```
 
 
 ## Contributing
-This project is customisable by entering your own relevant surevy information into the ```data/challenge.json``` file and changing the background images in the static files.
+This project is customisable by saving your own survey information, in json format, into the ```data/challenge.json``` file,  replacing the background images (found [here](/static/css/_challenge.scss) with ones which match the question and changing text found in [templates](templates) directory.
 
 ### Getting the code up and running
 1. Create an environment running python 2.7.6 as the default in your IDE
-2. Clone this repository by running the ```git clone https://github.com/Deasun/snAPP.git``` command
+2. Clone this repository by running the ```$ git clone https://github.com/Deasun/MDA-TimeBank-App.git``` command
 3. pip install requirements
+4. Run ```$ python3 app.py``` and the app will be available for using your browser
 
 
 ## Credits

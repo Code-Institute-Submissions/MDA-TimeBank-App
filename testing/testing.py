@@ -30,7 +30,7 @@ assert guess_range(2, 15) == True, "Guess 10 or more fewer than answer"
 
 
 """
-Score based on guess range relative to answer
+Score based on accuracy of guess
 """
 score_list = []
 
