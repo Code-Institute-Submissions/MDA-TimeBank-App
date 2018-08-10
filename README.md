@@ -4,16 +4,20 @@ A community tool to generate interest in timebanking economies
 ## Overview
 
 ### What is this application for?
-MDA TimeBank app is a guessing game based on the results of peer-to-peer research (226 surveys) carried out by residents in the Markets area of Belfast.
+**MDA TimeBank App** is a guessing game based on the results of peer-to-peer research (226 surveys) carried out by residents in the Markets area of Belfast.
 
 The TimeBank App is to be used at specific community events to generate discussion and interest in setting up a local, or joining a regional, TimeBank.
 
 ### What does it do?
 Participants guess answers to a series of questions based on the results of a community survey. As participants progress through the questions, they are introduced to the concept and core values of TimeBanking.
 
-Correct guesses are awarded with 10 points, guesses within a 10 point range of the answer are awarded 5 points and all other valid guesses are awarded 0 points. 
+##### How the challenge is scored
+> * Correct guesses are awarded with 10 points
+> * Guesses within a 10 point range of the answer are awarded 5 points
+> * All other valid (>=0) guesses are awarded 0 points
 
-At the end of the challenge, participants are provided with their final score and must register to leave a comment, see the results table of other participants' scores, get more information about TimeBanking (including an introductory youtube video), and get details of their local TimeBank organiser/contact.
+##### Building contacts through the app
+> At the end of the challenge, participants are provided with their final score and must register to leave a comment, see the results table of other participants' scores, get more information about TimeBanking (including an introductory youtube video), and get details of their local TimeBank organiser/contact.
 
 ### How does it work
 The application uses the **Flask** microframework to route participants through the challenge and executive the programme. The programme is written in **python 2.7.6**
@@ -190,9 +194,10 @@ This project is customisable by entering your own relevant surevy information in
 2. Clone this repository by running the ```git clone https://github.com/Deasun/snAPP.git``` command
 3. pip install requirements
 
+
 ## Credits
 
-## Media
+### Media
 All images used on the site are from [FREEIMAGES](https://www.freeimages.com)
 and used under their CONTENT LICENSE AGREEMENT.
 
