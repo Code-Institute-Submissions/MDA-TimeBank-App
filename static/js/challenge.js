@@ -41,5 +41,4 @@ $(document).ready(function() {
     $("body").click(function() {
         $(".alert").hide("fast");
     });
-    
 });

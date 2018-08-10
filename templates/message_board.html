@@ -3,12 +3,8 @@
 {% block content %}
 <body class="bk-image-10">
 
-<!--<section class="resume-section p-3 p-lg-5 d-flex flex-column bk-image-10">-->
-
     <!--Score Table Header-->
     <h1 class="message_margin">{{ page_title }}</h1>
-
-
 
     <!--Score Table read from Registration Page Input and data/user_info.txt-->
     <table class="table table-responsive">
@@ -20,7 +16,6 @@
             </tr>
         </thead>
         <tbody>
-
             {% for item in score_table %}
             <tr>
                 <td>{{ item.score }}</td>
@@ -30,7 +25,6 @@
             {% endfor %}
         </tbody>
     </table>
-
     <form class="msg-bd-btn" method="POST" data-toggle="validator" role="form">
         <button type="submit" class="btn btn-lg btn-outline-info">Find out more!</button>
     </form>
@@ -38,9 +32,9 @@
     <!--Refresh Page every 10 seconds for community stall events-->
     
         <script>
-    //     setTimeout(function() {
-    //         location.reload();
-    //     }, 10000);
+        setTimeout(function() {
+            location.reload();
+        }, 10000);
         </script>
 
 </body>

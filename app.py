@@ -113,6 +113,7 @@ def registration():
     # Display total score
     flash("You scored {} points!".format(int(sum(score))))
 
+    
     # Sign in & append details to user_info list
     if request.method == "POST":
         name = request.form["username"]

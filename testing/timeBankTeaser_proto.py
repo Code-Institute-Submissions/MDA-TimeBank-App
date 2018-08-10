@@ -34,7 +34,7 @@ def register():
 SHOW MENU FUNCTION
 """
 def show_menu():
-    # print("Welcome, {0}. Take your pick: ".format(username))
+    print("Welcome, {0}. Take your pick: ".format(username))
     print("1. What is a TimeBank?")
     print("2. What do you think? Add your comments")
     print("3. Send me through to MDA's website please")
