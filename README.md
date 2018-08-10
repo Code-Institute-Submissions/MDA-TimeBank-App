@@ -24,7 +24,7 @@ The application uses the **Flask** microframework to route participants through 
 
 The site is styled with **Bootstrap** and **JQuery** code. The Bootstrap grid layout is used to make the application responsive across mobile, tablet and desktop devices. The site is designed using a **mobile-first** design and can be viewed [HERE](https://mda-timebank.herokuapp.com/). JQuery is employed to provide animations on each of the quiz/challenge pages.
 
-The information for each challenge is stored in the ```data/challenge.json``` file and rendered onto the templates by passing the json formatted information through the relevant views and rendered onto the corresponding templates. 
+The information for each challenge is stored in the ```data/challenge.json``` file and rendered onto the templates by passing the json formatted information through the relevant views and rendered onto the corresponding templates. **AJAX** posts requests are implemented to enable the user to provide their guesses withouth triggering a page refresh.
 
 Participants scores are recorded in a list and compiled with user information logged at the registration stage of the app - which acts as a gateway to further information. These details are stored in a list of dictionaries, per session, in a ```data/user_info``` file.
 
