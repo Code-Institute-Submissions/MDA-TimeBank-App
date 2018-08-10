@@ -244,7 +244,8 @@ a {
 .hidden_icon,
 .hidden_answer,
 .hidden_icon {
-  display: none; }
+  display: none;
+  width: 100%; }
 
 .challenge-body {
   margin-top: 10rem; }
