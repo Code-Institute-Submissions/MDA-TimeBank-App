@@ -3,26 +3,22 @@ import os
 import json
 from flask import Flask, request, flash
 
-
-
 """
-List to store user details
+List to store user information
 """
 user_list = []
    
-
 """
-List to handle scores as game progresses
+List to store points as the game progresses
 """
 score = []
-
 
 """
 Scoring Function
 """
 # Testing with score variable
 def calc_score(guess, answer):
-    if guess <= 0:
+    if guess < 0:
         points = 0
     elif guess == answer:
         points = 10
@@ -37,7 +33,6 @@ def calc_score(guess, answer):
             points = 5
     score.append(points)
 
-    
 """
 Challenge Q&A function
 """
@@ -48,7 +43,6 @@ def challenge_q_a(num):
                 
             # Call Scoring Function
             calc_score(int(request.form["guess"]), int(data[num]["skill_answer"]))
-
 
 """
 Display Score Tally
