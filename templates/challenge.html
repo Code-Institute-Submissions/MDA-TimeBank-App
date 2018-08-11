@@ -8,7 +8,7 @@
 
         <div class="row challenge-body">
             <div class="col-xs-12">
-                <h1>Welcome {{ context.username }}!</p>
+                <h1 style="color: black">Welcome {{ context.username }}!</p>
                 <h2 class="challenge-numbers_1 hidden">{{ context.need }}</h2>
             </div>
             <div class="col-xs-12">
@@ -46,7 +46,7 @@
                 <p>Attempt # {{context.attempt }}</p>
 
                 <h2 class="hidden_answer answer_txt">The correct answer is...</h2>
-                <span><h1 class="hidden_answer challenge-numbers_2">{{ context.answer }}</h1></span>
+                <span><h1 class="hidden_answer challenge-numbers_2">{{ context.skill_answer }}</h1></span>
             </div>
         </div>
     </div>

@@ -17,7 +17,7 @@ Get challenge information from json file to loop through the questions and answe
 def get_challenge(index):
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-        return data[index] if index < 8 else None # Catches IndexError if there are no more challenges
+        return data[index] if index <= 7 else None # Catches IndexError if there are no more challenges
 
 
 """
@@ -30,7 +30,7 @@ def setup_context(username):
     attempt = 1
     challenge = get_challenge(0)
     context = {
-        'challenge_id': 0,
+        'challenge_id': 0, 
         'title': challenge['title'],
         'need': challenge['need_amount'],
         'statement': challenge['need_statement'],
@@ -80,6 +80,7 @@ def challenge(username):
         """ 
         Form on intro.html passed default context for the first question. If not
         Challenge 1, the function will take the values from the player's submitted form
+        (including hidden inputs)
         """
         
         if form.get('first-challenge') == 'true':
@@ -92,18 +93,17 @@ def challenge(username):
             score = int(form.get('current_score'))
             challenge = get_challenge(challenge_id)
             
-            guess = form.get('guess')
-            answer = challenge['skill_answer']
+            guess = int(form.get('guess'))
+            answer = int(challenge['skill_answer'])
             correct = guess == answer
-            print(answer)
             
-            while challenge_id < 9:
+            while challenge_id < 8:
                 if correct:
                     challenge_id += 1
                     score += 10
-                    attempt = 1 # keep attempt at 1 to set up next challenge
+                    attempt = 1 # set attempt at 1 for next challenge
                     next_challenge = get_challenge(challenge_id)
-                    flash('Nice work! You nailed it!', 'success')
+                    flash('Spot on! Well done.', 'success')
                     
                 else:
                     if attempt >= 2:
@@ -115,6 +115,7 @@ def challenge(username):
                         attempt += 1
                         next_challenge = get_challenge(challenge_id)
                         flash('"{}" wasn\'t right. You\'ve got one more try...'.format(guess), 'error')
+               
                 """
                 Template is now returned with the updated context unless player has
                 completed the final challenge, in which case game will move through to 
