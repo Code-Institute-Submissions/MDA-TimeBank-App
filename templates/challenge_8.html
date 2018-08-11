@@ -47,6 +47,7 @@
 
             <!--Guess Button (Ajax Request) -->
             <div class="col-xs-12">
+                <p>Welcome {{ session['username']}}!</p>
                 <form method='POST' class="form hidden_title" name="guess" onsubmit="return(false)">
                     <input type='number' class="form-control form-control-lg input-field input-lg" id="challenge_form" name='guess' autocomplete="off" placeholder="Guess" required>
                     <input type="button" id="numScore" class="btn-lg btn-danger challenge_btn" value='Go!'>
