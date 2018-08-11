@@ -159,81 +159,18 @@ def challenge(username):
             return render_template("registration.html", score_sub="See how everyone else did & find out more...")    
     return redirect('/')
 
-# """Challenge Page 1"""
-# @app.route('/challenge_1', methods=["GET", "POST"])
-# def challenge_1():
 
-#     # Q & A and Scoring Function (repeated each Challenge)
-#     challenge_q_a(0)
-    
-#     # Read challenge.js data for rendering (repeated each Challenge Page)
-#     with open("data/challenge.json", "r") as json_data:
-#         data = json.load(json_data)
-#     return render_template("challenge_1.html", challenge_data = data)
 
-# """Challenge Page 2"""
-# @app.route('/challenge_2', methods=["GET", "POST"])
-# def challenge_2():
-#     challenge_q_a(1)
+# OLD FUNCTIONS - KEEP FOR REF
+# """Challenge Page 8"""
+# @app.route('/challenge_8', methods=["GET", "POST"])
+# def challenge_8():
+
+#     challenge_q_a(7)
 #     display_score()
 #     with open("data/challenge.json", "r") as json_data:
 #         data = json.load(json_data)
-#     return render_template("challenge_2.html", challenge_data = data)
-    
-# """Challenge Page 3"""
-# @app.route('/challenge_3', methods=["GET", "POST"])
-# def challenge_3():
-#     challenge_q_a(2)
-#     display_score()   
-#     with open("data/challenge.json", "r") as json_data:
-#         data = json.load(json_data)
-#     return render_template("challenge_3.html", challenge_data = data)
-
-# """Challenge Page 4"""
-# @app.route('/challenge_4', methods=["GET", "POST"])
-# def challenge_4():
-#     challenge_q_a(3)
-#     display_score()
-#     with open("data/challenge.json", "r") as json_data:
-#         data = json.load(json_data)
-#     return render_template("challenge_4.html", challenge_data = data)
-
-# """Challenge Page 5"""
-# @app.route('/challenge_5', methods=["GET", "POST"])
-# def challenge_5():
-#     challenge_q_a(4)
-#     display_score()
-#     with open("data/challenge.json", "r") as json_data:
-#         data = json.load(json_data)
-#     return render_template("challenge_5.html", challenge_data = data)
-
-# """Challenge Page 6"""
-# @app.route('/challenge_6', methods=["GET", "POST"])
-# def challenge_6():
-#     challenge_q_a(5)
-#     display_score()
-#     with open("data/challenge.json", "r") as json_data:
-#         data = json.load(json_data)
-#     return render_template("challenge_6.html", challenge_data = data)
-
-"""Challenge Page 7"""
-@app.route('/challenge_7', methods=["GET", "POST"])
-def challenge_7():
-    challenge_q_a(6)
-    display_score()
-    with open("data/challenge.json", "r") as json_data:
-        data = json.load(json_data)
-    return render_template("challenge_7.html", challenge_data = data)
-
-"""Challenge Page 8"""
-@app.route('/challenge_8', methods=["GET", "POST"])
-def challenge_8():
-
-    challenge_q_a(7)
-    display_score()
-    with open("data/challenge.json", "r") as json_data:
-        data = json.load(json_data)
-    return render_template("challenge_8.html", challenge_data = data)
+#     return render_template("challenge_8.html", challenge_data = data)
     
 
 """
