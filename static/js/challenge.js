@@ -12,19 +12,19 @@ $(document).ready(function() {
 
 
     // AJAX POST Request
-    $('.challenge_btn').click(function() {
-        var score = $('#numScore').val();
-        $.ajax({
-            data: $('form').serialize(),
-            type: 'POST',
-            success: function(response) {
-                return ("SUCCESS!");
-            },
-            error: function(error) {
-                return false;
-            }
-        });
-    });
+    // $('.challenge_btn').click(function() {
+    //     var score = $('#numScore').val();
+    //     $.ajax({
+    //         data: $('form').serialize(),
+    //         type: 'POST',
+    //         success: function(response) {
+    //             return ("SUCCESS!");
+    //         },
+    //         error: function(error) {
+    //             return false;
+    //         }
+    //     });
+    // });
 
     // Transitions after button click
     $('.challenge_btn').click(function() {

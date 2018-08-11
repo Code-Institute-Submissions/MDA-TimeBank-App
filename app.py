@@ -30,7 +30,7 @@ def setup_context(username):
     attempt = 1
     challenge = get_challenge(0)
     context = {
-        'challenge_index': 0,
+        'challenge_id': challenge['id'],
         'title': challenge['title'],
         'need': challenge['need_amount'],
         'statement': challenge['need_statement'],
@@ -71,8 +71,8 @@ Challenge Pages
 """
 
 """Challenge Test Page"""
-@app.route('/challenge_test/<username>', methods=["GET", "POST"])
-def challenge_test(username):
+@app.route('/challenge/<username>', methods=["GET", "POST"])
+def challenge(username):
     if request.method == 'POST':
         
         form = request.form
@@ -84,34 +84,34 @@ def challenge_test(username):
         
         if form.get('first-challenge') == 'true':
             context = setup_context(username)
-            return render_template('challenge_test.html', context=context)
+            return render_template('challenge.html', context=context)
         
         else:
             attempt = int(form.get('attempt'))
-            challenge_index = int(form.get('challenge_index'))
+            challenge_id = int(form.get('challenge_id'))
             score = int(form.get('current_score'))
-            challenge = get_challenge(challenge_index)
+            challenge = get_challenge(challenge_id)
             
-            guess = form.get('guess').strip().lower()
-            answer = challenge('skill_answer').strip().lower()
+            guess = form.get('guess')
+            answer = challenge['skill_answer']
             correct = guess == answer
             
-            while challenge_index < 9:
+            while challenge_id < 9:
                 if correct:
-                    challenge_index += 1
+                    challenge_id += 1
                     score += 10
                     attempt = 1 # keep attempt at 1 to set up next challenge
-                    next_challenge = get_challenge(challenge_index)
+                    next_challenge = get_challenge(challenge_id)
                 
                 else:
                     if attempt > 2:
-                        challenge_index += 1
+                        challenge_id += 1
                         attempt = 1
-                        next_challenge = get_challenge(challenge_index)
+                        next_challenge = get_challenge(challenge_id)
                         
                     else:
                         attempt += 1
-                        next_challenge = get_challenge(challenge_index)
+                        next_challenge = get_challenge(challenge_id)
                 
                 """
                 Template is now returned with the updated context unless player has
@@ -121,7 +121,7 @@ def challenge_test(username):
                 
                 if next_challenge is not None:
                     context = {
-                        'challenge_index': challenge_index,
+                        'challenge_id': challenge_id,
                         'title': next_challenge['title'],
                         'challenge': next_challenge['skill_question'],
                         'need': next_challenge['need_amount'],
@@ -131,8 +131,12 @@ def challenge_test(username):
                         'current_score': score,
                         'attempt': attempt
                     }
-                    return render_template('challenge_test', context=context)
-    
+         
+         
+                    return render_template('challenge.html', context=context)
+            
+        # CHECK CODE HERE - PUT END RESULT IN END_SCORE FUNCTION Return final score and add the player to the leaderboard
+        return render_template("registration.html", score_sub="See how everyone else did & find out more...")    
     return redirect('/')
 
 # """Challenge Page 1"""
