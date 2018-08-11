@@ -104,17 +104,34 @@ def challenge(username):
                     attempt = 1 # set attempt at 1 for next challenge
                     next_challenge = get_challenge(challenge_id)
                     flash('Spot on! Well done.', 'success')
-                    
+                
                 else:
                     if attempt >= 2:
                         challenge_id += 1
                         attempt = 1
-                        next_challenge = get_challenge(challenge_id)
-                        flash('"{}" was your last attempt. The answer was "{}". How about a new challenge?'.format(guess, answer), 'error')                        
+                        
+                        """
+                        Give 5 points to guesses (on the second attempt) that are
+                        within a -10 and +10 range of the answer
+                        """
+                        
+                        if (guess > answer) and (guess <= answer + 5) or (guess < answer) and (guess >= answer - 5):
+                            score += 5
+                            flash('"{}" is close enough! You get 5 points for that one!'.format(answer), 'error')
+                            next_challenge = get_challenge(challenge_id)
+                        
+                        else:    
+                            next_challenge = get_challenge(challenge_id)
+                            flash('"{}" was your last guess. The answer was "{}". Try another one!'.format(guess, answer), 'error')                        
+                    
                     else:
                         attempt += 1
                         next_challenge = get_challenge(challenge_id)
-                        flash('"{}" wasn\'t right. You\'ve got one more try...'.format(guess), 'error')
+                        if (guess > answer) and (guess < answer + 5) or (guess < answer) and (guess > answer - 5):
+                            flash('"{}" is close... Try one more time'.format(guess), 'error')
+                        
+                        else:
+                            flash('"{}" is\'t right. Have another go!'.format(guess), 'error')
                
                 """
                 Template is now returned with the updated context unless player has
