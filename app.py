@@ -9,6 +9,34 @@ app = Flask(__name__)
 app.secret_key = "some_secret"
 
 
+
+"""
+Get challenge information from json file to loop through the questions and answers
+"""
+def get_challenge(index):
+    with open("data/challenge.json", "r") as json_data:
+        data = json.load(json_data)
+        return data[index] if index < 8 else None # Catches IndexError if there are no more challenges
+
+
+"""
+Set default values (score and details) for starting game and context for storing
+information throughout game
+"""
+def setup_context(user):
+    score = 0
+    attempt = 1
+    challenge = get_challenge(0)
+    context = {
+        'challenge_index': 0,
+        'challenge': challenge['need_amount'],
+        'answer': challenge['need_statement'],
+        'username': username,
+        'current_score': score,
+        'attempt': attempt
+    }
+    return context
+
 """
 Start Page
 """
@@ -20,29 +48,37 @@ def index():
         
         # Register new player and store their information and score in 
         # Flask Session
-        session['username'] = request.form['username']
+        username = request.form['username']
+        get_challenge(0)
         
-        # Clear scoring list for new player
-        score[:]=[]
-        return redirect('/challenge_1')
+        return render_template(("challenge_test.html", ))
+
     return render_template("index.html")
 
 
 """
 Challenge Pages
 """
+"""Challenge Test Page"""
+@app.route('/challenge_test/<username>', methods=["GET", "POST"])
+def challenge_1(username):
+    
+    
+    
 
-"""Challenge Page 1"""
-@app.route('/challenge_1', methods=["GET", "POST"])
-def challenge_1():
+    return render_template("challenge_test.html", challenge_data = data)
+
+# """Challenge Page 1"""
+# @app.route('/challenge_1', methods=["GET", "POST"])
+# def challenge_1():
+
+#     # Q & A and Scoring Function (repeated each Challenge)
+#     challenge_q_a(0)
     
-    # Q & A and Scoring Function (repeated each Challenge)
-    challenge_q_a(0)
-    
-    # Read challenge.js data for rendering (repeated each Challenge Page)
-    with open("data/challenge.json", "r") as json_data:
-        data = json.load(json_data)
-    return render_template("challenge_1.html", challenge_data = data)
+#     # Read challenge.js data for rendering (repeated each Challenge Page)
+#     with open("data/challenge.json", "r") as json_data:
+#         data = json.load(json_data)
+#     return render_template("challenge_1.html", challenge_data = data)
 
 # """Challenge Page 2"""
 # @app.route('/challenge_2', methods=["GET", "POST"])
@@ -89,18 +125,19 @@ def challenge_1():
 #         data = json.load(json_data)
 #     return render_template("challenge_6.html", challenge_data = data)
 
-# """Challenge Page 7"""
-# @app.route('/challenge_7', methods=["GET", "POST"])
-# def challenge_7():
-#     challenge_q_a(6)
-#     display_score()
-#     with open("data/challenge.json", "r") as json_data:
-#         data = json.load(json_data)
-#     return render_template("challenge_7.html", challenge_data = data)
+"""Challenge Page 7"""
+@app.route('/challenge_7', methods=["GET", "POST"])
+def challenge_7():
+    challenge_q_a(6)
+    display_score()
+    with open("data/challenge.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("challenge_7.html", challenge_data = data)
 
 """Challenge Page 8"""
 @app.route('/challenge_8', methods=["GET", "POST"])
 def challenge_8():
+
     challenge_q_a(7)
     display_score()
     with open("data/challenge.json", "r") as json_data:
@@ -113,31 +150,31 @@ Result & Registration Page
 """
 @app.route('/registration', methods=["GET", "POST"])
 def registration():
-    
+
     # Display total score
     flash("You scored {} points!".format(int(sum(score))))
 
     
     # Sign in & append details to user_info list
-    # if request.method == "POST":
-    #     name = request.form["username"]
-    #     email = request.form["email"]
-    #     message = request.form["message"]
-    #     final_score = int(sum(score))
+    if request.method == "POST":
+        name = session["username"]
+        email = request.form["email"]
+        message = request.form["message"]
+        final_score = int(sum(score))
         
-    #     user_list.append({
-    #     "name": name,
-    #     "email": email,
-    #     "message": message,
-    #     "score": final_score,
-    #     })
+        user_list.append({
+        "name": name,
+        "email": email,
+        "message": message,
+        "score": final_score,
+        })
         
-    with open('data/user_info.txt', 'w') as outfile:  
-        json.dump(user_list, outfile)
-
-    # remove the username from the session
-    session.pop('username', None)
-    # return redirect("/message_board") 
+        
+        with open('data/user_info.txt', 'w') as outfile:  
+            json.dump(user_list, outfile)
+            
+            return redirect('/message_board')
+    
     return render_template("registration.html", score_sub="See how everyone else did & find out more...")
     
     
@@ -146,6 +183,9 @@ Message Board Page
 """
 @app.route('/message_board', methods=["GET", "POST"])
 def message_board():
+    
+    # remove the username from the session
+    session.pop('username', None)
     
     # Display Score Table in descending order
     with open("data/user_info.txt", "r") as json_data:
@@ -156,6 +196,7 @@ def message_board():
     # Redirect to Information Page
     if request.method == "POST":
         return redirect('/information')
+    
     return render_template("message_board.html", page_title="How did you get on?", score_table = newlist)
 
 
