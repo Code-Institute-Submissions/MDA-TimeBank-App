@@ -1,0 +1,59 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<body class="bk-image-2">
+
+    <div class="container">
+
+
+        <div class="row challenge-body">
+            <div class="col-xs-12">
+                <p>Welcome {{ session['username']}}!</p>
+                <h2 class="challenge-numbers_1 hidden">{{ context.challenge_index + 1 }}</h2>
+            </div>
+            <div class="col-xs-12">
+                <h2 class="challenge_statement hidden">{{ context.statement }}</h2>
+            </div>
+
+            <div class="col-xs-12">
+                <h1 class="challenge-page-title hidden_title">{{ context.title }}</h1>
+            </div>
+            <div class="col-xs-12">
+                <a href="/challenge_7"><i class="fas fa-hand-point-right fa-9x hidden_icon"></i></a>
+            </div>
+            <div class="col-xs-12">
+                <h2 class="challenge_statement_2 hidden_title">{{ context.challenge }}</h2>
+            </div>
+            
+            <!--Guess Button (Ajax Request) -->
+            <div class="col-xs-12">
+                
+                {% with messages = get_flashed_messages() %} 
+                    {% if messages %} 
+                        {% for message in messages %}
+                            <p>{{ message }}</p><br> 
+                        {% endfor %} 
+                    {% endif %} 
+                {% endwith %}
+                
+                <form method='POST' class="form hidden_title" name="guess" onsubmit="return(false)">
+                    <input type='number' class="form-control form-control-lg input-field input-lg" id="guess" name='guess' autocomplete="off" placeholder="Guess" required>
+                    <input type="hidden" name="challenge_index" id="challenge_index" value="{{ context.challenge_index }}">                    
+                    <input type="hidden" name="current_score" id="current_score" value="{{ context.current_score }}">
+                    <input type="hidden" name="attempt" id="attempt" value="{{ context.attempt }}">
+                    
+                    <button type="submit" id="numScore" class="btn-lg btn-danger challenge_btn" value='Go!'></button>
+                </form>
+                
+                <p>Current Score: {{context.current_score }}</p>
+                <p>Attemt # {{context.attempt }}</p>
+
+                <h2 class="hidden_answer answer_txt">The correct answer is...</h2>
+                <span><h1 class="hidden_answer challenge-numbers_2">{{ context.answer }}</h1></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<body class="bk-image-1">
+    <div class="container">
+        <div>
+            <h2>What's this about?</h2>
+            <hr>
+            <p>There are around 2,500 people living in the Markets.<br><br> Over the last year 226 residents provided information about the skills, knowledge and expertise they have - and what support they could do with or would like.<br></p>
+            <h2>Take the challenge and see how resourceful your neighbours are!</h2><br>
+            <h2>
+                <strong>'Right Answer'..................10 points<br><br>
+            'Close Enough' (+/- 10)..........5 points</strong></h2>
+        </div>
+        <h2>Welcome {{ username }}</h2>
+        <form method="POST" data-toggle="validator" role="form" action="/challenge_test/{{username}}">
+            <input type="hidden" value="true" name="first-challenge">
+            <button type="submit" value="login" class="btn-lg btn-outline-info">Play Now!</button>
+        </form>
+    </div>
+</body>
+
+{% endblock %}
