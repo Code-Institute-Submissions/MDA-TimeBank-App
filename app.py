@@ -30,7 +30,7 @@ def setup_context(username):
     attempt = 1
     challenge = get_challenge(0)
     context = {
-        'challenge_id': challenge['id'],
+        'challenge_id': 0,
         'title': challenge['title'],
         'need': challenge['need_amount'],
         'statement': challenge['need_statement'],
@@ -95,6 +95,7 @@ def challenge(username):
             guess = form.get('guess')
             answer = challenge['skill_answer']
             correct = guess == answer
+            print(answer)
             
             while challenge_id < 9:
                 if correct:
@@ -102,17 +103,18 @@ def challenge(username):
                     score += 10
                     attempt = 1 # keep attempt at 1 to set up next challenge
                     next_challenge = get_challenge(challenge_id)
-                
+                    flash('Nice work! You nailed it!', 'success')
+                    
                 else:
-                    if attempt > 2:
+                    if attempt >= 2:
                         challenge_id += 1
                         attempt = 1
                         next_challenge = get_challenge(challenge_id)
-                        
+                        flash('"{}" was your last attempt. The answer was "{}". How about a new challenge?'.format(guess, answer), 'error')                        
                     else:
                         attempt += 1
                         next_challenge = get_challenge(challenge_id)
-                
+                        flash('"{}" wasn\'t right. You\'ve got one more try...'.format(guess), 'error')
                 """
                 Template is now returned with the updated context unless player has
                 completed the final challenge, in which case game will move through to 
@@ -131,12 +133,12 @@ def challenge(username):
                         'current_score': score,
                         'attempt': attempt
                     }
-         
-         
                     return render_template('challenge.html', context=context)
-            
-        # CHECK CODE HERE - PUT END RESULT IN END_SCORE FUNCTION Return final score and add the player to the leaderboard
-        return render_template("registration.html", score_sub="See how everyone else did & find out more...")    
+                else:
+                    return "done yet?"
+                    
+            # CHECK CODE HERE - PUT END RESULT IN END_SCORE FUNCTION Return final score and add the player to the leaderboard
+            return render_template("registration.html", score_sub="See how everyone else did & find out more...")    
     return redirect('/')
 
 # """Challenge Page 1"""
