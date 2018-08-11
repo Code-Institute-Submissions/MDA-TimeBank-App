@@ -13,6 +13,7 @@ app.secret_key = "some_secret"
 """
 Get challenge information from json file to loop through the questions and answers
 """
+
 def get_challenge(index):
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
@@ -20,53 +21,119 @@ def get_challenge(index):
 
 
 """
-Set default values (score and details) for starting game and context for storing
-information throughout game
+Set default values for starting game. These will be used to initialise the challenge
+for the player at Challenge 1
 """
-def setup_context(user):
+
+def setup_context(username):
     score = 0
     attempt = 1
     challenge = get_challenge(0)
     context = {
         'challenge_index': 0,
-        'challenge': challenge['need_amount'],
-        'answer': challenge['need_statement'],
+        'title': challenge['title'],
+        'need': challenge['need_amount'],
+        'statement': challenge['need_statement'],
+        'challenge': challenge['skill_question'],
+        'answer': challenge['skill_answer'],
         'username': username,
         'current_score': score,
         'attempt': attempt
     }
     return context
 
+
 """
-Start Page
+Start Page - Player selects a username which is passed through to the intro function
 """
+
 @app.route('/', methods=["GET", "POST"])
 def index():
-    
-    # Trigger start of new game
-    if request.method == "POST":
-        
-        # Register new player and store their information and score in 
-        # Flask Session
-        username = request.form['username']
-        get_challenge(0)
-        
-        return render_template(("challenge_test.html", ))
+    return render_template("index.html" )
 
-    return render_template("index.html")
+    
+"""
+Introduction Page
+"""
+
+@app.route('/intro/', methods=["GET", "POST"])
+def intro():
+    if request.method == 'POST':
+        form = request.form
+        user = form['username']
+        return render_template("intro.html", username=user)
+    
+    return redirect('/')
 
 
 """
 Challenge Pages
 """
+
 """Challenge Test Page"""
 @app.route('/challenge_test/<username>', methods=["GET", "POST"])
-def challenge_1(username):
+def challenge_test(username):
+    if request.method == 'POST':
+        
+        form = request.form
+        
+        """ 
+        Form on intro.html passed default context for the first question. If not
+        Challenge 1, the function will take the values from the player's submitted form
+        """
+        
+        if form.get('first-challenge') == 'true':
+            context = setup_context(username)
+            return render_template('challenge_test.html', context=context)
+        
+        else:
+            attempt = int(form.get('attempt'))
+            challenge_index = int(form.get('challenge_index'))
+            score = int(form.get('current_score'))
+            challenge = get_challenge(challenge_index)
+            
+            guess = form.get('guess').strip().lower()
+            answer = challenge('skill_answer').strip().lower()
+            correct = guess == answer
+            
+            while challenge_index < 9:
+                if correct:
+                    challenge_index += 1
+                    score += 10
+                    attempt = 1 # keep attempt at 1 to set up next challenge
+                    next_challenge = get_challenge(challenge_index)
+                
+                else:
+                    if attempt > 2:
+                        challenge_index += 1
+                        attempt = 1
+                        next_challenge = get_challenge(challenge_index)
+                        
+                    else:
+                        attempt += 1
+                        next_challenge = get_challenge(challenge_index)
+                
+                """
+                Template is now returned with the updated context unless player has
+                completed the final challenge, in which case game will move through to 
+                final score announcement
+                """
+                
+                if next_challenge is not None:
+                    context = {
+                        'challenge_index': challenge_index,
+                        'title': next_challenge['title'],
+                        'challenge': next_challenge['skill_question'],
+                        'need': next_challenge['need_amount'],
+                        'statement': next_challenge['need_statement'],
+                        'answer': next_challenge['skill_answer'],
+                        'username': username,
+                        'current_score': score,
+                        'attempt': attempt
+                    }
+                    return render_template('challenge_test', context=context)
     
-    
-    
-
-    return render_template("challenge_test.html", challenge_data = data)
+    return redirect('/')
 
 # """Challenge Page 1"""
 # @app.route('/challenge_1', methods=["GET", "POST"])
