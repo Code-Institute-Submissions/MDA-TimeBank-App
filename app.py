@@ -21,6 +21,23 @@ def get_challenge(index):
 
 
 """
+Add and sort players to the results table
+"""
+
+def results_table(username, result):
+    results_list = []
+    results_list.append({
+        "name": username,
+        "score": result,
+    })
+    
+    with open('data/results.txt', 'w') as outfile:
+        json.dump(results_list, outfile)
+
+
+
+
+"""
 Set default values for starting game. These will be used to initialise the challenge
 for the player at Challenge 1
 """
@@ -44,7 +61,8 @@ def setup_context(username):
 
 
 """
-Start Page - Player selects a username which is passed through to the intro function
+Start Page - Player selects a username which is passed through to the intro 
+function
 """
 
 @app.route('/', methods=["GET", "POST"])
@@ -112,7 +130,7 @@ def challenge(username):
                         
                         """
                         Give 5 points to guesses (on the second attempt) that are
-                        within a -10 and +10 range of the answer
+                        within a -5 and +5 range of the answer
                         """
                         
                         if (guess > answer) and (guess <= answer + 5) or (guess < answer) and (guess >= answer - 5):
@@ -153,10 +171,15 @@ def challenge(username):
                     }
                     return render_template('challenge.html', context=context)
                 else:
-                    return "done yet?"
+                    session.pop('_flashes', None) # Clear flashed messages if we're on the final question"
                     
+            
+            results_table(username, score)
             # CHECK CODE HERE - PUT END RESULT IN END_SCORE FUNCTION Return final score and add the player to the leaderboard
-            return render_template("registration.html", score_sub="See how everyone else did & find out more...")    
+            return render_template("registration.html", username=username, score_sub="See how everyone else did & find out more...")    
+        
+    # Redirect to the homepage with an error if using GET
+    flash('You can\'t access that page directly. Enter your username below:')
     return redirect('/')
 
 
@@ -176,7 +199,8 @@ def challenge(username):
 """
 Result & Registration Page
 """
-@app.route('/registration', methods=["GET", "POST"])
+
+@app.route('/registration/<username>', methods=["GET", "POST"])
 def registration():
 
     # Display total score
@@ -209,14 +233,12 @@ def registration():
 """
 Message Board Page
 """
+
 @app.route('/message_board', methods=["GET", "POST"])
 def message_board():
-    
-    # remove the username from the session
-    session.pop('username', None)
-    
-    # Display Score Table in descending order
-    with open("data/user_info.txt", "r") as json_data:
+
+    # Display Results Table in descending order
+    with open("data/results.txt", "r") as json_data:
         data = json.load(json_data)
         
         newlist = sorted(data, key=itemgetter('score'), reverse=True)
