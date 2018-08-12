@@ -5,18 +5,17 @@
         <div class="row home-body">
             <div class='col-xs-12'>
                 <h1 class="landing-header">MDA<br>
-                <span class="text-primary">TimeBank Survey</span></h1>
-                <h3 class="subheading">Take the Challenge<br>
-                See the Results<br>Join Us</h3>
+                    <span class="text-primary">TimeBank Survey</span></h1>
+                <h3 class="subheading">Take the Challenge<br> See the Results<br>Join Us</h3>
                 <br>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
                 <!--Redirect Button - Start New Challenge-->
-                <form method="POST" data-toggle="validator" role="form">
-                    <p><input type="text" name="username"></p>
-                    <button type="submit" value="login" class="btn-lg btn-outline-info">Play Now!</button>
+                <form method=POST action="/intro/">
+                    <input id="username" class="form-control" type="text" name="username" placeholder="Enter username" maxlength="20" required/>
+                    <button class="main-button btn btn-success btn-sm">Click to Play!</button>
                 </form>
             </div>
         </div>
