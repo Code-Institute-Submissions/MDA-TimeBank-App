@@ -50,33 +50,34 @@ hr {
     padding-top: 0;
     padding-left: 17rem; } }
 .mda_logo {
-  max-width: 8rem !important;
-  border: none !important;
-  padding: 0 !important;
-  box-shadow: 5px 6px 13px black; }
-  @media (min-width: 768px) {
-    .mda_logo {
-      max-width: 12rem !important; } }
-
-.navbar-toggler-icon {
-  font-size: 1.5rem !important; }
-
-#sideNav .navbar-nav .nav-item .nav-link {
-  font-weight: 600;
-  font-family: 'Open Sans';
-  padding-left: 1.5rem;
-  background-color: #BD5D38; }
+  width: 150px;
+  height: 75px; }
   @media (min-width: 992px) {
-    #sideNav .navbar-nav .nav-item .nav-link {
-      font-size: 1.5rem; } }
+    .mda_logo {
+      position: fixed;
+      top: 50%;
+      left: 2rem;
+      width: 200px;
+      height: 100px; } }
+
+#sideNav {
+  background: rgba(189, 93, 56, 0.93) !important;
+  box-shadow: 7px 7px 8px 0px black; }
+  #sideNav .navbar-nav .nav-item .nav-link {
+    font-weight: 600;
+    font-family: 'Open Sans';
+    padding-left: 1.5rem;
+    background-color: #BD5D38; }
+    @media (min-width: 992px) {
+      #sideNav .navbar-nav .nav-item .nav-link {
+        font-size: 1.5rem; } }
 
 /*
-Boostrap provided theme - https://blackrockdigital.github.io/startbootstrap-resume/
+Code provided - https://blackrockdigital.github.io/startbootstrap-resume/
 adapted for size, logo, color and shadow
 */
 @media (min-width: 992px) {
   #sideNav {
-    text-align: left;
     position: fixed;
     top: 0;
     left: 0;
@@ -378,6 +379,19 @@ a {
 
 .msg-bd-btn {
   text-align: center; }
+
+.nav-btn {
+  position: fixed;
+  right: .5rem;
+  top: 4rem; }
+  @media (min-width: 768px) {
+    .nav-btn {
+      right: 3rem;
+      top: 3rem; } }
+  @media (min-width: 992px) {
+    .nav-btn {
+      top: 65%;
+      left: 5rem; } }
 
 .table {
   font-size: .7rem;

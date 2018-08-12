@@ -11,3 +11,17 @@
 .msg-bd-btn {
     text-align: center;
 }
+
+.nav-btn {
+    position: fixed;
+    right: .5rem;
+    top: 4rem;
+    @media (min-width: $break-small) {
+       right: 3rem;
+       top: 3rem;
+    }
+    @media (min-width: $break-medium) {
+        top: 65%;
+        left: 5rem;
+    }
+}
