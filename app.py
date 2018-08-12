@@ -23,18 +23,16 @@ def get_challenge(index):
 """
 Add and sort players to the results table
 """
+results_list = [] # results_list kept in global to create list of objects from results_table function
 
 def results_table(username, result):
-    results_list = []
     results_list.append({
-        "name": username,
-        "score": result,
+        'name': username,
+        'score': result,
     })
     
     with open('data/results.txt', 'w') as outfile:
         json.dump(results_list, outfile)
-
-
 
 
 """
@@ -115,7 +113,7 @@ def challenge(username):
             answer = int(challenge['skill_answer'])
             correct = guess == answer
             
-            while challenge_id < 8:
+            while challenge_id <= 8:
                 if correct:
                     challenge_id += 1
                     score += 10
@@ -175,8 +173,7 @@ def challenge(username):
                     
             
             results_table(username, score)
-            # CHECK CODE HERE - PUT END RESULT IN END_SCORE FUNCTION Return final score and add the player to the leaderboard
-            return render_template("registration.html", username=username, score_sub="See how everyone else did & find out more...")    
+            return render_template("message_board.html", score_sub="See how everyone else did & find out more...")    
         
     # Redirect to the homepage with an error if using GET
     flash('You can\'t access that page directly. Enter your username below:')
@@ -222,7 +219,7 @@ def registration():
         })
         
         
-        with open('data/user_info.txt', 'w') as outfile:  
+        with open('data/user_info.txt', 'a') as outfile:  
             json.dump(user_list, outfile)
             
             return redirect('/message_board')
