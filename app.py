@@ -9,7 +9,6 @@ app = Flask(__name__)
 app.secret_key = "some_secret"
 
 
-
 """
 Get challenge information from json file to loop through the questions and answers
 """
@@ -23,7 +22,7 @@ def get_challenge(index):
 """
 Add and sort players to the results table
 """
-results_list = [] # results_list kept in global to create list of objects from results_table function
+results_list = []   # results_list kept in global to create list of objects from results_table function
 
 def results_table(username, result):
     results_list.append({
@@ -83,10 +82,9 @@ def intro():
 
 
 """
-Challenge Pages
+Challenge loop
 """
 
-"""Challenge Test Page"""
 @app.route('/challenge/<username>', methods=["GET", "POST"])
 def challenge(username):
     if request.method == 'POST':
@@ -133,7 +131,7 @@ def challenge(username):
                         
                         if (guess > answer) and (guess <= answer + 5) or (guess < answer) and (guess >= answer - 5):
                             score += 5
-                            flash('"{}" is close enough! You get 5 points for that one!'.format(answer), 'error')
+                            flash('The answer was "{}", but "{}" is close enough! You get 5 points for that one!'.format(answer, guess), 'error')
                             next_challenge = get_challenge(challenge_id)
                         
                         else:    
@@ -172,12 +170,46 @@ def challenge(username):
                     session.pop('_flashes', None) # Clear flashed messages if we're on the final question"
                     
             
-            results_table(username, score)
-            return render_template("message_board.html", score_sub="See how everyone else did & find out more...")    
+            results_table(username, score) # call function to store results list to .txt
+            return redirect("/information")    
         
     # Redirect to the homepage with an error if using GET
     flash('You can\'t access that page directly. Enter your username below:')
     return redirect('/')
+
+    
+"""
+Results and information page
+"""
+
+@app.route('/results_table', methods=["GET", "POST"])
+def results_board():
+
+    with open("data/results.txt", "r") as json_data:
+        data = json.load(json_data)
+        
+        newlist = sorted(data, key=itemgetter('score'), reverse=True) # Display results table from highest score down
+    
+    return render_template("results_table.html", page_title="Timebanking", score_table = newlist)
+
+
+"""
+More Information Page
+"""
+
+@app.route('/information')
+def information():
+    return render_template("information.html", page_title="Find out more...")
+
+
+if __name__ == "__main__":
+    app.run(host=os.environ.get('IP'),
+        port=int(os.environ.get('PORT')),
+        debug=True)
+        
+        
+
+
 
 
 
@@ -193,71 +225,3 @@ def challenge(username):
 #     return render_template("challenge_8.html", challenge_data = data)
     
 
-"""
-Result & Registration Page
-"""
-
-@app.route('/registration/<username>', methods=["GET", "POST"])
-def registration():
-
-    # Display total score
-    flash("You scored {} points!".format(int(sum(score))))
-
-    
-    # Sign in & append details to user_info list
-    if request.method == "POST":
-        name = session["username"]
-        email = request.form["email"]
-        message = request.form["message"]
-        final_score = int(sum(score))
-        
-        user_list.append({
-        "name": name,
-        "email": email,
-        "message": message,
-        "score": final_score,
-        })
-        
-        
-        with open('data/user_info.txt', 'a') as outfile:  
-            json.dump(user_list, outfile)
-            
-            return redirect('/message_board')
-    
-    return render_template("registration.html", score_sub="See how everyone else did & find out more...")
-    
-    
-"""
-Message Board Page
-"""
-
-@app.route('/message_board', methods=["GET", "POST"])
-def message_board():
-
-    # Display Results Table in descending order
-    with open("data/results.txt", "r") as json_data:
-        data = json.load(json_data)
-        
-        newlist = sorted(data, key=itemgetter('score'), reverse=True)
-    
-    # Redirect to Information Page
-    if request.method == "POST":
-        return redirect('/information')
-    
-    return render_template("message_board.html", page_title="How did you get on?", score_table = newlist)
-
-
-"""
-More Information Page
-"""
-@app.route('/information')
-def information():
-    return render_template("information.html", page_title="Find out more...")
-
-
-if __name__ == "__main__":
-    app.run(host=os.environ.get('IP'),
-        port=int(os.environ.get('PORT')),
-        debug=True)
-        
-        
