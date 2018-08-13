@@ -44,7 +44,7 @@ hr {
 
 @media (min-width: 768px) {
   h1 {
-    line-height: 7.5rem; } }
+    line-height: 3.5rem; } }
 @media (min-width: 992px) {
   body {
     padding-top: 0;
@@ -62,7 +62,7 @@ hr {
 
 #sideNav {
   background: rgba(189, 93, 56, 0.93) !important;
-  box-shadow: 7px 7px 8px 0px black; }
+  box-shadow: 7px 7px 9px black; }
   #sideNav .navbar-nav .nav-item .nav-link {
     font-weight: 600;
     font-family: 'Open Sans';
@@ -126,49 +126,49 @@ a {
   a:hover, a:focus, a:active {
     color: #824027; }
 
-.alert {
+.jumbotron {
   font-family: 'Saira Extra Condensed', serif;
-  background-color: #000;
-  box-shadow: 12px 10px 9px #525050;
-  width: 90%;
-  position: fixed;
-  top: 20%;
-  left: 5%;
+  text-align: center;
+  background: rgba(66, 24, 59, 0.78);
+  width: 100%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 10;
   border-radius: 25px;
   line-height: 1; }
-  @media (min-width: 992px) {
-    .alert {
+  @media (min-width: 768px) {
+    .jumbotron {
       width: 60%;
-      position: fixed;
-      top: 5%;
-      left: 30%; } }
+      margin-top: 6rem; } }
   @media (min-width: 1200px) {
-    .alert {
-      width: 50%;
-      left: 30%;
-      top: 25%; } }
-  .alert p {
+    .jumbotron {
+      width: 50%; } }
+  .jumbotron p {
     font-size: 1rem;
-    color: white;
+    color: #ffe242;
     font-weight: 400; }
     @media (min-width: 768px) {
-      .alert p {
+      .jumbotron p {
+        font-size: 1.5rem; } }
+    @media (min-width: 992px) {
+      .jumbotron p {
         font-size: 2rem; } }
-  .alert h2 {
+  .jumbotron h2 {
     font-size: 1.2rem;
-    color: #bf5d31;
+    color: #fff;
     text-align: center; }
     @media (min-width: 768px) {
-      .alert h2 {
+      .jumbotron h2 {
         font-size: 2rem; } }
-  .alert .close {
+  .jumbotron .close {
     font-size: 2rem;
     color: white;
     padding: 0; }
 
-.alert-warning {
-  padding: 1rem; }
+.warning {
+  padding: 1rem;
+  text-align: center; }
 
 .bk-image-1 {
   background-image: url(/static/img/hands.jpeg);
@@ -249,10 +249,10 @@ a {
   width: 100%; }
 
 .challenge-body {
-  margin-top: 10rem; }
+  margin-top: 3rem; }
   @media (min-width: 768px) {
     .challenge-body {
-      margin-top: 17rem; } }
+      margin-top: 5rem; } }
   @media (min-width: 992px) {
     .challenge-body {
       margin-top: 8rem;
@@ -393,6 +393,10 @@ a {
       top: 65%;
       left: 5rem; } }
 
+.main-button {
+  margin-left: 15px;
+  margin-top: 15px; }
+
 .table {
   font-size: .7rem;
   color: white;
@@ -424,7 +428,7 @@ a {
   font-size: 5rem;
   line-height: 4rem !important;
   color: white;
-  text-shadow: 5px -2px black; }
+  text-shadow: 7px 7px 9px black; }
   @media (min-width: 768px) {
     .landing-header {
       font-size: 7rem;
@@ -446,11 +450,11 @@ a {
       line-height: 3.5rem; } }
 
 .home-body {
-  margin-top: 8rem;
+  margin-top: 3rem;
   margin-left: .3rem; }
   @media (min-width: 768px) {
     .home-body {
-      margin-top: 17rem; } }
+      margin-top: 10rem; } }
   @media (min-width: 992px) {
     .home-body {
       margin-top: 14rem; } }
@@ -475,5 +479,8 @@ a {
 .info-foot {
   color: #BD5D38;
   text-align: center; }
+
+.form-control {
+  margin-left: 15px; }
 
 /*# sourceMappingURL=resume.css.map */
