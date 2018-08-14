@@ -1,9 +1,14 @@
 // Global styling for this template
 body {
   @include nav-font;
-  color: $gray-600;
+  color: black;
+  line-height: 1;
 }
 
+
+blockquote {
+  border-left: solid 2px #000;
+}
 
 hr {
   width: 90%;
