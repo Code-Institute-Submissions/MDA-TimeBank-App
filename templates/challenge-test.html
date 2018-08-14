@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block content %}
+
+<body class="bk-image" style="background-image: url({{ context.image }})">
+
+    <div class="container">
+        <p CLASS="user">Welcome {{ context.username }}!</p>
+        <div class="row challenge-body">
+
+            <div class="col-4">
+                <div class="card">
+                    <h2>Question</h2>
+                    <div class="card-body">
+                        <!--Adding ! to challenge_id so renders Challenge #-->
+                        <h2>{{ context.challenge_id + 1 }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class='col-4'>
+                <div class="card">
+                    <h2>Attempt</h2>
+                    <div class="card-body">
+                        <h2>{{ context.attempt }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class='col-4'>
+                <div class="card">
+                    <h2>Score</h2>
+                    <div class="card-body">
+                        <h2>{{ context.current_score }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row challenge-body">
+            <div class="col-3">
+                <h2 class="challenge-number">{{ context.need }}</h2>
+            </div>
+            <div class="col-9">
+                <p>{{ context.statement }}...</p>
+            </div>
+        </div>
+        <h1 class="challenge_title">{{ context.title }}</h1>
+        <p>{{ context.challenge }}</p>
+
+        <!--Guess Button -->
+
+        <form method='POST' class="form-inline" name="guess">
+            <input type='number' class="form-control form-control-lg input-field input-lg" id="guess" name='guess' autocomplete="off" placeholder="Guess" required>
+            <input type="hidden" name="challenge_id" id="challenge_id" value="{{ context.challenge_id }}">
+            <input type="hidden" name="current_score" id="current_score" value="{{ context.current_score }}">
+            <input type="hidden" name="attempt" id="attempt" value="{{ context.attempt }}">
+
+            <button class="btn-lg btn-success">Go!</button>
+        </form>
+    </div>
+    {% with messages = get_flashed_messages() %} 
+        {% if messages %} 
+            {% for message in messages %}
+                <div class="col-xs-12 col-md-6 col-lg-6">
+                    <div class="card warning">
+                        <h2>{{ message }}</h2>
+                    </div>
+                </div>
+            {% endfor %} 
+        {% endif %} 
+    {% endwith %}
+    </div>
+
+
+
+    </div>
+</body>
+
+{% endblock %}

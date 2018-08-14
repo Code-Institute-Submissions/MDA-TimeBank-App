@@ -1,0 +1,16 @@
+.card {
+    box-shadow: $shadow;
+    background-color: black;
+    height: 4rem !important;
+    border: $orange 1px solid;
+}
+
+.card .card-body {
+    padding: 1 !important;
+}
+
+.card h2 {
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+}
