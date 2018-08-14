@@ -52,7 +52,8 @@ def setup_context(username):
         'answer': challenge['skill_answer'],
         'username': username,
         'current_score': score,
-        'attempt': attempt
+        'attempt': attempt,
+        'image': challenge['image'],
     }
     return context
 
@@ -92,14 +93,13 @@ def challenge(username):
         form = request.form
         
         """ 
-        Form on intro.html passed default context for the first question. If not
-        Challenge 1, the function will take the values from the player's submitted form
-        (including hidden inputs)
+        The form on intro.html creates the 'context' for the Challenge 1 - keeping
+        track of player activity and the progress of the challenges
         """
         
         if form.get('first-challenge') == 'true':
             context = setup_context(username)
-            return render_template('challenge.html', context=context)
+            return render_template('challenge-test.html', context=context)
         
         else:
             attempt = int(form.get('attempt'))
@@ -117,7 +117,7 @@ def challenge(username):
                     score += 10
                     attempt = 1 # set attempt at 1 for next challenge
                     next_challenge = get_challenge(challenge_id)
-                    flash('Spot on! Well done.', 'success')
+                    flash('{} is correct - 10 points Try the next challenge!').format(guess)
                 
                 else:
                     if attempt >= 2:
@@ -131,21 +131,21 @@ def challenge(username):
                         
                         if (guess > answer) and (guess <= answer + 5) or (guess < answer) and (guess >= answer - 5):
                             score += 5
-                            flash('The answer was "{}", but "{}" is close enough! You get 5 points for that one!'.format(answer, guess), 'error')
+                            flash('The answer was {}, but {} is close enough - 5 points! Take the next challenge.'.format(answer, guess))
                             next_challenge = get_challenge(challenge_id)
                         
                         else:    
                             next_challenge = get_challenge(challenge_id)
-                            flash('"{}" was your last guess. The answer was "{}". Try another one!'.format(guess, answer), 'error')                        
+                            flash('You guessed {}. The answer was {}. Take the next challenge.'.format(guess, answer))                        
                     
                     else:
                         attempt += 1
                         next_challenge = get_challenge(challenge_id)
                         if (guess > answer) and (guess < answer + 5) or (guess < answer) and (guess > answer - 5):
-                            flash('"{}" is close... Try one more time'.format(guess), 'error')
+                            flash('{} is close... Try again'.format(guess))
                         
                         else:
-                            flash('"{}" is\'t right. Have another go!'.format(guess), 'error')
+                            flash('{} is not right. Try again!'.format(guess))
                
                 """
                 Template is now returned with the updated context unless player has
@@ -161,20 +161,19 @@ def challenge(username):
                         'need': next_challenge['need_amount'],
                         'statement': next_challenge['need_statement'],
                         'answer': next_challenge['skill_answer'],
+                        'image': next_challenge['image'],                
                         'username': username,
                         'current_score': score,
-                        'attempt': attempt
+                        'attempt': attempt,
                     }
-                    return render_template('challenge.html', context=context)
+                    return render_template('challenge-test.html', context=context)
                 else:
                     session.pop('_flashes', None) # Clear flashed messages if we're on the final question"
                     
             
-            results_table(username, score) # call function to store results list to .txt
+            results_table(username, score) # call function to store results list to results.txt
             return redirect("/information")    
-        
-    # Redirect to the homepage with an error if using GET
-    flash('You can\'t access that page directly. Enter your username below:')
+    
     return redirect('/')
 
     
