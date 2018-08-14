@@ -3,61 +3,65 @@
         "need_amount": 58,
         "need_statement": "needed support and assistance to be able to confidently use",
         "skill_question": "How many said they had expertise they would be willing to share with neighbours?", 
-        "skill_answer": 78
-
+        "skill_answer": 78,
+        "image": "/static/img/computer-web.jpeg"
         },
         {
         "title": "Bicycle Repairs",
         "need_amount": 15,
         "need_statement": "had bicycles and would benefit from someone carrying out",
         "skill_question": "How many responded that they could do bicycle maintenance?",
-        "skill_answer": 6
+        "skill_answer": 6,
+        "image": "/static/img/bike_wheel.jpg"
         },
         {
         "title":"Home Decorating",
         "need_amount": 15,
         "need_statement": "wanted to do some work to their house and needed help",
         "skill_question": "What number of respondents do you think said they had a talent for decorating?",
-        "skill_answer": 13
+        "skill_answer": 13,
+        "image": "/static/img/decorate-web.jpg"
         },
         {
         "title": "Music",
         "need_amount": 17,
         "need_statement": "are interested in learning or developing their skills in playing",
         "skill_question": "How many said they would have enough experience and/or qualification to teach music?",
-        "skill_answer":3
+        "skill_answer":3,
+        "image": "/static/img/guitar.jpg"
         }, 
         {
         "title": "Help with Transport",
         "need_amount": 9,
         "need_statement": "find it difficult getting to appointments and require",
         "skill_question": "How many had access to a car and said they would be able to provide lifts?",
-        "skill_answer": 17
+        "skill_answer": 17,
+        "image": "/static/img/car-web.jpeg"
         },
         {
         "title": "Needlework",
         "need_amount": 17,
         "need_statement": "wanted help with sewing, embroidery and knitting:",
         "skill_question": "How many do you think had the skill and were willing to exchange and share?",
-        "skill_answer": 8
+        "skill_answer": 8,
+        "image": "/static/img/knitting.jpg"
         },
         {
         "title": "Health and Fitness",    
         "need_amount": 16,
         "need_statement": "are eager to learn yoga and take other courses in", 
         "skill_question": "What number of people responded saying they could provide this?",
-        "skill_answer": 7
+        "skill_answer": 7,
+        "image": "/static/img/yoga-web.jpeg"
         },
         {
         "title":"Home Repairs",
         "need_amount": 23,
         "need_statement": "needed help carrying out some basic",
         "skill_question": "How many said they had practical experience of home repairs?",
-        "skill_answer": 18
+        "skill_answer": 18,
+        "image": "/static/img/wrench-web.jpeg"
         }
-        
-        
-
     ]
     
 
