@@ -123,7 +123,7 @@ def challenge(username):
                     next_challenge = get_challenge(challenge_id)
                     flash('{} is correct - 10 points!'.format(guess))
                     
-                    if flash <= 7:
+                    if challenge_id < 8:
                         flash('Try the next challenge about {}'.format(challenge_plus['title']))
                 
                 else:
@@ -140,30 +140,19 @@ def challenge(username):
                             score += 5
                             flash('The answer was {}, but {} is close enough - 5 points!'.format(answer, guess))
                             next_challenge = get_challenge(challenge_id)
-                            
-                            """
-                            if statement(s) to avoid NoneType error if there is no 
-                            next title for the flash message
-                            """
-                            
-                            if flash <= 7:
+                            if challenge_id < 8:
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
-                            
-                        
                         else:    
                             next_challenge = get_challenge(challenge_id)
                             flash('You guessed {}. The answer was {}.'.format(guess, answer))
-                            
-                            if flash <= 7:
+                            if challenge_id < 8:
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
-                    
                     else:
                         attempt += 1
                         next_challenge = get_challenge(challenge_id)
                         
                         if (guess > answer) and (guess < answer + 5) or (guess < answer) and (guess > answer - 5):
                             flash('{} is close... Try again'.format(guess))
-                        
                         else:
                             flash('{} is not right. Try again!'.format(guess))
                
@@ -188,9 +177,8 @@ def challenge(username):
                     }
                     return render_template('challenge-test.html', context=context)
                 else:
-                    session.pop('_flashes', None) # Clear flashed messages if we're on the final question"
+                    session.pop('_flashes', None) # Clear flashed messages at final question
                     
-            
             results_table(username, score) # call function to store results list to results.txt
             return redirect("/results_table")    
     
@@ -206,7 +194,6 @@ def results_board():
 
     with open("data/results.txt", "r") as json_data:
         data = json.load(json_data)
-        
         newlist = sorted(data, key=itemgetter('score'), reverse=True) # Display results table from highest score down
     
     return render_template("results_table.html", page_title="Timebanking", score_table = newlist)
@@ -230,17 +217,4 @@ if __name__ == "__main__":
 
 
 
-
-
-# OLD FUNCTIONS - KEEP FOR REF
-# """Challenge Page 8"""
-# @app.route('/challenge_8', methods=["GET", "POST"])
-# def challenge_8():
-
-#     challenge_q_a(7)
-#     display_score()
-#     with open("data/challenge.json", "r") as json_data:
-#         data = json.load(json_data)
-#     return render_template("challenge_8.html", challenge_data = data)
-    
 
