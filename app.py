@@ -2,6 +2,8 @@ import os
 import json
 from flask import Flask, render_template, request, flash, redirect, url_for, jsonify, session
 from operator import itemgetter, attrgetter
+import types
+from types import NoneType
 
 # import scoring (access via 'scoring.user_list')
 
@@ -120,7 +122,9 @@ def challenge(username):
                     attempt = 1 # set attempt at 1 for next challenge
                     next_challenge = get_challenge(challenge_id)
                     flash('{} is correct - 10 points!'.format(guess))
-                    flash('Try the next challenge about {}'.format(challenge_plus['title']))
+                    
+                    if flash <= 7:
+                        flash('Try the next challenge about {}'.format(challenge_plus['title']))
                 
                 else:
                     if attempt >= 2:
@@ -135,17 +139,28 @@ def challenge(username):
                         if (guess > answer) and (guess <= answer + 5) or (guess < answer) and (guess >= answer - 5):
                             score += 5
                             flash('The answer was {}, but {} is close enough - 5 points!'.format(answer, guess))
-                            flash('Try the next challenge about {}'.format(challenge_plus['title']))
                             next_challenge = get_challenge(challenge_id)
+                            
+                            """
+                            if statement(s) to avoid NoneType error if there is no 
+                            next title for the flash message
+                            """
+                            
+                            if flash <= 7:
+                                flash('Try the next challenge about {}'.format(challenge_plus['title']))
+                            
                         
                         else:    
                             next_challenge = get_challenge(challenge_id)
                             flash('You guessed {}. The answer was {}.'.format(guess, answer))
-                            flash('Try the next challenge about {}'.format(challenge_plus['title']))
+                            
+                            if flash <= 7:
+                                flash('Try the next challenge about {}'.format(challenge_plus['title']))
                     
                     else:
                         attempt += 1
                         next_challenge = get_challenge(challenge_id)
+                        
                         if (guess > answer) and (guess < answer + 5) or (guess < answer) and (guess > answer - 5):
                             flash('{} is close... Try again'.format(guess))
                         
