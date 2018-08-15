@@ -12,13 +12,14 @@
             </p>
             <h2>Think you know your neighbours?<br>Let's get started...</h2><br>
             <p>
-                <strong>For every <u>correct answer</u> you will receive <u>10 points</u>. If 
-                your guess is <u>close (i.e. within 5 points of the answer)</u>,
-                you will get <u>5 points</u>.</strong>
+                <strong><u>RULES</u></strong><br>
+                <strong>2 attempts</strong> per challenge<br>
+                <strong>10 points</strong> for correct answer<br>
+                <strong>5 points</strong> if your guess is close (+/-5)
             </p>
-            <form method="POST" data-toggle="validator" role="form" action="/challenge/{{username}}">
+            <form method="POST" action="/challenge/{{username}}">
                 <input type="hidden" value="true" name="first-challenge">
-                <button type="submit" value="login" class="btn-lg btn-success">Play Now!</button>
+                <button class="btn btn-lg btn-success">Play Now!</button>
             </form>
         </div>
 

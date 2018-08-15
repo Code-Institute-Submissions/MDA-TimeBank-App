@@ -26,30 +26,13 @@
 
 <body>
 
-<!--Collapsable navbar-->
-    <!--<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id='sideNav'>-->
-    <!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>-->
-    <!--<a class="navbar-brand">-->
-    <!--    <span class="d-lg-none"><img class="mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo"></span>-->
-    <!--    <span class="d-none d-lg-block"><img class="mb-2 mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo"></span>-->
-    <!--</a>-->
-    <!--    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">-->
-    <!--        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">-->
-    <!--            <li class="nav-item">-->
-    <!--                <a class="nav-link" href="{{ url_for('index') }}">Start the Challenge!</a>-->
-    <!--            </li>-->
-    <!--            <li class="nav-item">-->
-    <!--                <a class="nav-link" href="{{ url_for('information') }}">More Information</a>-->
-    <!--            </li>-->
-    <!--        </ul>-->
-    <!--    </div>-->
-    <!--</nav>-->
     <nav class="navbar navbar-light bg-light" id="sideNav">
         <a class="navbar-brand">
             <img class="mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo" width="200" height="100" alt="">
+            
             <form>
-                <button type="submit" value="{{ url_for('index') }}" class="btn-sm btn-danger nav-btn">Start Again!</button>
-            </form>
+                <button type="submit" href="{{ '/' }}" class="btn btn-sm btn-info nav-btn"><strong>Start Again!</strong></button>
+            </form>     
         </a>
     </nav>
 
