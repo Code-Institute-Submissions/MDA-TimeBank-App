@@ -2,7 +2,7 @@ import os
 import json
 from flask import Flask, render_template, request, flash, redirect, url_for, jsonify, session
 from operator import itemgetter, attrgetter
-from scoring import user_list, score, calc_score, challenge_q_a, display_score
+
 # import scoring (access via 'scoring.user_list')
 
 app = Flask(__name__)
@@ -106,18 +106,21 @@ def challenge(username):
             challenge_id = int(form.get('challenge_id'))
             score = int(form.get('current_score'))
             challenge = get_challenge(challenge_id)
+            challenge_plus = get_challenge(challenge_id + 1)
             
             guess = int(form.get('guess'))
             answer = int(challenge['skill_answer'])
             correct = guess == answer
             
             while challenge_id <= 8:
+                
                 if correct:
                     challenge_id += 1
                     score += 10
                     attempt = 1 # set attempt at 1 for next challenge
                     next_challenge = get_challenge(challenge_id)
-                    flash('{} is correct - 10 points Try the next challenge!').format(guess)
+                    flash('{} is correct - 10 points!'.format(guess))
+                    flash('Try the next challenge about {}'.format(challenge_plus['title']))
                 
                 else:
                     if attempt >= 2:
@@ -131,12 +134,14 @@ def challenge(username):
                         
                         if (guess > answer) and (guess <= answer + 5) or (guess < answer) and (guess >= answer - 5):
                             score += 5
-                            flash('The answer was {}, but {} is close enough - 5 points! Take the next challenge.'.format(answer, guess))
+                            flash('The answer was {}, but {} is close enough - 5 points!'.format(answer, guess))
+                            flash('Try the next challenge about {}'.format(challenge_plus['title']))
                             next_challenge = get_challenge(challenge_id)
                         
                         else:    
                             next_challenge = get_challenge(challenge_id)
-                            flash('You guessed {}. The answer was {}. Take the next challenge.'.format(guess, answer))                        
+                            flash('You guessed {}. The answer was {}.'.format(guess, answer))
+                            flash('Try the next challenge about {}'.format(challenge_plus['title']))
                     
                     else:
                         attempt += 1
@@ -172,7 +177,7 @@ def challenge(username):
                     
             
             results_table(username, score) # call function to store results list to results.txt
-            return redirect("/information")    
+            return redirect("/results_table")    
     
     return redirect('/')
 
