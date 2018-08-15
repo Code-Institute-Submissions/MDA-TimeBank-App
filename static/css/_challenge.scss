@@ -26,12 +26,24 @@
 }
 
 .challenge-body {
+    margin-top: 3rem;
+    @media (min-width: $break-small) {
+        margin-top: 9rem;        
+    }
+
+}
+
+.challenge-cards {
     margin-top: 1rem;
+
 }
 
 .challenge-number {
     @include challenge-font;
     font-size: 4rem;
+    @media (min-width: $break-small) {
+        font-size: 8rem;
+    }
     line-height: 3rem;
     color: $blue;
     opacity: .9;
@@ -47,25 +59,14 @@
         top: 1px solid;
         bottom: 1px solid;
     }
+    @media (min-width: $break-small) {
+        line-height: 5.5rem;
+        margin-top: 1rem;
+        font-size: 6.5rem;
+        
+    }
 }
 
-// .challenge-numbers_2 {
-//     @include challenge-font;
-//     font-size: 7rem;
-//     @media (min-width: $break-small) {
-//         font-size: 8rem;
-//     }
-//     line-height: 5rem;
-//     color: $orange;
-//     margin-top: 1rem;
-//     text: {
-//         shadow: 7px -3px black;
-//         align: right;
-//     }
-//     @media (min-width: 992px) {
-//         font-size: 9rem;
-//     }
-// }
 
 .challenge_statement {
     padding: .2rem;
@@ -81,6 +82,12 @@
     @media (min-width: 992px) {
         margin-top: 3rem;
     }
+}
+
+.challenge-text {
+   @media (min-width: $break-small) {
+       font-size: 2rem;
+   }
 }
 
 .answer_txt {
@@ -106,7 +113,7 @@
     z-index: 10;
     position: fixed;
     font-size: 7rem;
-    @media (min-width: $break-small) {
+    @media (min-width: $break-medium) {
         font-size: 13rem;
     }
     top: 15%;
@@ -123,7 +130,6 @@
     max-width: 35%;
     @media (min-width: $break-small) {
         font-size: 2rem;
-        margin-top: 2rem;
     }
     margin-left: 1rem;
 }

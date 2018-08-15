@@ -4,9 +4,13 @@
         font-size: 2rem;
     }
     line-height: 1.5;
-    border-radius: 18px !important;
+    // border-radius: 18px !important;
     margin: 1rem;
     display: inline-block;
+}
+
+.btn-info {
+    box-shadow: 7px 5px 9px black;;
 }
 
 .msg-bd-btn {
@@ -14,7 +18,7 @@
 }
 
 .nav-btn {
-    position: fixed;
+    position: absolute;
     right: .5rem;
     top: 4rem;
     @media (min-width: $break-small) {

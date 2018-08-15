@@ -17,6 +17,12 @@ h2 {
     }
 }
 
+h3 {
+    @media (min-width: $break-large) {
+    color: $primary;
+    }
+}
+
 .text-primary {
     color: $primary !important;
 }
@@ -42,6 +48,13 @@ h2 {
 }
 
 .user {
-    position: fixed;
-    top: 6rem;
+    position: absolute;
+    top: 5.4rem;
+    left: 1.1rem;
+    border-top: solid;
+    border-bottom: solid;
+    @media (min-width: $break-medium) {
+        max-width: 220px;
+        left: 2rem;
+    }
 }

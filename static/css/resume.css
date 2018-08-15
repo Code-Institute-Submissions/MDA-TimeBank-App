@@ -17,6 +17,10 @@ h2 {
     h2 {
       font-size: 2rem; } }
 
+@media (min-width: 1200px) {
+  h3 {
+    color: #BD5D38; } }
+
 .text-primary {
   color: #BD5D38 !important; }
 
@@ -36,8 +40,15 @@ h2 {
       margin-top: 6rem; } }
 
 .user {
-  position: fixed;
-  top: 6rem; }
+  position: absolute;
+  top: 5.4rem;
+  left: 1.1rem;
+  border-top: solid;
+  border-bottom: solid; }
+  @media (min-width: 992px) {
+    .user {
+      max-width: 220px;
+      left: 2rem; } }
 
 body {
   font-family: 'Open Sans', serif;
@@ -205,6 +216,12 @@ a {
   width: 100%; }
 
 .challenge-body {
+  margin-top: 3rem; }
+  @media (min-width: 768px) {
+    .challenge-body {
+      margin-top: 9rem; } }
+
+.challenge-cards {
   margin-top: 1rem; }
 
 .challenge-number {
@@ -215,11 +232,19 @@ a {
   opacity: .9;
   text-shadow: 7px 7px 9px black;
   text-align: right; }
+  @media (min-width: 768px) {
+    .challenge-number {
+      font-size: 8rem; } }
 
 .challenge_title {
   color: #2e72aa;
   border-top: 1px solid;
   border-bottom: 1px solid; }
+  @media (min-width: 768px) {
+    .challenge_title {
+      line-height: 5.5rem;
+      margin-top: 1rem;
+      font-size: 6.5rem; } }
 
 .challenge_statement {
   padding: .2rem; }
@@ -234,6 +259,10 @@ a {
   @media (min-width: 992px) {
     .challenge_statement_2 {
       margin-top: 3rem; } }
+
+@media (min-width: 768px) {
+  .challenge-text {
+    font-size: 2rem; } }
 
 .answer_txt {
   font-family: 'Open Sans', serif;
@@ -256,7 +285,7 @@ a {
   font-size: 7rem;
   top: 15%;
   left: 65%; }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .fa-hand-point-right {
       font-size: 13rem; } }
   @media (min-width: 992px) {
@@ -271,8 +300,7 @@ a {
   margin-left: 1rem; }
   @media (min-width: 768px) {
     .input-lg {
-      font-size: 2rem;
-      margin-top: 2rem; } }
+      font-size: 2rem; } }
 
 #end-score {
   color: #BD5D38;
@@ -307,18 +335,20 @@ a {
 .btn-lg {
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 18px !important;
   margin: 1rem;
   display: inline-block; }
   @media (min-width: 768px) {
     .btn-lg {
       font-size: 2rem; } }
 
+.btn-info {
+  box-shadow: 7px 5px 9px black; }
+
 .msg-bd-btn {
   text-align: center; }
 
 .nav-btn {
-  position: fixed;
+  position: absolute;
   right: .5rem;
   top: 4rem; }
   @media (min-width: 768px) {
@@ -394,7 +424,7 @@ a {
       margin-top: 10rem; } }
   @media (min-width: 992px) {
     .home-body {
-      margin-top: 14rem; } }
+      margin-top: 12rem; } }
 
 .info-p {
   color: #fff;
@@ -420,18 +450,21 @@ a {
 .form-control {
   margin-left: 15px; }
 
-.card {
+.card,
+.card-body {
   box-shadow: 7px 7px 9px black;
-  background-color: black;
-  height: 4rem !important;
-  border: #BD5D38 1px solid; }
-
-.card .card-body {
-  padding: 1 !important; }
+  background-color: rgba(66, 24, 59, 0.78);
+  padding: 0; }
 
 .card h2 {
   line-height: 1;
   text-align: center;
   color: #fff; }
+
+.warning {
+  margin-top: 1rem; }
+  @media (min-width: 992px) {
+    .warning {
+      margin-top: 3rem; } }
 
 /*# sourceMappingURL=resume.css.map */

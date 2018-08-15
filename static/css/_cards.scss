@@ -1,16 +1,21 @@
-.card {
+.card,
+.card-body {
     box-shadow: $shadow;
-    background-color: black;
-    height: 4rem !important;
-    border: $orange 1px solid;
+    background-color: rgba(66, 24, 59, 0.78);
+    padding: 0;
+
 }
 
-.card .card-body {
-    padding: 1 !important;
-}
 
 .card h2 {
     line-height: 1;
     text-align: center;
     color: #fff;
+}
+
+.warning {
+    margin-top: 1rem;
+    @media (min-width: $break-medium) {
+        margin-top: 3rem;
+    }
 }
