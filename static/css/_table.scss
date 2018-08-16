@@ -1,31 +1,15 @@
 .table {
-    font-size: .7rem;
-    @media (min-width: $break-small) {
-        font-size: 1.5rem;
-    }
+    font-size: 1rem;
     color: white;
     overflow: auto;
-    text-align: justify;
-    height: 60%;
-}
-
-.message_margin {
-    margin-top: 8rem;
-    color: #bf5d31;
     text-align: center;
-    @media (min-width: $break-small) {
-        font-size: 3.5rem;
-    }
 }
 
 .table-responsive {
-    width: 100%;
-    @media (min-width: $break-medium) {
-        width: 80%;
-        margin: {
-            left: 5%;
-            right: 5%;
-        }
-    }
+    height: 200px;
+}
+
+tbody > tr:hover {
+    color: $orange;
 }
 

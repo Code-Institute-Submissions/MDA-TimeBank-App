@@ -50,6 +50,9 @@ h2 {
       max-width: 220px;
       left: 2rem; } }
 
+.results-head {
+  color: white; }
+
 body {
   font-family: 'Open Sans', serif;
   color: black;
@@ -68,6 +71,10 @@ hr {
   body {
     padding-top: 0;
     padding-left: 17rem; } }
+.carousel-item {
+  width: 100%    !important;
+  height: auto   !important; }
+
 .mda_logo {
   width: 150px;
   height: 75px; }
@@ -222,7 +229,8 @@ a {
       margin-top: 9rem; } }
 
 .challenge-cards {
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  text-align: center; }
 
 .challenge-number {
   font-family: 'Skranji', cursive;
@@ -365,30 +373,16 @@ a {
   margin-top: 15px; }
 
 .table {
-  font-size: .7rem;
+  font-size: 1rem;
   color: white;
   overflow: auto;
-  text-align: justify;
-  height: 60%; }
-  @media (min-width: 768px) {
-    .table {
-      font-size: 1.5rem; } }
-
-.message_margin {
-  margin-top: 8rem;
-  color: #bf5d31;
   text-align: center; }
-  @media (min-width: 768px) {
-    .message_margin {
-      font-size: 3.5rem; } }
 
 .table-responsive {
-  width: 100%; }
-  @media (min-width: 992px) {
-    .table-responsive {
-      width: 80%;
-      margin-left: 5%;
-      margin-right: 5%; } }
+  height: 200px; }
+
+tbody > tr:hover {
+  color: #BD5D38; }
 
 /*Home page heading*/
 .landing-header {
@@ -459,12 +453,17 @@ a {
 .card h2 {
   line-height: 1;
   text-align: center;
-  color: #fff; }
+  color: #fff;
+  padding: .1rem; }
 
 .warning {
   margin-top: 1rem; }
   @media (min-width: 992px) {
     .warning {
       margin-top: 3rem; } }
+
+blockquote {
+  border-left: solid white 1px;
+  padding-left: 1rem; }
 
 /*# sourceMappingURL=resume.css.map */
