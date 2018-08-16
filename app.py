@@ -122,8 +122,8 @@ def challenge(username):
                     attempt = 1 # set attempt at 1 for next challenge
                     next_challenge = get_challenge(challenge_id)
                     flash('{} is correct - 10 points!'.format(guess))
-                    
-                    if challenge_id < 7:
+                
+                    if challenge_id < 7: # stop message from flahsing if on last challenge
                         flash('Try the next challenge about {}'.format(challenge_plus['title']))
                 
                 else:
@@ -141,13 +141,14 @@ def challenge(username):
                             flash('The answer was {}, but {} is close enough - 5 points!'.format(answer, guess))
                             next_challenge = get_challenge(challenge_id)
                             
-                            if challenge_id < 7:
+                            if challenge_id < 7: # stop message from flahsing if on last challenge
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
                         
                         else:    
                             next_challenge = get_challenge(challenge_id)
                             flash('You guessed {}. The answer was {}.'.format(guess, answer))
-                            if challenge_id < 7:
+                            
+                            if challenge_id < 7: # stop message from flahsing if on last challenge
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
                     else:
                         attempt += 1
@@ -161,7 +162,7 @@ def challenge(username):
                 """
                 Template is now returned with the updated context unless player has
                 completed the final challenge, in which case game will move through to 
-                final score announcement
+                results table
                 """
                 
                 if next_challenge is not None:
@@ -178,14 +179,9 @@ def challenge(username):
                         'attempt': attempt,
                     }
                     return render_template('challenge-test.html', context=context)
-                # else:
-                    # session.get('_flashes', None) # Clear flashed messages at final question
-                    # final_session = {a:list(set(b)) for a,b in session.items()}
 
-                    
             results_table(username, score) # call function to store results list to results.txt
-            # final_session = {a:list(set(b)) for a,b in session.items()}
-            # print(final_session)
+
             return redirect("/results_table")    
     
     return redirect('/')
