@@ -60,5 +60,22 @@ h3 {
 }
 
 .results-head {
+    color: $orange;
+}
+
+.carousel h1 {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.carousel-item p {
+    font-size: 1.5rem;
+    @media (min-width: $break-medium) {
+        font-size: 2rem;
+    }
+}
+
+.carousel p,
+blockquote p {
     color: white;
 }

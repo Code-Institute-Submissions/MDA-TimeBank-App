@@ -51,6 +51,20 @@ h2 {
       left: 2rem; } }
 
 .results-head {
+  color: #BD5D38; }
+
+.carousel h1 {
+  color: white;
+  margin-bottom: 2rem; }
+
+.carousel-item p {
+  font-size: 1.5rem; }
+  @media (min-width: 992px) {
+    .carousel-item p {
+      font-size: 2rem; } }
+
+.carousel p,
+blockquote p {
   color: white; }
 
 body {
@@ -72,8 +86,24 @@ hr {
     padding-top: 0;
     padding-left: 17rem; } }
 .carousel-item {
-  width: 100%    !important;
-  height: auto   !important; }
+  width: 100% !important;
+  height: 450px !important;
+  text-align: center;
+  background-color: #af563499;
+  padding: 1rem;
+  line-height: 1.5; }
+
+.carousel-container {
+  margin-top: 2rem; }
+
+.carousel-item > p {
+  font-size: 1.5rem;
+  position: relative;
+  top: 30%;
+  transform: translateY(-70%); }
+
+.carousel {
+  padding-bottom: 4rem; }
 
 .mda_logo {
   width: 150px;

@@ -5,7 +5,6 @@ body {
   line-height: 1;
 }
 
-
 blockquote {
   border-left: solid 2px #000;
 }
@@ -13,7 +12,6 @@ blockquote {
 hr {
   width: 90%;
 }
-
 
 @media (min-width: 768px) {
   h1 {
@@ -29,14 +27,27 @@ hr {
 }
 
 .carousel-item {
-  width: 100%    !important;
-  height: auto   !important;
+  width: 100% !important;
+  height: 450px !important;
+  text-align: center;
+  background-color: #af563499;
+  padding: 1rem;
+  line-height: 1.5;
 }
 
-// .carousel-item iframe {
-//   position: absolute;  
-//   top: 0; 
-//   left: 0; 
-//   width: 100%; 
-//   height: 100%;
-// }
+.carousel-container {
+  margin-top: 2rem;
+}
+
+.carousel-item > p {
+  font-size: 1.5rem;
+  position: relative;
+  top: 30%;
+  transform: translateY(-70%);
+}
+
+.carousel {
+  padding-bottom: 4rem;
+}
+
+
