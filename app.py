@@ -95,8 +95,8 @@ def challenge(username):
         form = request.form
         
         """ 
-        The form on intro.html creates the 'context' for the Challenge 1 - keeping
-        track of player activity and the progress of the challenges
+        The form on intro.html passes the data for the context for the Challenge 1 
+        - keeping track of player activity and the progress of the challenges
         """
         
         if form.get('first-challenge') == 'true':
@@ -114,7 +114,7 @@ def challenge(username):
             answer = int(challenge['skill_answer'])
             correct = guess == answer
             
-            while challenge_id <= 8:
+            while challenge_id <= 7:
                 
                 if correct:
                     challenge_id += 1
@@ -123,7 +123,7 @@ def challenge(username):
                     next_challenge = get_challenge(challenge_id)
                     flash('{} is correct - 10 points!'.format(guess))
                     
-                    if challenge_id < 8:
+                    if challenge_id < 7:
                         flash('Try the next challenge about {}'.format(challenge_plus['title']))
                 
                 else:
@@ -140,12 +140,14 @@ def challenge(username):
                             score += 5
                             flash('The answer was {}, but {} is close enough - 5 points!'.format(answer, guess))
                             next_challenge = get_challenge(challenge_id)
-                            if challenge_id < 8:
+                            
+                            if challenge_id < 7:
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
+                        
                         else:    
                             next_challenge = get_challenge(challenge_id)
                             flash('You guessed {}. The answer was {}.'.format(guess, answer))
-                            if challenge_id < 8:
+                            if challenge_id < 7:
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
                     else:
                         attempt += 1
@@ -176,10 +178,14 @@ def challenge(username):
                         'attempt': attempt,
                     }
                     return render_template('challenge-test.html', context=context)
-                else:
-                    session.pop('_flashes', None) # Clear flashed messages at final question
+                # else:
+                    # session.get('_flashes', None) # Clear flashed messages at final question
+                    # final_session = {a:list(set(b)) for a,b in session.items()}
+
                     
             results_table(username, score) # call function to store results list to results.txt
+            # final_session = {a:list(set(b)) for a,b in session.items()}
+            # print(final_session)
             return redirect("/results_table")    
     
     return redirect('/')
@@ -191,7 +197,7 @@ Results and information page
 
 @app.route('/results_table', methods=["GET", "POST"])
 def results_board():
-
+     
     with open("data/results.txt", "r") as json_data:
         data = json.load(json_data)
         newlist = sorted(data, key=itemgetter('score'), reverse=True) # Display results table from highest score down
