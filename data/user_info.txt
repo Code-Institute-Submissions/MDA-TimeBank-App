@@ -1,1 +1,0 @@
-[{"message": "This is Susie's Test", "email": "susie@mail.com", "name": "Susie Seashore", "score": 0}, {"message": "This is Madeline's test", "email": "mads@mods.com", "name": "Madeline Albany", "score": 0}, {"message": "This is Albany's test", "email": "mods@mads.com", "name": "Albany madeline", "score": 0}]
