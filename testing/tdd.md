@@ -114,7 +114,9 @@ The following aspects of the code were tested manually:
 
 * **JQuery events** all take place on the Challenge pages. These were tested by executing the event, refreshing the page and testing again 
 
-* a basic test function ``count_attempts(guess, answer)`` was written in the test suite to count attempts, but as the live code involved passing the original context data through hidden names in the HTML form, this was not simulated in the tests or refactored with the ``challenge_run(username, guess)``. Instead the 'loop' to the second guess or progression to next question was tested manually by providing a range of responses to the question to see what response the code would produce.
+* As the live code involved passing the original context data through hidden names in the HTML form, the second attempt was not simulated in the tests or refactored with the ``challenge_run(username, guess)``. Instead the 'loop' to the second guess or progression to next question was tested manually by providing a range of responses to the question to see what response the code would produce:
+    * a correct answer should have progressed to the following challenge (unless it was the last challenge)
+    * an incorrect answer should have repeated the challenge one more time, and then progressed to the next challenge
 
 * **Broswer compatibility**. The above features were tested in each of the following browsers:
   - Google Chrome

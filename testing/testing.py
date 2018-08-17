@@ -232,23 +232,6 @@ assert challenge_test.get("statement", None) == "needed support and assistance t
 
 print("all scoring & context tests passed!")
     
-
-def count_attempts(guess, answer):
-    attempt = 1 # keep attempt at 1 to start on first guess
-    score = 0    
-    correct = guess == answer
-    
-    if correct and attempt == 1:
-        return "Correct guess in {} attempt".format(attempt)
-    else:
-        attempt += 1
-        return "Guess again. This is attempt #{}".format(attempt)
-
-# tests
-assert count_attempts(6, 6) == "Correct guess in 1 attempt"
-assert count_attempts(4, 9) == "Guess again. This is attempt #2"
-
-print("all limit_two_attempts tests passed!")
     
 
 print("All tests passed... Nice one!")
