@@ -5,7 +5,6 @@ from operator import itemgetter, attrgetter
 import types
 from types import NoneType
 
-# import scoring (access via 'scoring.user_list')
 
 app = Flask(__name__)
 app.secret_key = "some_secret"
@@ -24,7 +23,8 @@ def get_challenge(index):
 """
 Add and sort players to the results table
 """
-results_list = []   # results_list kept in global to create list of objects from results_table function
+
+results_list = []
 
 def results_table(username, result):
     results_list.append({
@@ -32,7 +32,7 @@ def results_table(username, result):
         'score': result,
     })
     
-    with open('data/results.txt', 'w') as outfile:
+    with open('data/results.json', 'w') as outfile:
         json.dump(results_list, outfile)
 
 
@@ -90,6 +90,8 @@ Challenge loop
 
 @app.route('/challenge/<username>', methods=["GET", "POST"])
 def challenge(username):
+    
+    
     if request.method == 'POST':
         
         form = request.form
@@ -186,7 +188,7 @@ def challenge(username):
     
     return redirect('/')
 
-    
+
 """
 Results and information page
 """
@@ -194,20 +196,12 @@ Results and information page
 @app.route('/results_table', methods=["GET", "POST"])
 def results_board():
      
-    with open("data/results.txt", "r") as json_data:
+    with open("data/results.json", "r") as json_data:
         data = json.load(json_data)
         newlist = sorted(data, key=itemgetter('score'), reverse=True) # Display results table from highest score down
     
     return render_template("results_table.html", page_title="Timebanking", score_table = newlist)
 
-
-"""
-More Information Page
-"""
-
-@app.route('/information')
-def information():
-    return render_template("information.html", page_title="Find out more...")
 
 
 if __name__ == "__main__":
