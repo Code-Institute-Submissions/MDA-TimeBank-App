@@ -10,7 +10,7 @@ app.secret_key = "some_secret"
 
 
 """
-Get challenge information from json file to loop through the questions and answers
+Get challenge information from json file to iterate through the questions and answers
 """
 
 def get_challenge(index):
@@ -20,7 +20,7 @@ def get_challenge(index):
 
 
 """
-Add and sort players to the results table
+Appen usernames and scores to the results file
 """
 
 results_list = []
@@ -60,8 +60,8 @@ def setup_context(username):
 
 
 """
-Start Page - Player selects a username which is passed through to the intro 
-function
+Index Page - Player enters a username which is rendered on the 'welcome' card on 
+intro page
 """
 
 @app.route('/', methods=["GET", "POST"])
@@ -90,14 +90,13 @@ Challenge loop
 @app.route('/challenge/<username>', methods=["GET", "POST"])
 def challenge(username):
     
-    
     if request.method == 'POST':
         
         form = request.form
         
         """ 
-        The form on intro.html passes the data for the context for the Challenge 1 
-        - keeping track of player activity and the progress of the challenges
+        The POST request on intro.html passes sets the game at 'first-challenge'
+        - enabling context to be created
         """
         
         if form.get('first-challenge') == 'true':
@@ -109,7 +108,7 @@ def challenge(username):
             challenge_id = int(form.get('challenge_id'))
             score = int(form.get('current_score'))
             challenge = get_challenge(challenge_id)
-            challenge_plus = get_challenge(challenge_id + 1)
+            challenge_plus = get_challenge(challenge_id + 1) # this retrieves title of next challenge for rendering
             
             guess = int(form.get('guess'))
             answer = int(challenge['skill_answer'])
@@ -124,7 +123,7 @@ def challenge(username):
                     next_challenge = get_challenge(challenge_id) # uses challenge_id as param to get next challenge
                     flash('"{}" was correct - 10 points!'.format(guess))
                 
-                    if challenge_id < 7: # stop message from flahsing if on last challenge
+                    if challenge_id < 7: # displays title of next challenge
                         flash('Try the next challenge about {}'.format(challenge_plus['title']))
                 
                 else:
@@ -142,14 +141,14 @@ def challenge(username):
                             flash('The answer was "{}", but "{}" is close enough - 5 points!'.format(answer, guess))
                             next_challenge = get_challenge(challenge_id) # uses challenge_id as param to get next challenge
                             
-                            if challenge_id < 7: # stop message from flahsing if on last challenge
+                            if challenge_id < 7: # displays title of next challenge
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
                         
                         else: # if guess is not correct or within +/-5 range of answer     
                             next_challenge = get_challenge(challenge_id)  # uses challenge_id as param to get next challenge
                             flash('You guessed "{}". The answer was "{}".'.format(guess, answer))
                             
-                            if challenge_id < 7: # stop message from flahsing if on last challenge
+                            if challenge_id < 7: # displays title of next challenge
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
                     else: # if there has only been one attempt
                         attempt += 1 # move to second attempt
@@ -162,9 +161,9 @@ def challenge(username):
                             flash('"{}" is not right. Try again!'.format(guess))
                
                 """
-                Template is now returned with the updated context unless player has
-                completed the final challenge, in which case game will move through to 
-                results table
+                Context is now updated unless player has completed the final challenge, 
+                in which case the usernamen and score will be stored in .json file
+                and player will move through to results table
                 """
                 
                 if next_challenge is not None: # if there is another challenge
@@ -196,12 +195,11 @@ Results and information page
 @app.route('/results_table', methods=["GET", "POST"])
 def results_board():
      
-    with open("data/results.json", "r") as json_data:
+    with open("data/results.json", "r") as json_data: # read username & scores from json file
         data = json.load(json_data)
         newlist = sorted(data, key=itemgetter('score'), reverse=True) # Display results table from highest score down
     
     return render_template("results_table.html", page_title="Timebanking", score_table = newlist)
-
 
 
 if __name__ == "__main__":
