@@ -30,6 +30,7 @@ assert guess_range(32, 15) == True, "Guess 5 or more greater than answer"
 assert guess_range(5, 15) == True, "Guess 5 or more fewer than answer"
 assert guess_range(2, 15) == True, "Guess 5 or more fewer than answer"
 
+print("all guess_range tests passed!")
 
 """Score based on accuracy of guess"""
 def allocate_points(guess, answer):
@@ -202,12 +203,10 @@ def challenge_run(username, guess):
             return context  
         
         else: # if there are no more challenges
-            return context # return the score
+            return score # return the score
 
 
-
-
-challenge_test = challenge_run("bob505", 78) # a correct guess
+challenge_test = challenge_run("bob505", 78) # set up a correct guess
 
 # will produce the context for the next challenge
 assert challenge_test.get("username", None) == "bob505"
@@ -230,42 +229,10 @@ assert challenge_test.get("answer", None) == 78
 assert challenge_test.get("title", None) != "Bike Repairs"
 assert challenge_test.get("statement", None) == "needed support and assistance to be able to confidently use"
 
-
-"""left this out - looping function - might be useful to refactor main code"""
-# # pass the context from first challenge to second attempt
-# challenge_test_two = challenge_run(challenge_test.get("username", None), 74, challenge_test.get("attempt", None))
-
-# assert challenge_test.get("username", None) == "bob505"
-# assert challenge_test.get("challenge_id", None) == 1
-# assert challenge_test.get("attempt", None) == 1
-# assert challenge_test.get("current_score", None) == 5 # awards 5 points for guess within +/-5
-# assert challenge_test.get("answer", None) == 6
-# assert challenge_test.get("title", None) == "Bike Repairs"
-# assert challenge_test.get("statement", None) == "had bicycles and would benefit from someone carrying out"
-
 print("all scoring & context tests passed!")
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def count_attempts(guess, answer):
-    
     attempt = 1 # keep attempt at 1 to start on first guess
     score = 0    
     correct = guess == answer
@@ -282,24 +249,5 @@ assert count_attempts(4, 9) == "Guess again. This is attempt #2"
 
 print("all limit_two_attempts tests passed!")
     
-
-
-"""
-Refactor code - integrate context with game logic
-"""
-
-
-"""
-Writing name and score to .txt file
-"""
-
-    
-    
-
-
-
-
-
-
 
 print("All tests passed... Nice one!")
