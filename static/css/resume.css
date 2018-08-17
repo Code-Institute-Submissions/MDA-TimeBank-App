@@ -1,5 +1,4 @@
 /*Media breakpoints*/
-/*My code*/
 h1,
 h2,
 h3,
@@ -24,7 +23,6 @@ h2 {
 .text-primary {
   color: #BD5D38 !important; }
 
-/*Challenge fonts*/
 .challenge-page-title {
   font-size: 4rem;
   color: #2e72aa; }
@@ -67,40 +65,22 @@ h2 {
 blockquote p {
   color: white; }
 
+.text-primary {
+  color: #BD5D38 !important; }
+
 body {
   font-family: 'Open Sans', serif;
   color: black;
   line-height: 1; }
-
-hr {
-  width: 90%; }
-
-@media (min-width: 768px) {
-  h1 {
-    line-height: 3.5rem; } }
-@media (min-width: 992px) {
-  body {
-    padding-top: 0;
-    padding-left: 17rem; } }
-.carousel-item {
-  width: 100% !important;
-  height: 450px !important;
-  text-align: center;
-  background-color: #af563499;
-  padding: 1rem;
-  line-height: 1.5; }
-
-.carousel-container {
-  margin-top: 2rem; }
-
-.carousel-item > p {
-  font-size: 1.5rem;
-  position: relative;
-  top: 30%;
-  transform: translateY(-70%); }
-
-.carousel {
-  padding-bottom: 4rem; }
+  @media (min-width: 992px) {
+    body {
+      padding-top: 0;
+      padding-left: 17rem; } }
+  body hr {
+    width: 90%; }
+  @media (min-width: 768px) {
+    body h1 {
+      line-height: 3.5rem; } }
 
 .mda_logo {
   width: 150px;
@@ -171,9 +151,6 @@ adapted for size, logo, color and shadow
           display: block; }
           #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
             display: block; } }
-.bg-primary {
-  background-color: #BD5D38 !important; }
-
 a {
   color: #BD5D38; }
   a:hover, a:focus, a:active {
@@ -302,77 +279,6 @@ a {
   .challenge-text {
     font-size: 2rem; } }
 
-.answer_txt {
-  font-family: 'Open Sans', serif;
-  font-size: 1rem;
-  margin-top: 1rem;
-  color: white;
-  background-color: #BD5D38; }
-  @media (min-width: 768px) {
-    .answer_txt {
-      font-size: 2rem; } }
-
-.input-group {
-  width: 45%; }
-
-.fa-hand-point-right {
-  color: #000;
-  opacity: .8;
-  z-index: 10;
-  position: fixed;
-  font-size: 7rem;
-  top: 15%;
-  left: 65%; }
-  @media (min-width: 992px) {
-    .fa-hand-point-right {
-      font-size: 13rem; } }
-  @media (min-width: 992px) {
-    .fa-hand-point-right {
-      top: 72%;
-      left: 75%; } }
-
-.input-lg {
-  border: solid #bb613f 3px;
-  font-size: 1rem;
-  margin-left: 1rem;
-  max-width: 20%; }
-  @media (min-width: 768px) {
-    .input-lg {
-      font-size: 2rem; } }
-  @media (min-width: 1200px) {
-    .input-lg {
-      max-width: 10%; } }
-
-#end-score {
-  color: #BD5D38;
-  background-color: black; }
-
-.username {
-  color: #fff;
-  font-size: 2rem;
-  font-family: 'Skranji', cursive;
-  text-align: center;
-  background-color: #058599;
-  padding: 1rem;
-  line-height: 1 !important; }
-
-.reg-page {
-  font-size: 10rem;
-  line-height: 8.5rem;
-  color: white;
-  text-shadow: 5px -2px black; }
-
-.text-primary {
-  color: #BD5D38 !important; }
-
-.input-reg {
-  font-size: 1rem;
-  max-width: 90%;
-  margin-left: 1rem; }
-  @media (min-width: 768px) {
-    .input-reg {
-      max-width: 50%; } }
-
 .btn-lg {
   font-size: 1rem;
   line-height: 1.5;
@@ -383,7 +289,7 @@ a {
       font-size: 2rem; } }
 
 .btn-info {
-  box-shadow: 7px 5px 9px black; }
+  box-shadow: 7px 7px 9px black; }
 
 .msg-bd-btn {
   text-align: center; }
@@ -420,7 +326,10 @@ tbody > tr:hover {
 .results-margin {
   margin-top: 5rem; }
 
-/*Home page heading*/
+.iframe {
+  width: 560;
+  height: 315; }
+
 .landing-header {
   font-size: 5rem;
   line-height: 4rem !important;
@@ -456,29 +365,20 @@ tbody > tr:hover {
     .home-body {
       margin-top: 12rem; } }
 
-.info-p {
-  color: #fff;
-  font-size: 1rem;
-  background: #000;
-  text-align: center; }
-  @media (min-width: 768px) {
-    .info-p {
-      font-size: 2rem; } }
-
-.info-head {
-  color: white;
-  font-weight: 300;
-  text-align: center; }
-  @media (min-width: 768px) {
-    .info-head {
-      font-size: 3rem; } }
-
-.info-foot {
-  color: #BD5D38;
-  text-align: center; }
-
 .form-control {
   margin-left: 15px; }
+
+.input-lg {
+  border: solid #bb613f 3px;
+  font-size: 1rem;
+  margin-left: 1rem;
+  max-width: 20%; }
+  @media (min-width: 768px) {
+    .input-lg {
+      font-size: 2rem; } }
+  @media (min-width: 1200px) {
+    .input-lg {
+      max-width: 10%; } }
 
 .card,
 .card-body {
@@ -511,5 +411,25 @@ tbody > tr:hover {
 blockquote {
   border-left: solid white 1px;
   padding-left: 1rem; }
+
+.carousel-item {
+  width: 100% !important;
+  height: 450px !important;
+  text-align: center;
+  background-color: #af563499;
+  padding: 1rem;
+  line-height: 1.5; }
+
+.carousel-container {
+  margin-top: 2rem; }
+
+.carousel-item > p {
+  font-size: 1.5rem;
+  position: relative;
+  top: 30%;
+  transform: translateY(-70%); }
+
+.carousel {
+  padding-bottom: 4rem; }
 
 /*# sourceMappingURL=resume.css.map */

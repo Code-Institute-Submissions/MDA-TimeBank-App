@@ -9,13 +9,12 @@
     @include background-image
 }
 
-
 .bk-image-10 {
     background-image: url(/static/img/hands_mess_board.jpeg);
     @include background-image
 }
 
-// Elements idden for jquery event
+// Elements hidden for jquery event
 .hidden,
 .hidden_question,
 .hidden_attempt,
@@ -65,7 +64,6 @@
         line-height: 5.5rem;
         margin-top: 1rem;
         font-size: 6.5rem;
-        
     }
 }
 
@@ -91,51 +89,6 @@
    }
 }
 
-.answer_txt {
-    @include nav-font;
-    font-size: 1rem;
-    @media (min-width: $break-small) {
-        font-size: 2rem;
-    }
-    margin-top: 1rem;
-    color: white;
-    background-color: $orange;
-}
 
-// Margins
-.input-group {
-    width: 45%;
-}
-
-// Icon
-.fa-hand-point-right {
-    color: #000;
-    opacity: .8;
-    z-index: 10;
-    position: fixed;
-    font-size: 7rem;
-    @media (min-width: $break-medium) {
-        font-size: 13rem;
-    }
-    top: 15%;
-    left: 65%;
-    @media (min-width: $break-medium) {
-        top: 72%;
-        left: 75%;
-    }
-}
-
-.input-lg {
-    border: solid #bb613f 3px;
-    font-size: 1rem;
-    @media (min-width: $break-small) {
-        font-size: 2rem;
-    }
-    margin-left: 1rem;
-    max-width: 20%;
-    @media (min-width: $break-large) {
-        max-width: 10%;
-    }
-}
 
 

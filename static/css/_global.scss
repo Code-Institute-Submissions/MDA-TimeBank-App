@@ -1,51 +1,22 @@
-// Global styling for this template
 body {
   @include nav-font;
   color: black;
   line-height: 1;
-}
+  @media (min-width: 992px) {
+    padding: {
+      top: 0;
+      left: $sidebar-base-width;
+    }
+  }
+
+  hr {
+    width: 90%;
+  }
 
 
-
-hr {
-  width: 90%;
-}
-
-@media (min-width: 768px) {
   h1 {
-    line-height: 3.5rem;
+    @media (min-width: 768px) {
+      line-height: 3.5rem;
+    }
   }
 }
-
-@media (min-width: 992px) {
-    body {
-    padding-top: 0;
-    padding-left: $sidebar-base-width;
-  }
-}
-
-.carousel-item {
-  width: 100% !important;
-  height: 450px !important;
-  text-align: center;
-  background-color: #af563499;
-  padding: 1rem;
-  line-height: 1.5;
-}
-
-.carousel-container {
-  margin-top: 2rem;
-}
-
-.carousel-item > p {
-  font-size: 1.5rem;
-  position: relative;
-  top: 30%;
-  transform: translateY(-70%);
-}
-
-.carousel {
-  padding-bottom: 4rem;
-}
-
-

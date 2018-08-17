@@ -27,8 +27,7 @@ h3 {
     color: $primary !important;
 }
 
-/*Challenge fonts*/
-
+// Challenge fonts
 .challenge-page-title {
     font-size: 4rem;
     color: $blue;
@@ -40,7 +39,6 @@ h3 {
             bottom: 3rem;
         }
     }
-
     @media (min-width: 992px) {
         font-size: 10rem;
         margin-top: 6rem;
@@ -63,6 +61,7 @@ h3 {
     color: $orange;
 }
 
+// Carousel fonts
 .carousel h1 {
     color: white;
     margin-bottom: 2rem;
@@ -78,4 +77,8 @@ h3 {
 .carousel p,
 blockquote p {
     color: white;
+}
+
+.text-primary {
+    color: $orange !important;
 }
