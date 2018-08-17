@@ -103,7 +103,7 @@ def challenge(username):
         
         if form.get('first-challenge') == 'true':
             context = setup_context(username)
-            return render_template('challenge-test.html', context=context)
+            return render_template('challenge.html', context=context)
         
         else:
             attempt = int(form.get('attempt'))
@@ -123,7 +123,7 @@ def challenge(username):
                     score += 10
                     attempt = 1 # set attempt at 1 for next challenge
                     next_challenge = get_challenge(challenge_id)
-                    flash('{} is correct - 10 points!'.format(guess))
+                    flash('"{}" was correct - 10 points!'.format(guess))
                 
                     if challenge_id < 7: # stop message from flahsing if on last challenge
                         flash('Try the next challenge about {}'.format(challenge_plus['title']))
@@ -140,7 +140,7 @@ def challenge(username):
                         
                         if (guess > answer) and (guess <= answer + 5) or (guess < answer) and (guess >= answer - 5):
                             score += 5
-                            flash('The answer was {}, but {} is close enough - 5 points!'.format(answer, guess))
+                            flash('The answer was "{}", but "{}" is close enough - 5 points!'.format(answer, guess))
                             next_challenge = get_challenge(challenge_id)
                             
                             if challenge_id < 7: # stop message from flahsing if on last challenge
@@ -148,7 +148,7 @@ def challenge(username):
                         
                         else:    
                             next_challenge = get_challenge(challenge_id)
-                            flash('You guessed {}. The answer was {}.'.format(guess, answer))
+                            flash('You guessed "{}". The answer was "{}".'.format(guess, answer))
                             
                             if challenge_id < 7: # stop message from flahsing if on last challenge
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
@@ -180,7 +180,7 @@ def challenge(username):
                         'current_score': score,
                         'attempt': attempt,
                     }
-                    return render_template('challenge-test.html', context=context)
+                    return render_template('challenge.html', context=context)
 
             results_table(username, score) # call function to store results list to results.txt
 
