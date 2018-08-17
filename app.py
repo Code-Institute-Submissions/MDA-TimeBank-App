@@ -2,10 +2,11 @@ import os
 import json
 from flask import Flask, render_template, request, flash, redirect, url_for, jsonify, session
 from operator import itemgetter, attrgetter
-from env import *
+
 
 
 app = Flask(__name__)
+SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 app.secret_key = SECRET_KEY
 
 
