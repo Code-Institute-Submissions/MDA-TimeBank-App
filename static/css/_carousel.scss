@@ -1,0 +1,23 @@
+.carousel-item {
+  width: 100% !important;
+  height: 450px !important;
+  text-align: center;
+  background-color: #af563499;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+.carousel-container {
+  margin-top: 2rem;
+}
+
+.carousel-item > p {
+  font-size: 1.5rem;
+  position: relative;
+  top: 30%;
+  transform: translateY(-70%);
+}
+
+.carousel {
+  padding-bottom: 4rem;
+}
