@@ -2,8 +2,7 @@ import os
 import json
 from flask import Flask, render_template, request, flash, redirect, url_for, jsonify, session
 from operator import itemgetter, attrgetter
-import types
-from types import NoneType
+
 
 
 app = Flask(__name__)
