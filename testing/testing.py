@@ -109,7 +109,8 @@ Setting game context
 def get_challenge(index):
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-        return data[index] if index <= 7 else None # Catches IndexError if there are no more challenges
+        # Catches IndexError if there are no more challenges
+        return data[index] if index <= 7 else None 
 
 assert get_challenge(0)['title'] == 'Computers', "The title is correct" 
 assert get_challenge(0)['need_amount'] == 58, "The need amount is correct"

@@ -10,17 +10,19 @@ app.secret_key = "some_secret"
 
 
 """
-Get challenge information from json file to iterate through the questions and answers
+Get challenge information from json file to iterate through the 
+questions and answers
 """
 
 def get_challenge(index):
     with open("data/challenge.json", "r") as json_data:
         data = json.load(json_data)
-        return data[index] if index <= 7 else None # Catches IndexError if there are no more challenges
+        # Catches IndexError if there are no more challenges
+        return data[index] if index <= 7 else None 
 
 
 """
-Appen usernames and scores to the results file
+Append usernames and scores to the results file
 """
 
 results_list = []
@@ -36,8 +38,8 @@ def results_table(username, result):
 
 
 """
-Set default values for starting game. These will be used to initialise the challenge
-for the player at Challenge 1
+Set default values for starting game. These will be used to 
+initialise the challenge for the player at Challenge 1
 """
 
 def setup_context(username):
@@ -60,8 +62,8 @@ def setup_context(username):
 
 
 """
-Index Page - Player enters a username which is rendered on the 'welcome' card on 
-intro page
+Index Page - Player enters a username which is rendered on the 'welcome' card 
+on intro page
 """
 
 @app.route('/', methods=["GET", "POST"])
@@ -108,19 +110,22 @@ def challenge(username):
             challenge_id = int(form.get('challenge_id'))
             score = int(form.get('current_score'))
             challenge = get_challenge(challenge_id)
-            challenge_plus = get_challenge(challenge_id + 1) # this retrieves title of next challenge for rendering
+            # this retrieves title of next challenge for rendering
+            challenge_plus = get_challenge(challenge_id + 1) 
             
             guess = int(form.get('guess'))
             answer = int(challenge['skill_answer'])
             correct = guess == answer
             
-            while challenge_id <= 7:  # executes while there is another challenge
-                
-                if correct: # catches if the guess is correct on first or second attempt
+            # executes while there is another challenge
+            while challenge_id <= 7:  
+                # catches if the guess is correct on first or second attempt
+                if correct:
                     challenge_id += 1 # if so, moves to next challenge_id
                     score += 10 # gives 10 points for correct guess
                     attempt = 1 # set attempt at 1 for next challenge
-                    next_challenge = get_challenge(challenge_id) # uses challenge_id as param to get next challenge
+                    # uses challenge_id as param to get next challenge
+                    next_challenge = get_challenge(challenge_id) 
                     flash('"{}" was correct - 10 points!'.format(guess))
                 
                     if challenge_id < 7: # displays title of next challenge
@@ -132,29 +137,35 @@ def challenge(username):
                         attempt = 1 # sets 1st attempt again
                         
                         """
-                        Give 5 points to guesses (on the second attempt) that are
-                        within a -5 and +5 range of the answer
+                        Give 5 points to guesses (on the second attempt) that 
+                        are within a -5 and +5 range of the answer
                         """
                         
-                        if (guess > answer) and (guess <= answer + 5) or (guess < answer) and (guess >= answer - 5):
-                            score += 5 # if guess is not correct but is +/-5, give 5 points
+                        if (guess > answer) and (guess <= answer + 5) or 
+                           (guess < answer) and (guess >= answer - 5):
+                            # if guess is not correct but is +/-5, give 5 points
+                            score += 5 
                             flash('The answer was "{}", but "{}" is close enough - 5 points!'.format(answer, guess))
-                            next_challenge = get_challenge(challenge_id) # uses challenge_id as param to get next challenge
+                            ) # uses challenge_id as param to get next challenge
+                            next_challenge = get_challenge(challenge_id
                             
                             if challenge_id < 7: # displays title of next challenge
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
                         
                         else: # if guess is not correct or within +/-5 range of answer     
-                            next_challenge = get_challenge(challenge_id)  # uses challenge_id as param to get next challenge
+                            # uses challenge_id as param to get next challenge
+                            next_challenge = get_challenge(challenge_id)  
                             flash('You guessed "{}". The answer was "{}".'.format(guess, answer))
                             
                             if challenge_id < 7: # displays title of next challenge
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
                     else: # if there has only been one attempt
                         attempt += 1 # move to second attempt
-                        next_challenge = get_challenge(challenge_id) # use same challenge_id param
+                        # use same challenge_id para
+                        next_challenge = get_challenge(challenge_id) m
                         
-                        if (guess > answer) and (guess < answer + 5) or (guess < answer) and (guess > answer - 5):
+                        if (guess > answer) and (guess < answer + 5) or 
+                           (guess < answer) and (guess > answer - 5):
                             # if guess is not correct but is +/-5, notify player that guess is close to answer
                             flash('"{}" is close... Try again'.format(guess))
                         else:
@@ -180,8 +191,8 @@ def challenge(username):
                         'attempt': attempt,
                     }
                     return render_template('challenge.html', context=context)
-
-            results_table(username, score) # call function to store results list to results.json
+            # call function to store results list to results.json    
+            results_table(username, score) 
 
             return redirect("/results_table")    
     
@@ -194,10 +205,11 @@ Results and information page
 
 @app.route('/results_table', methods=["GET", "POST"])
 def results_board():
-     
-    with open("data/results.json", "r") as json_data: # read username & scores from json file
+    # read username & scores from json file 
+    with open("data/results.json", "r") as json_data: 
         data = json.load(json_data)
-        newlist = sorted(data, key=itemgetter('score'), reverse=True) # Display results table from highest score down
+        # Display results table from highest score down
+        newlist = sorted(data, key=itemgetter('score'), reverse=True) 
     
     return render_template("results_table.html", page_title="Timebanking", score_table = newlist)
 
