@@ -123,4 +123,7 @@ The following aspects of the code were tested manually:
   - Opera
   - Microsoft Edge
   - Mozilla Firefox
+  - Safari
+
+An **unresolved bug** was found when testing the application on Microsoft Edge. The JQuery fadeIn() method, unlike each of the other browsers, was 'jumpy'  and not smooth. After looking for different fixes, I decided to leave it as it was as it was not too distracting, and the Market Development Association will have relative control over what browser the application is used on at community events.
 

@@ -63,7 +63,9 @@ A **Test Driven Development** approach was used to develop the application. Manu
 
 
 ## Contributing
-This project is customisable by saving your own survey information, in json format, into the ```data/challenge.json``` file, including the background images (with ones reflecting topic of the question) and text. All contributions to improving the code are welcomed, so make changes you think are needed/desired and submit a pull request
+This project is customisable by saving your own survey information, in json format, into the ```data/challenge.json``` file, including the background images (with ones reflecting topic of the question) and text. All contributions to improving the code are welcomed, so make changes you think are needed/desired and submit a pull request.
+
+See the Testing file for details on an unresolved bug relating to JQuery that was identified when testing the application on Microsoft Edge.
 
 ## Getting the code up and running
 1. Create an environment running python 2.7.6 as the default in your IDE
