@@ -158,9 +158,9 @@ def challenge(username):
                         
                         if (guess > answer) and (guess < answer + 5) or (guess < answer) and (guess > answer - 5):
                             # if guess is not correct but is +/-5, notify player that guess is close to answer
-                            flash('{} is close... Try again'.format(guess))
+                            flash('"{}" is close... Try again'.format(guess))
                         else:
-                            flash('{} is not right. Try again!'.format(guess))
+                            flash('"{}" is not right. Try again!'.format(guess))
                
                 """
                 Template is now returned with the updated context unless player has
