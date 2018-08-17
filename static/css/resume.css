@@ -72,9 +72,6 @@ body {
   color: black;
   line-height: 1; }
 
-blockquote {
-  border-left: solid 2px #000; }
-
 hr {
   width: 90%; }
 
@@ -245,10 +242,10 @@ a {
   background-position: center; }
 
 .hidden,
-.hidden_title,
-.hidden_icon,
-.hidden_answer,
-.hidden_icon {
+.hidden_question,
+.hidden_attempt,
+.hidden_score,
+.hidden_para {
   display: none;
   width: 100%; }
 
@@ -261,6 +258,9 @@ a {
 .challenge-cards {
   margin-top: 1rem;
   text-align: center; }
+  @media (min-width: 1200px) {
+    .challenge-cards {
+      margin-top: 4rem; } }
 
 .challenge-number {
   font-family: 'Skranji', cursive;
@@ -334,11 +334,14 @@ a {
 .input-lg {
   border: solid #bb613f 3px;
   font-size: 1rem;
-  max-width: 35%;
-  margin-left: 1rem; }
+  margin-left: 1rem;
+  max-width: 20%; }
   @media (min-width: 768px) {
     .input-lg {
       font-size: 2rem; } }
+  @media (min-width: 1200px) {
+    .input-lg {
+      max-width: 10%; } }
 
 #end-score {
   color: #BD5D38;
@@ -414,6 +417,9 @@ a {
 tbody > tr:hover {
   color: #BD5D38; }
 
+.results-margin {
+  margin-top: 5rem; }
+
 /*Home page heading*/
 .landing-header {
   font-size: 5rem;
@@ -486,11 +492,21 @@ tbody > tr:hover {
   color: #fff;
   padding: .1rem; }
 
+.flash {
+  position: relative;
+  width: 66.6%;
+  left: 1800px;
+  top: 0px;
+  margin-top: 1rem; }
+
 .warning {
   margin-top: 1rem; }
   @media (min-width: 992px) {
     .warning {
       margin-top: 3rem; } }
+
+.blacken {
+  background-color: black; }
 
 blockquote {
   border-left: solid white 1px;

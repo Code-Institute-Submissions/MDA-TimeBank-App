@@ -11,6 +11,15 @@
     line-height: 1;
     text-align: center;
     color: #fff;
+    padding: .1rem;
+}
+
+.flash {
+    position: relative;
+    width: 66.6%;
+    left: 1800px;
+    top: 0px;
+    margin-top: 1rem;  
 }
 
 .warning {
@@ -18,4 +27,8 @@
     @media (min-width: $break-medium) {
         margin-top: 3rem;
     }
+}
+
+.blacken {
+    background-color: black;
 }

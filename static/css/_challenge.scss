@@ -17,10 +17,10 @@
 
 // Elements idden for jquery event
 .hidden,
-.hidden_title,
-.hidden_icon,
-.hidden_answer,
-.hidden_icon {
+.hidden_question,
+.hidden_attempt,
+.hidden_score,
+.hidden_para {
     display: none;
     width: 100%;
 }
@@ -30,12 +30,14 @@
     @media (min-width: $break-small) {
         margin-top: 9rem;        
     }
-
 }
 
 .challenge-cards {
     margin-top: 1rem;
-
+    @media (min-width: $break-large) {
+        margin-top: 4rem;
+    }
+    text-align: center;
 }
 
 .challenge-number {
@@ -66,7 +68,6 @@
         
     }
 }
-
 
 .challenge_statement {
     padding: .2rem;
@@ -127,11 +128,14 @@
 .input-lg {
     border: solid #bb613f 3px;
     font-size: 1rem;
-    max-width: 35%;
     @media (min-width: $break-small) {
         font-size: 2rem;
     }
     margin-left: 1rem;
+    max-width: 20%;
+    @media (min-width: $break-large) {
+        max-width: 10%;
+    }
 }
 
 
