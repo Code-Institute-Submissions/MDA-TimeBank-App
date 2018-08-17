@@ -2,11 +2,11 @@
 
 A **Test Driven Development** approach was used to develop the application using the folllowing steps:
 
-**1. Identify the functionality that needs to be built and write pseudocode**
-**2. Write a test for this feature**
-**3. Write the code and test it**
-**4. Refactor code, merging with previous functions where possible**
-**5. Move to next piece of required functionality - start from step 1**
+1. **Identify the functionality that needs to be built and write pseudocode**
+2. **Write a test for this feature**
+3. **Write the code and test it**
+4. **Refactor code, merging with previous functions where possible**
+5. **Move to next piece of required functionality - start from step 1**
 
 
 #### 1. Identify the functionality that needs to be built and write pseudocode
