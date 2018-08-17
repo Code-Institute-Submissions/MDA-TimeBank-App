@@ -141,13 +141,12 @@ def challenge(username):
                         are within a -5 and +5 range of the answer
                         """
                         
-                        if (guess > answer) and (guess <= answer + 5) or 
-                           (guess < answer) and (guess >= answer - 5):
+                        if (guess > answer) and (guess <= answer + 5) or (guess < answer) and (guess >= answer - 5):
                             # if guess is not correct but is +/-5, give 5 points
                             score += 5 
                             flash('The answer was "{}", but "{}" is close enough - 5 points!'.format(answer, guess))
-                            ) # uses challenge_id as param to get next challenge
-                            next_challenge = get_challenge(challenge_id
+                            # uses challenge_id as param to get next challenge
+                            next_challenge = get_challenge(challenge_id)
                             
                             if challenge_id < 7: # displays title of next challenge
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
@@ -161,11 +160,10 @@ def challenge(username):
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
                     else: # if there has only been one attempt
                         attempt += 1 # move to second attempt
-                        # use same challenge_id para
-                        next_challenge = get_challenge(challenge_id) m
+                        # use same challenge_id param
+                        next_challenge = get_challenge(challenge_id) 
                         
-                        if (guess > answer) and (guess < answer + 5) or 
-                           (guess < answer) and (guess > answer - 5):
+                        if (guess > answer) and (guess < answer + 5) or (guess < answer) and (guess > answer - 5):
                             # if guess is not correct but is +/-5, notify player that guess is close to answer
                             flash('"{}" is close... Try again'.format(guess))
                         else:
