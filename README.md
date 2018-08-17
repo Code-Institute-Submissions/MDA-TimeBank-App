@@ -30,8 +30,6 @@ The information for each challenge is stored in the ```data/challenge.json``` fi
 
 Information needed for participants to progress through the challenge (current score, question information and attempts per question)  is stroed in the Flask 'context' which is updated after each question. The 'username' and 'final score' details are stored in the ```data/results.json``` file and rendered to the results table at the end of the challenge.
 
-A JQuery function is included in results_table.html to reload the results page every 20 seconds so that players are added to the table when other users are reading or watching information from the carousel.
-
 **AWS Cloud9** has been used to manage package dependencies for deployment of site on GitHub and Heroku. 
 
 
