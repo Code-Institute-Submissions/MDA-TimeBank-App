@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
+// Fly in the message following guess
     $('.flash').animate({left: "15%"}, "slow", "swing").delay(6000);
-	
 	
 // 	Challenge page Question, Attempt and Score counters
 	$('div.hidden_question').delay(2000).fadeIn("slow").fadeOut("slow").fadeIn("slow");
@@ -26,6 +26,4 @@ $(document).ready(function() {
     $('.card').mouseout(function(){
         $(this).css('background-color', "rgba(66, 24, 59, 0.78)");
     });
-
-    
 });
