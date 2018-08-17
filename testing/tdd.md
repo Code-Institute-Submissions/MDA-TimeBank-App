@@ -96,15 +96,29 @@ The testing suite can be found [here]('testing.py')
 
 ### Manual tests
 The following aspects of the code were tested manually:
-* **data processed through HTML forms**. Flash messages were used to test that the player's guesses were processed correctly
-* **routes** were tested through live testing of the challenges
+* **data processed through HTML forms**. Flash messages were used to test that the player's guesses were processed correctly. For example:
+    * username was entered on index.html
+    * the 'welcome' card on intro.html was viewed to ensure that the username was stored in the context
+
+* **routes** were tested through live testing of the challenges. For example:
+    * there is only one 'path' through the challenge (other than the 'Start Again' button on the navbar) and this was tested numerous times by completing the challenge
+
 * the **persistence of the context data** was tested by checking that the information was accurantely written to the results.json file when the challenge had been completed
+    * player score, which is stored in the context, was tested by doing multiple 'walk-throughs' of the challenge, providing different answers for each challenge
+    * the score was tallied manually and compared with the results produced at the end of the challenge
+    
 * **.json data rendering onto the templates** was tested by manually matching the results.json data with the rendered templates
+    * the game follows a strict chronological sequence. The challenge progression outlined in the challenge.json file was matched to the template progression (including titles, numbers, etc) and tested to ensure they matched
+    
 * **simultaneous players and separate contexts** were tested by checking if both usernames & results displayed on the results table at the end of the challenge
-* **JQuery events** were tested by executing the event, refreshing the page and testing again
-* a basic test function ``count_attempts(guess, answer)`` was written in the test suite to count attempts, but as the live code invovled passing the original contect data through hidden names in the HTML form, this was not simulated in the tests or refactored with the ``challenge_run(username, guess)``. Instead the 'loop' to the second guess or progression to next question was tested manually by providing a range of responses to the question to see what response the code would produce.
+
+* **JQuery events** all take place on the Challenge pages. These were tested by executing the event, refreshing the page and testing again 
+
+* a basic test function ``count_attempts(guess, answer)`` was written in the test suite to count attempts, but as the live code involved passing the original context data through hidden names in the HTML form, this was not simulated in the tests or refactored with the ``challenge_run(username, guess)``. Instead the 'loop' to the second guess or progression to next question was tested manually by providing a range of responses to the question to see what response the code would produce.
+
 * **Broswer compatibility**. The above features were tested in each of the following browsers:
   - Google Chrome
   - Opera
   - Microsoft Edge
   - Mozilla Firefox
+
