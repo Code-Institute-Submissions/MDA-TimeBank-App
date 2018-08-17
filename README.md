@@ -19,7 +19,7 @@ After registering a username, participants guess answers to a series of question
 
 The **MDA TimeBank App** will be used by a cross section of the community including all ages and different IT proficiency. The app is desinged with simplicity in mind with players only being asked to enter guesses. The text is rendered in relativey large font for accessibility purposes.
 
-The **MDA TimeBank App** is a 'conversation' starter and as such is not intended to convey excessive information or take too much time to complete. The game has 8 questions and can be completed in under 5 minutes with relative ease. 
+The **MDA TimeBank App** is a 'conversation' starter and as such is not intended to convey excessive information or take too much time to complete. The game has 8 questions and can be completed in under 5 minutes with relative ease. The animations provide for a more stimulating UX without being distracting or taking too much time to complete.
 
 ### How does it work
 The application uses the **Flask** microframework to route participants through the challenge and execute the programme. The programme is written in **python 2.7.6**
