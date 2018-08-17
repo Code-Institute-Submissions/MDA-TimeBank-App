@@ -20,24 +20,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
     <!--Above sheets to be sorted - delete styles.css following emptying into scss-->
-
 </head>
 
-
 <body>
-
     <nav class="navbar navbar-light bg-light" id="sideNav">
         <a class="navbar-brand">
             <img class="mda_logo" src="{{ url_for('static', filename='img/MDA.png') }}" alt="MDA logo" width="200" height="100" alt="">
             
-            <form>
-                <button type="submit" href="{{ '/' }}" class="btn btn-sm btn-info nav-btn"><strong>Start Again!</strong></button>
+            
+            <form action="{{ url_for('index') }}">
+                <button type="submit" value="Go to homepage" class="btn btn-sm btn-info nav-btn"><strong>Start Again</strong></button>
             </form>     
         </a>
     </nav>
 
 
-{% block content %} {% endblock %}
+{% block content %}
+
+{% endblock %}
+
 
 <!--JQuery-->
 <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
@@ -45,17 +46,10 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-<!--Materialize JS-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-
 <!--Font-awesome JavaScript-->
 <script src="https://use.fontawesome.com/0ac03ef31e.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="{{ url_for('static', filename='js/resume.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/challenge.js') }}"></script>
 
 </body>

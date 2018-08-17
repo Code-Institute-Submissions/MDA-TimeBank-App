@@ -3,9 +3,9 @@
 <body class="bk-image" style="background-image: url({{ context.image }})">
 
     <div class="container">
+        <!--Context is used to render values on the template-->
         <h2 class="user">Player: {{ context.username }}!</h2>
         <div class="row challenge-cards">
-
             <div class="col-4">
                 <div class="card card-body hidden_question">
                     <h2>Question</h2>
@@ -37,7 +37,7 @@
         <h1 class="challenge_title hidden">{{ context.title }}</h1>
         <p class="challenge-text hidden">{{ context.challenge }}</p>
 
-        <!--Guess Button with input fields hidden to pass auto names for the context -->
+        <!--Guess Button with input fields hidden to pass auto values for the context -->
         <form method='POST' class="form-inline hidden" name="guess">
             <input type='number' class="form-control form-control-lg input-field input-lg" id="guess" name='guess' autocomplete="off" required>
             <input type="hidden" name="challenge_id" id="challenge_id" value="{{ context.challenge_id }}">
@@ -46,6 +46,8 @@
 
             <button class="btn btn-lg btn-success">Guess!</button>
         </form>
+        
+        <!--Flash messages informing player of score and next challenge-->
         {% with messages = get_flashed_messages() %} 
             {% if messages %} 
                 {% for message in messages %}
