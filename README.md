@@ -72,6 +72,7 @@ This project is customisable by saving your own survey information, in json form
 2. Clone this repository by running the ```$ git clone https://github.com/Deasun/MDA-TimeBank-App.git``` command
 3. pip install requirements
 4. Run the app.py file and the app will be available for using your browser
+5. Set your own SECRET_KEY. Be sure to add the file which contains the secret key variable to .gitignore or, if you are using a hosting platform like Heorku, set it in the Settings section of the platform (Config Vars) and store it in os environment variable in your app.py file.
 
 
 ## Credits
