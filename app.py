@@ -44,7 +44,7 @@ for the player at Challenge 1
 def setup_context(username):
     score = 0
     attempt = 1
-    challenge = get_challenge(0)
+    challenge = get_challenge(0) # start challenge on index 0 - default
     context = {
         'challenge_id': 0, 
         'title': challenge['title'],
@@ -116,22 +116,22 @@ def challenge(username):
             answer = int(challenge['skill_answer'])
             correct = guess == answer
             
-            while challenge_id <= 7:
+            while challenge_id <= 7:  # executes while there is another challenge
                 
-                if correct:
-                    challenge_id += 1
-                    score += 10
+                if correct: # catches if the guess is correct on first or second attempt
+                    challenge_id += 1 # if so, moves to next challenge_id
+                    score += 10 # gives 10 points for correct guess
                     attempt = 1 # set attempt at 1 for next challenge
-                    next_challenge = get_challenge(challenge_id)
+                    next_challenge = get_challenge(challenge_id) # uses challenge_id as param to get next challenge
                     flash('"{}" was correct - 10 points!'.format(guess))
                 
                     if challenge_id < 7: # stop message from flahsing if on last challenge
                         flash('Try the next challenge about {}'.format(challenge_plus['title']))
                 
                 else:
-                    if attempt >= 2:
-                        challenge_id += 1
-                        attempt = 1
+                    if attempt >= 2: # checks if there have been 2 or more attempts
+                        challenge_id += 1 # moves to next challenge_id if true
+                        attempt = 1 # sets 1st attempt again
                         
                         """
                         Give 5 points to guesses (on the second attempt) that are
@@ -139,24 +139,25 @@ def challenge(username):
                         """
                         
                         if (guess > answer) and (guess <= answer + 5) or (guess < answer) and (guess >= answer - 5):
-                            score += 5
+                            score += 5 # if guess is not correct but is +/-5, give 5 points
                             flash('The answer was "{}", but "{}" is close enough - 5 points!'.format(answer, guess))
-                            next_challenge = get_challenge(challenge_id)
+                            next_challenge = get_challenge(challenge_id) # uses challenge_id as param to get next challenge
                             
                             if challenge_id < 7: # stop message from flahsing if on last challenge
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
                         
-                        else:    
-                            next_challenge = get_challenge(challenge_id)
+                        else: # if guess is not correct or within +/-5 range of answer     
+                            next_challenge = get_challenge(challenge_id)  # uses challenge_id as param to get next challenge
                             flash('You guessed "{}". The answer was "{}".'.format(guess, answer))
                             
                             if challenge_id < 7: # stop message from flahsing if on last challenge
                                 flash('Try the next challenge about {}'.format(challenge_plus['title']))
-                    else:
-                        attempt += 1
-                        next_challenge = get_challenge(challenge_id)
+                    else: # if there has only been one attempt
+                        attempt += 1 # move to second attempt
+                        next_challenge = get_challenge(challenge_id) # use same challenge_id param
                         
                         if (guess > answer) and (guess < answer + 5) or (guess < answer) and (guess > answer - 5):
+                            # if guess is not correct but is +/-5, notify player that guess is close to answer
                             flash('{} is close... Try again'.format(guess))
                         else:
                             flash('{} is not right. Try again!'.format(guess))
@@ -167,8 +168,8 @@ def challenge(username):
                 results table
                 """
                 
-                if next_challenge is not None:
-                    context = {
+                if next_challenge is not None: # if there is another challenge
+                    context = { # use variables created/updated to update context
                         'challenge_id': challenge_id,
                         'title': next_challenge['title'],
                         'challenge': next_challenge['skill_question'],
@@ -182,7 +183,7 @@ def challenge(username):
                     }
                     return render_template('challenge.html', context=context)
 
-            results_table(username, score) # call function to store results list to results.txt
+            results_table(username, score) # call function to store results list to results.json
 
             return redirect("/results_table")    
     
