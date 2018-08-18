@@ -91,7 +91,7 @@ These steps were repeated until all tests were passing and the code was refactor
 
 For example, in the test suite, the ``calc_score(guess, answer)`` function was further refactored with the ``get_challenge(index)`` and ``setup_context(username)``functions to create the ``challenge_run(username, guess)`` function.
 
-The testing suite can be found [here]('testing.py') 
+The testing suite can be found [here](testing.py) 
 
 
 ### Manual tests
